@@ -12,4 +12,7 @@ let greedy = MinimumAbsoluteDifferenceArray()
 //greedy.minimumAbsoluteDifference(arr: [-59, -36, -13, 1, -53, -92, -2, -96, -54, 75])
 
 let marc = MarcsCakewalk()
-marc.marcsCakewalk(calorie: [7, 4, 9, 6])
+//marc.marcsCakewalk(calorie: [7, 4, 9, 6])
+
+let grid = GridChallenge()
+grid.gridChallenge(grid: ["eabcd", "fghij", "olkmn", "trpqs", "xywuv"])
