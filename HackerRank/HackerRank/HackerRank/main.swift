@@ -15,4 +15,7 @@ let marc = MarcsCakewalk()
 //marc.marcsCakewalk(calorie: [7, 4, 9, 6])
 
 let grid = GridChallenge()
-grid.gridChallenge(grid: ["eabcd", "fghij", "olkmn", "trpqs", "xywuv"])
+//grid.gridChallenge(grid: ["eabcd", "fghij", "olkmn", "trpqs", "xywuv"])
+
+let maxmin = MaxMin()
+maxmin.maxMin(k: 3, arr: [10, 100, 300, 200, 1000, 20, 30])
