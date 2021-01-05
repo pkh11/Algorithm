@@ -18,4 +18,7 @@ let grid = GridChallenge()
 //grid.gridChallenge(grid: ["eabcd", "fghij", "olkmn", "trpqs", "xywuv"])
 
 let maxmin = MaxMin()
-maxmin.maxMin(k: 3, arr: [10, 100, 300, 200, 1000, 20, 30])
+//maxmin.maxMin(k: 3, arr: [10, 100, 300, 200, 1000, 20, 30])
+
+let mark = MarkandToys()
+mark.maximumToys(prices: [1, 12, 5, 111, 200, 1000, 10], k: 50)
