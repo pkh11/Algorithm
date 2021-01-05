@@ -10,39 +10,28 @@ import Foundation
 class 체육복 {
     func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
         
-        var reserves = reserve
-        var students = Array(repeating: false, count: n)
+        let reserves = reserve
+        var students = Array(repeating: 0, count: n)
         
-        for i in 0..<n {
-            if reserve.contains(i+1) || !lost.contains(i+1) {
-                students[i] = true
-            }
-        }
+        for i in lost { students[i-1] -= 1 }
+        for i in reserves { students[i-1] += 1 }
         
         print(students)
         
-        for i in 0..<students.count {
-            if reserves.contains(i+1) {
-                if i == 0 {
-                    if !students[i+1] {
-                        students[i+1] = true
-                    }
-                } else if i == students.count - 1 {
-                    if !students[i-1] {
-                        students[i-1] = true
-                    }
-                } else {
-                    if !students[i+1] {
-                        students[i+1] = true
-                    } else if !students[i-1] {
-                        students[i-1] = true
-                    }
+        for (index, hasClothes) in students.enumerated() {
+            if hasClothes == -1 {
+                if (index > 0 && students[index - 1] == 1) {
+                    students[index - 1] -= 1
+                    students[index] += 1
+                } else if (index < students.count - 1) && students[index + 1] == 1 {
+                    students[index + 1] -= 1
+                    students[index] += 1
                 }
-            
-                reserves.remove(at: reserves.firstIndex(of: i+1)!)
             }
         }
+        print(students)
+
         
-        return students.filter{ $0 }.count
+        return students.filter{ $0 >= 0 }.count
     }
 }
