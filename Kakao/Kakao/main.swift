@@ -24,6 +24,10 @@ let no1 = 추석트래픽()
 
 let no2 = 체육복()
 //print(no2.solution(5, [2, 4], [1,3,5]))
-print(no2.solution(5, [2, 4], [3]))
+//print(no2.solution(5, [2, 4], [3]))
 //print(no2.solution(3, [3], [1]))
 //print(no2.solution(5, [1, 3], [5]))
+
+let no3 = 조이스틱()
+no3.solution("JEROEN")
+//no3.solution("JAN")
