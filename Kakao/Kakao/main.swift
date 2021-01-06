@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 let no1 = 추석트래픽()
 //no1.solution(["2016-09-15 01:00:04.001 2.0s", "2016-09-15 01:00:07.000 2s"])
 //no1.solution([
@@ -29,4 +27,3 @@ let no2 = 체육복()
 print(no2.solution(5, [2, 4], [3]))
 //print(no2.solution(3, [3], [1]))
 //print(no2.solution(5, [1, 3], [5]))
-//print(no2.solution(5, [5], [5]))
