@@ -29,5 +29,10 @@ let no2 = 체육복()
 //print(no2.solution(5, [1, 3], [5]))
 
 let no3 = 조이스틱()
-no3.solution("JEROEN")
+//no3.solution("JEROEN")
 //no3.solution("JAN")
+
+let no4 = 큰수만들기()
+//no4.solution("1924", 2)
+//no4.solution("1231234", 3)
+no4.solution("4177252841", 4)
