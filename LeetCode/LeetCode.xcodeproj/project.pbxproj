@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B317EC525ABE19900B2B5A7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B317EC425ABE19900B2B5A7 /* main.swift */; };
 		6B317ECE25ABE1E600B2B5A7 /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B317ECD25ABE1E600B2B5A7 /* Greedy.swift */; };
+		6B78FFBA25AC7CD4006BBFC2 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78FFB925AC7CD4006BBFC2 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		6B317EC125ABE19900B2B5A7 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B317EC425ABE19900B2B5A7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6B317ECD25ABE1E600B2B5A7 /* Greedy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Greedy.swift; sourceTree = "<group>"; };
+		6B78FFB925AC7CD4006BBFC2 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		6B317EC325ABE19900B2B5A7 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				6B78FFB825AC7CC4006BBFC2 /* String */,
 				6B317ECC25ABE1C200B2B5A7 /* Greedy */,
 				6B317EC425ABE19900B2B5A7 /* main.swift */,
 			);
@@ -71,6 +74,14 @@
 				6B317ECD25ABE1E600B2B5A7 /* Greedy.swift */,
 			);
 			path = Greedy;
+			sourceTree = "<group>";
+		};
+		6B78FFB825AC7CC4006BBFC2 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				6B78FFB925AC7CD4006BBFC2 /* String.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B78FFBA25AC7CD4006BBFC2 /* String.swift in Sources */,
 				6B317ECE25ABE1E600B2B5A7 /* Greedy.swift in Sources */,
 				6B317EC525ABE19900B2B5A7 /* main.swift in Sources */,
 			);
