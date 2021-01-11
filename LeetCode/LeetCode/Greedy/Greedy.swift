@@ -9,6 +9,25 @@ import Foundation
 
 class Greedy {
     
+    func findContentChildren(_ g: [Int], _ s: [Int]) -> Int {
+        
+        let sortedG = g.sorted(by: <)
+        let sortedS = s.sorted(by: <)
+        var i = 0
+        var j = 0
+        
+        while i<sortedG.count && j<sortedS.count {
+            if sortedG[i] <= sortedS[j] {
+                i+=1
+            }
+            j+=1
+        }
+        
+        print(i)
+        
+        return 0
+    }
+    
     func maxProfit(_ prices: [Int]) -> Int {
         
         var profit = 0
