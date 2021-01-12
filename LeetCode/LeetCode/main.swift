@@ -15,5 +15,6 @@ let greedy = Greedy()
 let string = _String()
 //string.longestCommonPrefix(["flower","flow","flight"])
 //print(string.detectCapitalUse("FlaG"))
-print(string.countAndSay(3))
-
+//print(string.countAndSay(3))
+string.romanToInt("LVIII")
+//string.romanToInt("MCMXCIV")

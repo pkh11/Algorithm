@@ -9,6 +9,36 @@ import Foundation
 
 class _String {
     
+    func romanToInt(_ s: String) -> Int {
+    
+        let map = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
+        let chars = Array(s)
+
+        var total = 0
+        var prev = Int.max
+
+        for c in chars  {
+            if let currValue = map[String(c)] {
+                if (currValue > prev) {
+                    total += currValue - prev - prev
+                }
+                else {
+                    total += currValue
+                }
+                prev = currValue
+            }
+        }
+        
+        print(total)
+
+        return total
+    }
+    
+    
+    func reverseString(_ s: inout [Character]) {
+        s.reverse()
+    }
+    
     func countAndSay(_ n: Int) -> String {
         
         guard n > 1 else { return "1" }
