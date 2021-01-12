@@ -13,5 +13,7 @@ let greedy = Greedy()
 //greedy.findContentChildren([1,2,3], [1,1])
 
 let string = _String()
-string.longestCommonPrefix(["flower","flow","flight"])
+//string.longestCommonPrefix(["flower","flow","flight"])
+//print(string.detectCapitalUse("FlaG"))
+print(string.countAndSay(3))
 
