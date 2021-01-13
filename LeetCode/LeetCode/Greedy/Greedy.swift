@@ -9,6 +9,32 @@ import Foundation
 
 class Greedy {
     
+    func totalMoney(_ n: Int) -> Int {
+        
+        let week = n/7
+        let days = n%7
+            
+        let moneyOfWeek = [1, 2, 3, 4, 5, 6, 7]
+        var money = 0
+        
+        if week == 0 {
+            for i in 0..<days {
+                money += moneyOfWeek[i]
+            }
+        } else {
+            for w in 0..<week {
+                money += 28 + w*7
+            }
+            for day in 0..<days {
+                money += (moneyOfWeek[day] + week)
+            }
+        }
+        
+        print(money)
+
+        return money
+    }
+    
     func findContentChildren(_ g: [Int], _ s: [Int]) -> Int {
         
         let sortedG = g.sorted(by: <)
