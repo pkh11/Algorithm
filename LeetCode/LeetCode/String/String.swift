@@ -9,6 +9,37 @@ import Foundation
 
 class _String {
     
+    func numUniqueEmails(_ emails: [String]) -> Int {
+        // ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
+        
+        // . 은 무시 (이름만)
+        // + 뒤에는 삭제
+        
+        var set = Set<String>()
+        
+        for email in emails {
+            let splits = email.split(separator: "@")
+            let localName = splits[0]
+            let domainName = splits[1]
+            localName.replacingOccurrences(of: <#T##StringProtocol#>, with: <#T##StringProtocol#>)
+            var str = localName
+            if localName.contains(".") {
+                str = localName.filter{ $0 != "." }
+            }
+            
+            if str.contains("+") {
+                str.removeSubrange(str.firstIndex(of: "+")!..<str.endIndex)
+            }
+            
+            let newEmail = "\(str)@\(domainName)"
+            set.insert(newEmail)
+        }
+        
+//        print(set)
+        
+        return set.count
+    }
+    
     func romanToInt(_ s: String) -> Int {
     
         let map = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
