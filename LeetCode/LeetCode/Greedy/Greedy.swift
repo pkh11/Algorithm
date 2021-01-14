@@ -8,6 +8,32 @@
 import Foundation
 
 class Greedy {
+    func maximumUnits(_ boxTypes: [[Int]], _ truckSize: Int) -> Int {
+        //1,3 2,2 3,1 / 4
+        // unit이 제일 많은 순으로 정렬
+        let sorted = boxTypes.sorted(by: { $0[1] > $1[1] })
+        var units = 0
+        var boxes = 0
+        
+        for boxType in sorted {
+            let numberOfBoxes = boxType[0]
+            let unitsPerBox = boxType[1]
+            
+            boxes += numberOfBoxes
+            
+            if boxes > truckSize {
+                let remain = boxes - truckSize
+                units += (numberOfBoxes - remain) * unitsPerBox
+                break
+            } else {
+                units += numberOfBoxes * unitsPerBox
+            }
+        }
+        
+        print(units)
+        
+        return units
+    }
     
     func totalMoney(_ n: Int) -> Int {
         
