@@ -15,6 +15,7 @@ let greedy = Greedy()
 //greedy.totalMoney(20)
 //greedy.maximumUnits([[1,3],[2,2],[3,1]], 4)
 //greedy.maximumUnits([[5,10],[2,5],[4,7],[3,9]], 10)
+//greedy.maxDepth([3,9,20,nil,nil,15,7])
 
 let string = _String()
 //string.longestCommonPrefix(["flower","flow","flight"])
@@ -25,4 +26,18 @@ let string = _String()
 //string.numUniqueEmails(["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"])
 //string.mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", ["hit"])
 //string.mostCommonWord("a, a, a, a, b,b,b,c, c", ["a"])
-string.mostCommonWord("Bob", [])
+//string.mostCommonWord("Bob", [])
+
+
+public class TreeNode {
+    public var val: Int
+    public var left: TreeNode?
+    public var right: TreeNode?
+    public init() { self.val = 0; self.left = nil; self.right = nil; }
+    public init(_ val: Int) { self.val = val; self.left = nil; self.right = nil; }
+    public init(_ val: Int, _ left: TreeNode?, _ right: TreeNode?) {
+        self.val = val
+        self.left = left
+        self.right = right
+    }
+}

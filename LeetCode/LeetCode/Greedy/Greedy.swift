@@ -8,6 +8,13 @@
 import Foundation
 
 class Greedy {
+    var count = 0
+    func maxDepth(_ root: TreeNode?) -> Int {
+        
+        guard let root = root else { return 0 }
+        
+        return max(maxDepth(root.left!), maxDepth(root.right!)) + 1
+    }
     
     func maximumUnits(_ boxTypes: [[Int]], _ truckSize: Int) -> Int {
         //1,3 2,2 3,1 / 4
@@ -40,7 +47,7 @@ class Greedy {
         
         let week = n/7
         let days = n%7
-            
+        
         let moneyOfWeek = [1, 2, 3, 4, 5, 6, 7]
         var money = 0
         
@@ -58,7 +65,7 @@ class Greedy {
         }
         
         print(money)
-
+        
         return money
     }
     
