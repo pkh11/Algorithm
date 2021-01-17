@@ -9,6 +9,54 @@ import Foundation
 
 class _String {
     
+    // "a, a, a, a, b,b,b,c, c"
+    // ["a"]
+    func mostCommonWord(_ paragraph: String, _ banned: [String]) -> String {
+        
+        var countOfWords = [String:Int]()
+        var filterdWords = [String]()
+        let words = paragraph.lowercased().map{ String($0) }
+//        print(words)
+        var tmp = ""
+        for (index, word) in words.enumerated() {
+            if word == " " ||
+                word == "!" ||
+                word == "?" ||
+                word == "'" ||
+                word == "." ||
+                word == ";" ||
+                word == "," {
+                filterdWords.append(tmp)
+                tmp = ""
+            } else {
+                tmp += word
+                if index == words.count - 1 {
+                    filterdWords.append(tmp)
+                }
+            }
+        }
+        
+        for word in filterdWords {
+            if let key = countOfWords[word] {
+                countOfWords[word] = key + 1
+            } else {
+                countOfWords[word] = 1
+            }
+        }
+        
+        for bannedWord in banned {
+            countOfWords = countOfWords.filter({ $0.key != bannedWord })
+        }
+        
+        let answer = countOfWords.sorted(by: { $0.value > $1.value }).map{ $0.key }.filter({ $0 != "" })
+    
+        if let word = answer.first {
+            return word
+        }
+        
+        return ""
+    }
+    
     func numUniqueEmails(_ emails: [String]) -> Int {
         // ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
         
@@ -21,7 +69,7 @@ class _String {
             let splits = email.split(separator: "@")
             let localName = splits[0]
             let domainName = splits[1]
-            localName.replacingOccurrences(of: <#T##StringProtocol#>, with: <#T##StringProtocol#>)
+//            localName.replacingOccurrences(of: <#T##StringProtocol#>, with: <#T##StringProtocol#>)
             var str = localName
             if localName.contains(".") {
                 str = localName.filter{ $0 != "." }
