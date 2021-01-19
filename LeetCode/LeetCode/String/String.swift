@@ -9,6 +9,13 @@ import Foundation
 
 class _String {
     
+    func reverseWords(_ s: String) -> String {
+        
+        let splited = s.split(separator: " ").map{ String($0).reversed() }.map{ String($0) }
+        
+        return splited.joined(separator: " ")
+    }
+    
     // "a, a, a, a, b,b,b,c, c"
     // ["a"]
     func mostCommonWord(_ paragraph: String, _ banned: [String]) -> String {
