@@ -27,8 +27,9 @@ let string = _String()
 //string.mostCommonWord("Bob hit a ball, the hit BALL flew far after it was hit.", ["hit"])
 //string.mostCommonWord("a, a, a, a, b,b,b,c, c", ["a"])
 //string.mostCommonWord("Bob", [])
-string.reverseWords("Let's take LeetCode contest")
-
+//string.reverseWords("Let's take LeetCode contest")
+//string.defangIPaddr("1.1.1.1")
+string.isValid("()")
 
 public class TreeNode {
     public var val: Int

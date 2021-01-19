@@ -9,6 +9,44 @@ import Foundation
 
 class _String {
     
+    func isValid(_ s: String) -> Bool {
+            
+        let array = s.map{ String($0) }
+        var stack = [String]()
+        
+        for char in array {
+            if char == "(" || char == "{" || char == "[" {
+                stack.append(char)
+            } else {
+                if !stack.isEmpty {
+                    let top = stack.last!
+                    
+                    if top == "(" && char == ")" {
+                        stack.removeLast()
+                    } else if top == "{" && char == "}" {
+                        stack.removeLast()
+                    } else if top == "[" && char == "]" {
+                        stack.removeLast()
+                    } else {
+                        stack.append(char)
+                    }
+                } else {
+                    stack.append(char)
+                }
+            }
+        }
+        
+        if stack.isEmpty {
+            return true
+        }
+
+        return false
+    }
+    
+    func defangIPaddr(_ address: String) -> String {
+        return address.replacingOccurrences(of: ".", with: "[.]")
+    }
+    
     func reverseWords(_ s: String) -> String {
         
         let splited = s.split(separator: " ").map{ String($0).reversed() }.map{ String($0) }
