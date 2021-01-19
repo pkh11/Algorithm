@@ -8,6 +8,18 @@
 import Foundation
 
 class DFS {
+    func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        if p?.val == nil && q?.val == nil {
+            return true
+        }
+        
+        if p?.val == q?.val {
+            return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
+        }
+        
+        return false
+    }
+    
     func maxDepth(_ root: Node?) -> Int {
         guard let root = root else { return 0 }
         
