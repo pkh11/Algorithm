@@ -70,7 +70,6 @@ class 길찾기게임 {
         // root -> left -> right
         func inOrdered(_ root: Node?) {
             guard let node = root else { return }
-            print(node.value)
             inorderd.append(node.value)
             inOrdered(node.left)
             inOrdered(node.right)
@@ -81,7 +80,7 @@ class 길찾기게임 {
             guard let node = root else { return }
             postOrdered(node.left)
             postOrdered(node.right)
-            print(node.value)
+            postorderd.append(node.value)
         }
     }
 
