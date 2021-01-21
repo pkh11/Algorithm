@@ -29,7 +29,11 @@ let string = _String()
 //string.mostCommonWord("Bob", [])
 //string.reverseWords("Let's take LeetCode contest")
 //string.defangIPaddr("1.1.1.1")
-string.isValid("()")
+//string.isValid("()")
+
+let dfs = DFS()
+dfs.sortedArrayToBST([-10,-3,0,5,9])
+
 
 public class TreeNode {
     public var val: Int

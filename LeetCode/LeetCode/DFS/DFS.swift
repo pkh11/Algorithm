@@ -8,6 +8,26 @@
 import Foundation
 
 class DFS {
+    
+    func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+        
+        guard !nums.isEmpty else {
+            return nil
+        }
+        
+        let mid = nums.count / 2
+        let tree = TreeNode(nums[mid])
+        
+        tree.left = sortedArrayToBST(Array(nums[0..<mid]))
+        tree.right = sortedArrayToBST(Array(nums[mid+1..<nums.count]))
+        
+        return tree
+    }
+    
+    func makeTree(_ num: Int) {
+        
+    }
+    
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p?.val == nil && q?.val == nil {
             return true
