@@ -16,6 +16,7 @@ let greedy = Greedy()
 //greedy.maximumUnits([[1,3],[2,2],[3,1]], 4)
 //greedy.maximumUnits([[5,10],[2,5],[4,7],[3,9]], 10)
 //greedy.maxDepth([3,9,20,nil,nil,15,7])
+greedy.balancedStringSplit("RLRRLLRLRL")
 
 let string = _String()
 //string.longestCommonPrefix(["flower","flow","flight"])
@@ -32,7 +33,7 @@ let string = _String()
 //string.isValid("()")
 
 let dfs = DFS()
-dfs.sortedArrayToBST([-10,-3,0,5,9])
+//dfs.sortedArrayToBST([-10,-3,0,5,9])
 
 
 public class TreeNode {

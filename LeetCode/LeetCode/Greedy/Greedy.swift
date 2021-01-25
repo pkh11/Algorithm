@@ -8,6 +8,32 @@
 import Foundation
 
 class Greedy {
+    func balancedStringSplit(_ s: String) -> Int {
+    
+        var array = [Int]()
+        
+        for char in s {
+            if char == "R" {
+                array.append(1)
+            } else {
+                array.append(-1)
+            }
+        }
+        
+        var sum = 0
+        var count = 0
+        for (_, value) in array.enumerated() {
+            sum += value
+            if sum == 0 {
+                count += 1
+            }
+        }
+        print(count)
+        
+        
+        return count
+    }
+    
     var count = 0
     func maxDepth(_ root: TreeNode?) -> Int {
         
