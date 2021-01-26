@@ -9,6 +9,27 @@ import Foundation
 
 class _String {
     
+    func maxNumberOfBalloons(_ text: String) -> Int {
+        // balloon
+        var priority: [String:Int] = ["b":0, "a":0, "l":0, "o":0, "n":0]
+        
+        for char in text {
+            if let count = priority["\(char)"] {
+                priority["\(char)"] = count + 1
+            }
+        }
+        
+        if priority["o"]! % 2 == 1 {
+            priority["o"] = priority["o"]! - 1
+        }
+        
+        if priority["l"]! % 2 == 1 {
+            priority["l"] = priority["l"]! - 1
+        }
+        
+        return min(priority["b"]!, priority["a"]!, priority["l"]!/2, priority["o"]!/2, priority["n"]!)
+    }
+    
     func isValid(_ s: String) -> Bool {
             
         let array = s.map{ String($0) }
