@@ -31,17 +31,17 @@ class 길찾기게임 {
         }
         
         // inordered
-        bst.inOrdered(bst.root)
+        bst.preOrdered(bst.root)
 
         // postordered
         bst.postOrdered(bst.root)
         
-        return [bst.inorderd, bst.postorderd]
+        return [bst.preorderd, bst.postorderd]
     }
     
     class BST {
         var root: Node?
-        var inorderd = [Int]()
+        var preorderd = [Int]()
         var postorderd = [Int]()
         
         func insert(_ value: Int, _ x: Int, _ y: Int) {
@@ -68,11 +68,11 @@ class 길찾기게임 {
         }
         
         // root -> left -> right
-        func inOrdered(_ root: Node?) {
+        func preOrdered(_ root: Node?) {
             guard let node = root else { return }
-            inorderd.append(node.value)
-            inOrdered(node.left)
-            inOrdered(node.right)
+            preorderd.append(node.value)
+            preOrdered(node.left)
+            preOrdered(node.right)
         }
         
         // left -> right -> root
