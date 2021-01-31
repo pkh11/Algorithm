@@ -9,6 +9,36 @@ import Foundation
 
 class _String {
     
+    func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
+        
+        let ransomChars = Array(ransomNote)
+        let magazineChars = Array(magazine)
+        var dict = [Character: Int]()
+        
+        for char in magazineChars {
+            if let value = dict[char] {
+                dict[char] = value + 1
+            } else {
+                dict[char] = 1
+            }
+        }
+        
+        print(dict)
+        
+        for char in ransomChars {
+            if let value = dict[char] {
+                if value - 1 < 0 {
+                    return false
+                }
+                dict[char] = value - 1
+            } else {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     func maxNumberOfBalloons(_ text: String) -> Int {
         // balloon
         var priority: [String:Int] = ["b":0, "a":0, "l":0, "o":0, "n":0]
