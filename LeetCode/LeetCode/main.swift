@@ -20,8 +20,8 @@ let greedy = Greedy()
 //greedy.lastStoneWeight([2,7,4,1,8,1])
 //greedy.lastStoneWeight([2,2])
 //greedy.lastStoneWeight([1])
-greedy.minSubsequence([4,3,10,9,8])
-greedy.minSubsequence([4,4,7,6,7])
+//greedy.minSubsequence([4,3,10,9,8])
+//greedy.minSubsequence([4,4,7,6,7])
 
 let string = _String()
 //string.longestCommonPrefix(["flower","flow","flight"])
@@ -42,6 +42,10 @@ let string = _String()
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
+
+let dp = DP()
+dp.minCostClimbingStairs([10, 15, 20])
+dp.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
 
 
 public class TreeNode {
