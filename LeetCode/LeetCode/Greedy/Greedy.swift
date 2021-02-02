@@ -9,6 +9,27 @@ import Foundation
 
 class Greedy {
     
+    func minSubsequence(_ nums: [Int]) -> [Int] {
+            
+        let sorted = nums.sorted(by: >)
+        let total = sorted.reduce(0) { $0 + $1 }
+        var result = [Int]()
+        
+        var sum = 0
+        for num in sorted {
+            sum += num
+            result.append(num)
+            
+            let remain = total - sum
+            if sum > remain {
+//                print(result)
+                return result
+            }
+        }
+        
+        return []
+    }
+    
     func lastStoneWeight(_ stones: [Int]) -> Int {
         // [2,7,4,1,8,1]
         
