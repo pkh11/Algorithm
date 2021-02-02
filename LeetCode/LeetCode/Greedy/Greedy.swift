@@ -8,6 +8,31 @@
 import Foundation
 
 class Greedy {
+    
+    func lastStoneWeight(_ stones: [Int]) -> Int {
+        // [2,7,4,1,8,1]
+        
+        var _stones = stones
+        
+        while true {
+            _stones = _stones.sorted(by: <)
+            
+            if _stones.count <= 1 {
+                break
+            }
+            
+            if let max1 = _stones.popLast(),
+               let max2 = _stones.popLast() {
+                if max1 > max2 {
+                    let remain = max1 - max2
+                    _stones.append(remain)
+                }
+            }
+        }
+        
+        return _stones.isEmpty ? 0 : _stones[0]
+    }
+    
     func balancedStringSplit(_ s: String) -> Int {
     
         var array = [Int]()
