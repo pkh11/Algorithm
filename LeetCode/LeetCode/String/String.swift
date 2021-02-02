@@ -8,6 +8,34 @@
 import Foundation
 
 class _String {
+    func freqAlphabets(_ s: String) -> String {
+        var _s = s
+        let map = ["1":"a", "2":"b", "3":"c", "4":"d", "5":"e", "6":"f", "7":"g", "8":"h", "9":"i"]
+        let code = ["10#":"j", "11#":"k", "12#":"l", "13#":"m", "14#":"n", "15#":"o", "16#":"p",
+                   "17#":"q", "18#":"r", "19#":"s", "20#":"t", "21#":"u", "22#":"v", "23#":"w", "24#":"x", "25#":"y", "26#":"z"]
+        
+        while true {
+            if _s.contains("#") {
+                let firstIndex = _s.firstIndex(of: "#")!
+                let index1 = _s.index(firstIndex, offsetBy: -1)
+                let index2 = _s.index(firstIndex, offsetBy: -2)
+                
+                var key = "\(_s[index2])" + "\(_s[index1])" + "\(_s[firstIndex])"
+                _s = _s.replacingOccurrences(of: key, with: code["\(key)"]!)
+//                print(_s)
+            } else {
+                for char in _s {
+                    if char >= "1" && char <= "9" {
+                        _s = _s.replacingOccurrences(of: String(char), with: map["\(char)"]!)
+                    }
+                }
+                print(_s)
+                break
+            }
+        }
+        
+        return _s
+    }
     
     func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
         

@@ -39,13 +39,17 @@ let string = _String()
 //string.maxNumberOfBalloons("nlaebolko")
 //string.canConstruct("aa", "aab")
 //string.canConstruct("aa", "aab")
+string.freqAlphabets("10#11#12")
+string.freqAlphabets("1326#")
+string.freqAlphabets("25#")
+string.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
 
 let dp = DP()
-dp.minCostClimbingStairs([10, 15, 20])
-dp.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
+//dp.minCostClimbingStairs([10, 15, 20])
+//dp.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
 
 
 public class TreeNode {
