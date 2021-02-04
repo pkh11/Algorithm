@@ -8,6 +8,24 @@
 import Foundation
 
 class _String {
+    
+    func firstUniqChar(_ s: String) -> Int {
+                
+        var dic = [Character:Int]()
+        
+        for char in s {
+            dic[char] = (dic[char] ?? 0) + 1
+        }
+        
+        for char in s {
+            if dic[char] == 1 {
+                return (s.firstIndex(of: char)?.encodedOffset)!
+            }
+        }
+    
+        return -1
+    }
+    
     func freqAlphabets(_ s: String) -> String {
         var _s = s
         let map = ["1":"a", "2":"b", "3":"c", "4":"d", "5":"e", "6":"f", "7":"g", "8":"h", "9":"i"]
@@ -20,16 +38,15 @@ class _String {
                 let index1 = _s.index(firstIndex, offsetBy: -1)
                 let index2 = _s.index(firstIndex, offsetBy: -2)
                 
-                var key = "\(_s[index2])" + "\(_s[index1])" + "\(_s[firstIndex])"
+                let key = "\(_s[index2])" + "\(_s[index1])" + "\(_s[firstIndex])"
                 _s = _s.replacingOccurrences(of: key, with: code["\(key)"]!)
-//                print(_s)
+
             } else {
                 for char in _s {
                     if char >= "1" && char <= "9" {
                         _s = _s.replacingOccurrences(of: String(char), with: map["\(char)"]!)
                     }
                 }
-                print(_s)
                 break
             }
         }
