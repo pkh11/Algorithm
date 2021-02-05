@@ -43,9 +43,9 @@ let string = _String()
 //string.freqAlphabets("1326#")
 //string.freqAlphabets("25#")
 //string.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#")
-string.firstUniqChar("leetcode")
-string.firstUniqChar("loveleetcode")
-string.firstUniqChar("cc")
+//string.firstUniqChar("leetcode")
+//string.firstUniqChar("loveleetcode")
+//string.firstUniqChar("cc")
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
@@ -53,6 +53,9 @@ let dfs = DFS()
 let dp = DP()
 //dp.minCostClimbingStairs([10, 15, 20])
 //dp.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
+
+let ar = _Array()
+ar.findMaxAverage([1,12,-5,-6,50,3], 4)
 
 
 public class TreeNode {
