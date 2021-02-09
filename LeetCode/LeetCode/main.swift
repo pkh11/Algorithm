@@ -55,7 +55,10 @@ let dp = DP()
 //dp.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
 
 let ar = _Array()
-ar.findMaxAverage([1,12,-5,-6,50,3], 4)
+//ar.findMaxAverage([1,12,-5,-6,50,3], 4)
+ar.containsDuplicate([1,2,3,1])
+ar.containsDuplicate([1,2,3,4])
+ar.containsDuplicate([1,1,1,3,3,4,3,2,4,2])
 
 
 public class TreeNode {
