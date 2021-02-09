@@ -56,9 +56,11 @@ let dp = DP()
 
 let ar = _Array()
 //ar.findMaxAverage([1,12,-5,-6,50,3], 4)
-ar.containsDuplicate([1,2,3,1])
-ar.containsDuplicate([1,2,3,4])
-ar.containsDuplicate([1,1,1,3,3,4,3,2,4,2])
+//ar.containsDuplicate([1,2,3,1])
+print(ar.containsNearbyDuplicate([1,2,3,1], 3))
+print(ar.containsNearbyDuplicate([1,0,1,1], 1))
+print(ar.containsNearbyDuplicate([1,2,3,1,2,3], 2))
+//print(ar.containsNearbyDuplicate([99,99], 2))
 
 
 public class TreeNode {

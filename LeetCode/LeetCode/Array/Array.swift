@@ -9,6 +9,41 @@ import Foundation
 
 class _Array {
     
+    func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -> Bool {
+                
+        // [1,2,3,1] 3
+        // [1,0,1,1] 1
+        // [1,2,3,1,2,3] 2
+        // [99, 99] 2
+    
+        // dic
+        var dic = [Int:Int]()
+        
+        for i in 0..<nums.count {
+            if let value = dic[nums[i]],  i - value <= k {
+                return true
+            } else {
+                dic[nums[i]] = i
+            }
+        }
+
+        
+        // set
+//        var set = Set<Int>()
+//        
+//        for i in 0..<nums.count {
+//            if i > k {
+//                set.remove(nums[i - k - 1])
+//            }
+//            if !set.insert(nums[i]).inserted {
+//                return true
+//            }
+//        }
+        
+
+        return false
+    }
+    
     func containsDuplicate(_ nums: [Int]) -> Bool {
             
         var _nums = nums
@@ -21,18 +56,12 @@ class _Array {
             set1.insert(num)
         }
         
-//        print(set1)
-//        print(nums)
-        
         sorted = set1.sorted(by: <)
         _nums = nums.sorted(by: <)
         
         if !_nums.elementsEqual(sorted) {
             answer = true
         }
-//        print(set1)
-//        print(nums)
-//        print(answer)
         
         return answer
     }
