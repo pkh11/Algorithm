@@ -9,6 +9,30 @@ import Foundation
 
 class _Array {
     
+    func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
+    
+        guard !nums.isEmpty else { return [] }
+        let sorted = nums.sorted(by: <)
+        let size = sorted.count + 1
+        var checked = Array(repeating: false, count: size)
+        var result = [Int]()
+        
+        for i in 0..<sorted.count {
+            let value = sorted[i]
+            checked[value] = true
+        }
+        
+        for i in 1..<checked.count {
+            if !checked[i] {
+                result.append(i)
+            }
+        }
+        print(result)
+        
+        
+        return result
+    }
+    
     func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -> Bool {
                 
         // [1,2,3,1] 3

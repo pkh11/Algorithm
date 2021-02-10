@@ -57,10 +57,10 @@ let dp = DP()
 let ar = _Array()
 //ar.findMaxAverage([1,12,-5,-6,50,3], 4)
 //ar.containsDuplicate([1,2,3,1])
-print(ar.containsNearbyDuplicate([1,2,3,1], 3))
-print(ar.containsNearbyDuplicate([1,0,1,1], 1))
-print(ar.containsNearbyDuplicate([1,2,3,1,2,3], 2))
-//print(ar.containsNearbyDuplicate([99,99], 2))
+//print(ar.containsNearbyDuplicate([1,2,3,1], 3))
+//print(ar.containsNearbyDuplicate([1,0,1,1], 1))
+//print(ar.containsNearbyDuplicate([1,2,3,1,2,3], 2))
+ar.findDisappearedNumbers([4,3,2,7,8,2,3,1])
 
 
 public class TreeNode {
