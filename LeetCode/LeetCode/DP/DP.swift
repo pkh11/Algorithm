@@ -8,6 +8,18 @@
 import Foundation
 
 class DP {
+    func divisorGame(_ N: Int) -> Bool {
+        
+        let turn = 0
+        
+        while N > 0 {
+            
+        }
+        
+        
+        return false
+    }
+    
     func minCostClimbingStairs(_ cost: [Int]) -> Int {
                 
         var dp = Array(repeating: 0, count: cost.count)

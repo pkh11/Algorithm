@@ -8,9 +8,44 @@
 import Foundation
 
 class Greedy {
+    func lemonadeChange(_ bills: [Int]) -> Bool {
+        
+        // lemonade 5
+        // 5, 10, 20
+        
+        // input: 5,5,5,10,20
+        // [5,5,5,5,20,20,5,5,20,5]
+        // [5,5,5,10,5,5,10,20,20,20]
+        // 5,5,10,10,20
+        
+        var five = 0
+        var ten = 0
+        
+        for bill in bills {
+            
+            if bill == 5 {
+                five += 1
+            } else if bill == 10 {
+                five -= 1
+                ten += 1
+            } else if bill == 20 && ten > 0 {
+                ten -= 1
+                five -= 1
+            } else {
+                five -= 3
+            }
+            
+            if five < 0 {
+                return false
+            }
+        }
+        
+        
+        return true
+    }
     
     func minSubsequence(_ nums: [Int]) -> [Int] {
-            
+        
         let sorted = nums.sorted(by: >)
         let total = sorted.reduce(0) { $0 + $1 }
         var result = [Int]()
@@ -22,7 +57,7 @@ class Greedy {
             
             let remain = total - sum
             if sum > remain {
-//                print(result)
+                //                print(result)
                 return result
             }
         }
@@ -55,7 +90,7 @@ class Greedy {
     }
     
     func balancedStringSplit(_ s: String) -> Int {
-    
+        
         var array = [Int]()
         
         for char in s {
