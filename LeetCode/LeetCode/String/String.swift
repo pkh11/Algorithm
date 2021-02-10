@@ -21,7 +21,11 @@ class _String {
             let splits = email.split(separator: "@")
             let localName = splits[0]
             let domainName = splits[1]
-            localName.replacingOccurrences(of: <#T##StringProtocol#>, with: <#T##StringProtocol#>)
+            
+            let numbers = "+1(202)-505- 71-17".replacingOccurrences(of: "\\W", with: "", options: .regularExpression)
+            
+            print(numbers)
+            
             var str = localName
             if localName.contains(".") {
                 str = localName.filter{ $0 != "." }
