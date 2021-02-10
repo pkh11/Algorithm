@@ -8,6 +8,120 @@
 import Foundation
 
 class Greedy {
+    func lemonadeChange(_ bills: [Int]) -> Bool {
+        
+        // lemonade 5
+        // 5, 10, 20
+        
+        // input: 5,5,5,10,20
+        // [5,5,5,5,20,20,5,5,20,5]
+        // [5,5,5,10,5,5,10,20,20,20]
+        // 5,5,10,10,20
+        
+        var five = 0
+        var ten = 0
+        
+        for bill in bills {
+            
+            if bill == 5 {
+                five += 1
+            } else if bill == 10 {
+                five -= 1
+                ten += 1
+            } else if bill == 20 && ten > 0 {
+                ten -= 1
+                five -= 1
+            } else {
+                five -= 3
+            }
+            
+            if five < 0 {
+                return false
+            }
+        }
+        
+        
+        return true
+    }
+    
+    func minSubsequence(_ nums: [Int]) -> [Int] {
+        
+        let sorted = nums.sorted(by: >)
+        let total = sorted.reduce(0) { $0 + $1 }
+        var result = [Int]()
+        
+        var sum = 0
+        for num in sorted {
+            sum += num
+            result.append(num)
+            
+            let remain = total - sum
+            if sum > remain {
+                //                print(result)
+                return result
+            }
+        }
+        
+        return []
+    }
+    
+    func lastStoneWeight(_ stones: [Int]) -> Int {
+        // [2,7,4,1,8,1]
+        
+        var _stones = stones
+        
+        while true {
+            _stones = _stones.sorted(by: <)
+            
+            if _stones.count <= 1 {
+                break
+            }
+            
+            if let max1 = _stones.popLast(),
+               let max2 = _stones.popLast() {
+                if max1 > max2 {
+                    let remain = max1 - max2
+                    _stones.append(remain)
+                }
+            }
+        }
+        
+        return _stones.isEmpty ? 0 : _stones[0]
+    }
+    
+    func balancedStringSplit(_ s: String) -> Int {
+        
+        var array = [Int]()
+        
+        for char in s {
+            if char == "R" {
+                array.append(1)
+            } else {
+                array.append(-1)
+            }
+        }
+        
+        var sum = 0
+        var count = 0
+        for (_, value) in array.enumerated() {
+            sum += value
+            if sum == 0 {
+                count += 1
+            }
+        }
+        print(count)
+        
+        
+        return count
+    }
+    
+    var count = 0
+    func maxDepth(_ root: TreeNode?) -> Int {
+        
+        guard let root = root else { return 0 }
+        
+        return max(maxDepth(root.left!), maxDepth(root.right!)) + 1
+    }
     
     func maximumUnits(_ boxTypes: [[Int]], _ truckSize: Int) -> Int {
         //1,3 2,2 3,1 / 4
@@ -40,7 +154,7 @@ class Greedy {
         
         let week = n/7
         let days = n%7
-            
+        
         let moneyOfWeek = [1, 2, 3, 4, 5, 6, 7]
         var money = 0
         
@@ -58,7 +172,7 @@ class Greedy {
         }
         
         print(money)
-
+        
         return money
     }
     
