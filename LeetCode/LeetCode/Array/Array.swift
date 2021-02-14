@@ -8,6 +8,30 @@
 import Foundation
 
 class _Array {
+    
+    func singleNumber(_ nums: [Int]) -> Int {
+        
+        // print(nums.reduce(0, ^))
+        //     10
+        // xor 01
+        //     11
+        // 비트연산 (xor)하게 되면 같은 수는 0, 다른수는 1의 비트로 표현됨
+        
+        var dic = [Int:Int]()
+        
+        for num in nums {
+            if let value = dic[num] {
+                dic[num]  = value + 1
+            } else {
+                dic[num] = 1
+            }
+        }
+        
+        let result = dic.filter{ $0.value == 1 }.map{ $0.key }.first!
+    
+        return result
+    }
+    
     func missingNumber(_ nums: [Int]) -> Int {
         
 //        let size = nums.count

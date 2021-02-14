@@ -68,9 +68,11 @@ let ar = _Array()
 //print(ar.containsNearbyDuplicate([1,0,1,1], 1))
 //print(ar.containsNearbyDuplicate([1,2,3,1,2,3], 2))
 //ar.findDisappearedNumbers([4,3,2,7,8,2,3,1])
-print(ar.missingNumber([9,6,4,2,3,5,7,0,1]))
-print(ar.missingNumber([0,1]))
-print(ar.missingNumber([3,0,1]))
+//print(ar.missingNumber([9,6,4,2,3,5,7,0,1]))
+ar.singleNumber([2,2,1])
+ar.singleNumber([4,1,2,1,2])
+ar.singleNumber([1])
+
 
 public class TreeNode {
     public var val: Int
