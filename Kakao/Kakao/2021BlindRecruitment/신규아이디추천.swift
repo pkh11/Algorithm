@@ -13,7 +13,7 @@ class 신규아이디추천 {
         // step1.
         var newID = new_id.lowercased()
         
-        // step2.
+        // step2.ls
         newID = newID.filter {
             if $0 == "_" || $0 == "-" || $0 == "." || ($0 >= "0" && $0 <= "9") || ($0 >= "a" && $0 <= "z") {
                 return true
