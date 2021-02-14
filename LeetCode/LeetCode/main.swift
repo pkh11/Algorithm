@@ -25,7 +25,7 @@ let greedy = Greedy()
 //greedy.lemonadeChange([5,5,5,10,20])
 //greedy.lemonadeChange([5,5,10])
 //greedy.lemonadeChange([10,10])
-print(greedy.lemonadeChange([5,5,10,10,20]))
+//print(greedy.lemonadeChange([5,5,10,10,20]))
 //greedy.lemonadeChange([5,5,5,5,20,20,5,5,20,5])
 
 let string = _String()
@@ -68,7 +68,9 @@ let ar = _Array()
 //print(ar.containsNearbyDuplicate([1,0,1,1], 1))
 //print(ar.containsNearbyDuplicate([1,2,3,1,2,3], 2))
 //ar.findDisappearedNumbers([4,3,2,7,8,2,3,1])
-
+print(ar.missingNumber([9,6,4,2,3,5,7,0,1]))
+print(ar.missingNumber([0,1]))
+print(ar.missingNumber([3,0,1]))
 
 public class TreeNode {
     public var val: Int

@@ -8,9 +8,40 @@
 import Foundation
 
 class _Array {
+    func missingNumber(_ nums: [Int]) -> Int {
+        
+//        let size = nums.count
+//        let sorted = nums.sorted(by: <)
+//
+//        var contains = Array(repeating: false, count: size + 1)
+//
+//        for (index, _) in sorted.enumerated() {
+//            let value = sorted[index]
+//
+//            if !contains[value] {
+//                contains[value] = true
+//            }
+//        }
+//
+//        for (index, _) in contains.enumerated() {
+//            if !contains[index] {
+//                return index
+//            }
+//        }
+        
+        // 다른풀이
+        
+        let sorted = nums.sorted()
+        
+        for (index, num) in sorted.enumerated() where index != num {
+            return index
+        }
+
+        return sorted.endIndex
+    }
     
     func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
-    
+        
         guard !nums.isEmpty else { return [] }
         let sorted = nums.sorted(by: <)
         let size = sorted.count + 1
@@ -34,12 +65,12 @@ class _Array {
     }
     
     func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -> Bool {
-                
+        
         // [1,2,3,1] 3
         // [1,0,1,1] 1
         // [1,2,3,1,2,3] 2
         // [99, 99] 2
-    
+        
         // dic
         var dic = [Int:Int]()
         
@@ -50,26 +81,26 @@ class _Array {
                 dic[nums[i]] = i
             }
         }
-
+        
         
         // set
-//        var set = Set<Int>()
-//        
-//        for i in 0..<nums.count {
-//            if i > k {
-//                set.remove(nums[i - k - 1])
-//            }
-//            if !set.insert(nums[i]).inserted {
-//                return true
-//            }
-//        }
+        //        var set = Set<Int>()
+        //
+        //        for i in 0..<nums.count {
+        //            if i > k {
+        //                set.remove(nums[i - k - 1])
+        //            }
+        //            if !set.insert(nums[i]).inserted {
+        //                return true
+        //            }
+        //        }
         
-
+        
         return false
     }
     
     func containsDuplicate(_ nums: [Int]) -> Bool {
-            
+        
         var _nums = nums
         var set1 = Set<Int>()
         var sorted = [Int]()
