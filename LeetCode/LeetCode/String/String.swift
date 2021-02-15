@@ -9,6 +9,29 @@ import Foundation
 
 class _String {
     
+    func addBinary(_ a: String, _ b: String) -> String {
+        // 2진수(string) -> 10진수(int)
+//        let _a = Int64(a, radix: 2)!
+//        let _b = Int64(b, radix: 2)!
+        // 10진수(int) -> 2진수(string)
+//        let _c = String(_a + _b, radix: 2)
+        
+        var a = a
+        var b = b
+        var carry = 0
+        var result = ""
+        
+        while !a.isEmpty || !b.isEmpty || carry > 0 {
+            let x = Int(a.isEmpty ? "0" : String(a.removeLast()))!
+            let y = Int(b.isEmpty ? "0" : String(b.removeLast()))!
+            let sum = x + y + carry
+            result = String(sum % 2) + result
+            carry = sum / 2
+        }
+        
+        return result
+    }
+    
     func lengthOfLastWord(_ s: String) -> Int {
         
         let splited = s.split(separator: " ")
@@ -23,7 +46,7 @@ class _String {
     }
     
     func firstUniqChar(_ s: String) -> Int {
-                
+        
         var dic = [Character:Int]()
         
         for char in s {
@@ -35,7 +58,7 @@ class _String {
                 return (s.firstIndex(of: char)?.encodedOffset)!
             }
         }
-    
+        
         return -1
     }
     
@@ -43,7 +66,7 @@ class _String {
         var _s = s
         let map = ["1":"a", "2":"b", "3":"c", "4":"d", "5":"e", "6":"f", "7":"g", "8":"h", "9":"i"]
         let code = ["10#":"j", "11#":"k", "12#":"l", "13#":"m", "14#":"n", "15#":"o", "16#":"p",
-                   "17#":"q", "18#":"r", "19#":"s", "20#":"t", "21#":"u", "22#":"v", "23#":"w", "24#":"x", "25#":"y", "26#":"z"]
+                    "17#":"q", "18#":"r", "19#":"s", "20#":"t", "21#":"u", "22#":"v", "23#":"w", "24#":"x", "25#":"y", "26#":"z"]
         
         while true {
             if _s.contains("#") {
@@ -53,7 +76,7 @@ class _String {
                 
                 let key = "\(_s[index2])" + "\(_s[index1])" + "\(_s[firstIndex])"
                 _s = _s.replacingOccurrences(of: key, with: code["\(key)"]!)
-
+                
             } else {
                 for char in _s {
                     if char >= "1" && char <= "9" {
@@ -119,7 +142,7 @@ class _String {
     }
     
     func isValid(_ s: String) -> Bool {
-            
+        
         let array = s.map{ String($0) }
         var stack = [String]()
         
@@ -148,7 +171,7 @@ class _String {
         if stack.isEmpty {
             return true
         }
-
+        
         return false
     }
     
@@ -170,7 +193,7 @@ class _String {
         var countOfWords = [String:Int]()
         var filterdWords = [String]()
         let words = paragraph.lowercased().map{ String($0) }
-//        print(words)
+        //        print(words)
         var tmp = ""
         for (index, word) in words.enumerated() {
             if word == " " ||
@@ -203,7 +226,7 @@ class _String {
         }
         
         let answer = countOfWords.sorted(by: { $0.value > $1.value }).map{ $0.key }.filter({ $0 != "" })
-    
+        
         if let word = answer.first {
             return word
         }
@@ -228,9 +251,9 @@ class _String {
             
             print(numbers)
             
-
-//            localName.replacingOccurrences(of: <#T##StringProtocol#>, with: <#T##StringProtocol#>)
-
+            
+            //            localName.replacingOccurrences(of: <#T##StringProtocol#>, with: <#T##StringProtocol#>)
+            
             var str = localName
             if localName.contains(".") {
                 str = localName.filter{ $0 != "." }
@@ -244,19 +267,19 @@ class _String {
             set.insert(newEmail)
         }
         
-//        print(set)
+        //        print(set)
         
         return set.count
     }
     
     func romanToInt(_ s: String) -> Int {
-    
+        
         let map = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
         let chars = Array(s)
-
+        
         var total = 0
         var prev = Int.max
-
+        
         for c in chars  {
             if let currValue = map[String(c)] {
                 if (currValue > prev) {
@@ -270,7 +293,7 @@ class _String {
         }
         
         print(total)
-
+        
         return total
     }
     
@@ -344,7 +367,7 @@ class _String {
         if isAllCapitals(word) || isAllNotCapitals(word) || isFirstWordCapital(word) {
             return true
         }
-    
+        
         return false
     }
     
@@ -384,7 +407,7 @@ class _String {
         
         let sorted = strs.sorted(by: {$0.count < $1.count})
         guard !sorted.isEmpty else { return "" }
-
+        
         var longestComPrefix = sorted[0]
         
         for index in 1..<sorted.count {
