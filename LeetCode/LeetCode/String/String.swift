@@ -9,6 +9,19 @@ import Foundation
 
 class _String {
     
+    func lengthOfLastWord(_ s: String) -> Int {
+        
+        let splited = s.split(separator: " ")
+        
+        guard !splited.isEmpty else { return 0 }
+        
+        if let lastWord = splited.last {
+            return lastWord.count
+        }
+        
+        return 0
+    }
+    
     func firstUniqChar(_ s: String) -> Int {
                 
         var dic = [Character:Int]()

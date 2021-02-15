@@ -51,6 +51,7 @@ let string = _String()
 //string.firstUniqChar("leetcode")
 //string.firstUniqChar("loveleetcode")
 //string.firstUniqChar("cc")
+string.lengthOfLastWord("Hello World")
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
