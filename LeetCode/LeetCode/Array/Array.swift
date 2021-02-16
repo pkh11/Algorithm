@@ -8,6 +8,16 @@
 import Foundation
 
 class _Array {
+    var maxValue = Int.min
+    func maximumProduct(_ nums: [Int]) -> Int {
+        
+        let size = nums.count
+        let sorted = nums.sorted(by: <)
+        
+        return max(sorted[0] * sorted[1] * sorted[size - 1], sorted[size-1] * sorted[size-2] * sorted[size-3])
+    }
+    
+    
     
     func singleNumber(_ nums: [Int]) -> Int {
         
@@ -28,30 +38,30 @@ class _Array {
         }
         
         let result = dic.filter{ $0.value == 1 }.map{ $0.key }.first!
-    
+        
         return result
     }
     
     func missingNumber(_ nums: [Int]) -> Int {
         
-//        let size = nums.count
-//        let sorted = nums.sorted(by: <)
-//
-//        var contains = Array(repeating: false, count: size + 1)
-//
-//        for (index, _) in sorted.enumerated() {
-//            let value = sorted[index]
-//
-//            if !contains[value] {
-//                contains[value] = true
-//            }
-//        }
-//
-//        for (index, _) in contains.enumerated() {
-//            if !contains[index] {
-//                return index
-//            }
-//        }
+        //        let size = nums.count
+        //        let sorted = nums.sorted(by: <)
+        //
+        //        var contains = Array(repeating: false, count: size + 1)
+        //
+        //        for (index, _) in sorted.enumerated() {
+        //            let value = sorted[index]
+        //
+        //            if !contains[value] {
+        //                contains[value] = true
+        //            }
+        //        }
+        //
+        //        for (index, _) in contains.enumerated() {
+        //            if !contains[index] {
+        //                return index
+        //            }
+        //        }
         
         // 다른풀이
         
@@ -60,7 +70,7 @@ class _Array {
         for (index, num) in sorted.enumerated() where index != num {
             return index
         }
-
+        
         return sorted.endIndex
     }
     
