@@ -76,8 +76,12 @@ let ar = _Array()
 //ar.singleNumber([4,1,2,1,2])
 //ar.singleNumber([1])
 //ar.maximumProduct([-100, -98, -1, 2, 3, 4])
-ar.maximumProduct([1, 2, 3])
+//ar.maximumProduct([1, 2, 3])
 //ar.maximumProduct([1, 2, 3,4])
+//ar.maxProduct([2,3,-2,4])
+//ar.maxProduct([-2,0,-1])
+//ar.maxProduct([0,2])
+ar.maxProduct([-4,-3,-2])
 
 
 public class TreeNode {

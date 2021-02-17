@@ -8,6 +8,30 @@
 import Foundation
 
 class _Array {
+    
+    func maxProduct(_ nums: [Int]) -> Int {
+        // 2, 3, -2, 4
+        
+        var maxProducts = nums[0]
+        var minProducts = nums[0]
+        var result = nums[0]
+        
+        for i in 1..<nums.count {
+            
+//            maxProducts = max(nums[i], maxProducts*nums[i], minProducts*nums[i])
+//            minProducts = min(nums[i], maxProducts*nums[i], minProducts*nums[i])
+            let a = maxProducts * nums[i]
+            let b = minProducts * nums[i]
+            maxProducts = max(nums[i], a, b)
+            minProducts = min(nums[i], a, b)
+            
+            result = max(result, maxProducts)
+        }
+        
+        
+        return result
+    }
+    
     var maxValue = Int.min
     func maximumProduct(_ nums: [Int]) -> Int {
         
@@ -177,3 +201,4 @@ class _Array {
         return Double(max) / Double(k)
     }
 }
+
