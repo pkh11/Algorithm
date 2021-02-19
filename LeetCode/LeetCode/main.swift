@@ -81,7 +81,8 @@ let ar = _Array()
 //ar.maxProduct([2,3,-2,4])
 //ar.maxProduct([-2,0,-1])
 //ar.maxProduct([0,2])
-ar.maxProduct([-4,-3,-2])
+//ar.maxProduct([-4,-3,-2])
+ar.relativeSortArray([2,3,1,3,2,4,6,7,9,2,19], [2,1,4,3,9,6])
 
 
 public class TreeNode {
