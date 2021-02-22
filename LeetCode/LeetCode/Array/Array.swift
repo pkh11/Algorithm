@@ -8,6 +8,50 @@
 import Foundation
 
 class _Array {
+    func relativeSortArray(_ arr1: [Int], _ arr2: [Int]) -> [Int] {
+                
+        let sorted1 = arr1.sorted()
+        var arr2 = arr2
+        
+        print(sorted1)
+        
+        var temp = [sorted1[0]]
+        
+        for index in 1..<sorted1.count {
+            
+            let last = temp.last!
+            
+            if last == sorted1[index] {
+                temp.append(sorted1[index])
+            } else {
+                if let firstIndex = arr2.firstIndex(of: last) {
+                    temp.removeLast()
+                    arr2.insert(contentsOf: temp, at: firstIndex)
+                } else {
+                    arr2.append(last)
+                }
+                
+                temp.removeAll()
+                temp.append(sorted1[index])
+            }
+        }
+        
+        let last = temp.last!
+        if !temp.isEmpty {
+            if let firstIndex = arr2.firstIndex(of: last) {
+                temp.removeLast()
+                arr2.insert(contentsOf: temp, at: firstIndex)
+            } else {
+                arr2.insert(contentsOf: temp, at: arr2.endIndex)
+            }
+        }
+//        print(temp)
+        
+        
+        print(arr2)
+        
+        return []
+    }
     
     func findLengthOfLCIS(_ nums: [Int]) -> Int {
         
