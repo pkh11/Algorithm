@@ -9,6 +9,29 @@ import Foundation
 
 class _Array {
     
+    func findLengthOfLCIS(_ nums: [Int]) -> Int {
+        
+        guard nums.count > 0 else {
+            return 0
+        }
+        
+        var length = 1
+        var maxLength = Int.min
+        
+        for i in 1..<nums.count {
+            var prev = nums[i-1]
+            if nums[i] > prev {
+                length += 1
+            } else {
+                maxLength = max(maxLength, length)
+                length = 1
+            }
+        }
+        
+        //        print(maxLength)
+        return max(maxLength, length)
+    }
+    
     func maxProduct(_ nums: [Int]) -> Int {
         // 2, 3, -2, 4
         
@@ -18,8 +41,8 @@ class _Array {
         
         for i in 1..<nums.count {
             
-//            maxProducts = max(nums[i], maxProducts*nums[i], minProducts*nums[i])
-//            minProducts = min(nums[i], maxProducts*nums[i], minProducts*nums[i])
+            //            maxProducts = max(nums[i], maxProducts*nums[i], minProducts*nums[i])
+            //            minProducts = min(nums[i], maxProducts*nums[i], minProducts*nums[i])
             let a = maxProducts * nums[i]
             let b = minProducts * nums[i]
             maxProducts = max(nums[i], a, b)

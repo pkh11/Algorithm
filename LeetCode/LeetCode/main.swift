@@ -81,7 +81,9 @@ let ar = _Array()
 //ar.maxProduct([2,3,-2,4])
 //ar.maxProduct([-2,0,-1])
 //ar.maxProduct([0,2])
-ar.maxProduct([-4,-3,-2])
+//ar.maxProduct([-4,-3,-2])
+//print(ar.findLengthOfLCIS([1,3,5,7]))
+print(ar.findLengthOfLCIS([1,3,5,4,7]))
 
 
 public class TreeNode {
