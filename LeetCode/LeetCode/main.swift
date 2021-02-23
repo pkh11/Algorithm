@@ -82,12 +82,14 @@ let ar = _Array()
 //ar.maxProduct([-2,0,-1])
 //ar.maxProduct([0,2])
 //ar.maxProduct([-4,-3,-2])
-<<<<<<< HEAD
+
 //print(ar.findLengthOfLCIS([1,3,5,7]))
-print(ar.findLengthOfLCIS([1,3,5,4,7]))
-=======
-ar.relativeSortArray([2,3,1,3,2,4,6,7,9,2,19], [2,1,4,3,9,6])
->>>>>>> 726680d1e7bd68b39ed68b385f57b5e51073b925
+//print(ar.findLengthOfLCIS([1,3,5,4,7]))
+
+//ar.commonChars(["bella","label","roller"])
+ar.commonChars(["cool","lock","cook"])
+
+
 
 
 public class TreeNode {

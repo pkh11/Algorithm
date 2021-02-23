@@ -8,6 +8,40 @@
 import Foundation
 
 class _Array {
+    
+    func commonChars(_ A: [String]) -> [String] {
+        // ["bella","label","roller"]
+        
+        var sorted = A.sorted().map{ $0.sorted() }
+        
+        let temp = sorted[0]
+        var result = [String]()
+        
+        for t in temp {
+            var isContain = false
+            for i in 1..<sorted.count {
+                let str = sorted[i]
+
+                if str.contains(t) {
+                    isContain = true
+                    if let idx = str.firstIndex(of: t) {
+                        sorted[i].remove(at: idx)
+                    }
+                } else {
+                    isContain = false
+                    break
+                }
+            }
+            
+            if isContain {
+                result.append(String(t))
+            }
+        }
+
+//        print(result)
+        return result
+    }
+    
     func relativeSortArray(_ arr1: [Int], _ arr2: [Int]) -> [Int] {
                 
         let sorted1 = arr1.sorted()
