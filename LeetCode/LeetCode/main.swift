@@ -87,7 +87,11 @@ let ar = _Array()
 //print(ar.findLengthOfLCIS([1,3,5,4,7]))
 
 //ar.commonChars(["bella","label","roller"])
-ar.commonChars(["cool","lock","cook"])
+//ar.commonChars(["cool","lock","cook"])
+//ar.intersect([1,2,2,1], [2,2])
+//ar.intersect([4,9,5], [9,4,9,8,4])
+//ar.intersect([1], [1])
+ar.intersect([1,2], [1,1])
 
 
 

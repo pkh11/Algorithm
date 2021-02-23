@@ -9,6 +9,22 @@ import Foundation
 
 class _Array {
     
+    func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
+        var result = [Int]()
+        
+        var nums2 = nums2
+        
+        for num in nums1 {
+            if nums2.contains(num) {
+                result.append(num)
+                nums2.remove(at: nums2.firstIndex(of: num)!)
+            }
+        }
+        print(result)
+        
+        return result
+    }
+    
     func commonChars(_ A: [String]) -> [String] {
         // ["bella","label","roller"]
         
@@ -21,7 +37,7 @@ class _Array {
             var isContain = false
             for i in 1..<sorted.count {
                 let str = sorted[i]
-
+                
                 if str.contains(t) {
                     isContain = true
                     if let idx = str.firstIndex(of: t) {
@@ -37,13 +53,13 @@ class _Array {
                 result.append(String(t))
             }
         }
-
-//        print(result)
+        
+        //        print(result)
         return result
     }
     
     func relativeSortArray(_ arr1: [Int], _ arr2: [Int]) -> [Int] {
-                
+        
         let sorted1 = arr1.sorted()
         var arr2 = arr2
         
@@ -79,7 +95,7 @@ class _Array {
                 arr2.insert(contentsOf: temp, at: arr2.endIndex)
             }
         }
-//        print(temp)
+        //        print(temp)
         
         
         print(arr2)
