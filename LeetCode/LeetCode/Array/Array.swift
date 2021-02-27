@@ -8,6 +8,29 @@
 import Foundation
 
 class _Array {
+    func canMakeArithmeticProgression(_ arr: [Int]) -> Bool {
+     
+        let increse = arr.sorted(by: <)
+        let decrese = arr.sorted(by: >)
+        
+        var gap = increse[1] - increse[0]
+        
+        for i in 1..<increse.count {
+            if increse[i] - increse[i-1] != gap {
+                return false
+            }
+        }
+        
+        gap = decrese[1] - decrese[0]
+        
+        for i in 1..<decrese.count {
+            if decrese[i] - decrese[i-1] != gap {
+                return false
+            }
+        }
+        
+        return true
+    }
     
     func moveZeroes(_ nums: inout [Int]) {
                 
