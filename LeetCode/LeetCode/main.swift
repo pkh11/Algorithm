@@ -52,8 +52,8 @@ let string = _String()
 //string.firstUniqChar("loveleetcode")
 //string.firstUniqChar("cc")
 //string.lengthOfLastWord("Hello World")
-string.addBinary("11", "1")
-string.addBinary("1010", "1011")
+//string.addBinary("11", "1")
+//string.addBinary("1010", "1011")
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
@@ -91,7 +91,12 @@ let ar = _Array()
 //ar.intersect([1,2,2,1], [2,2])
 //ar.intersect([4,9,5], [9,4,9,8,4])
 //ar.intersect([1], [1])
-ar.intersect([1,2], [1,1])
+//ar.intersect([1,2], [1,1])
+
+ar.judgeCircle("UD")
+ar.judgeCircle("LL")
+ar.judgeCircle("RRDD")
+ar.judgeCircle("LDRRLRUULR")
 
 
 
