@@ -9,6 +9,15 @@ import Foundation
 
 class _Array {
     
+    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
+         
+        if let firstIndex = nums.firstIndex(of: val) {
+            nums.remove(at: firstIndex)
+            removeElement(&nums, val)
+        }
+        return nums.count
+    }
+    
     func judgeCircle(_ moves: String) -> Bool {
        
         var start = (0,0)

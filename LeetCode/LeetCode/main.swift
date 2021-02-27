@@ -93,12 +93,13 @@ let ar = _Array()
 //ar.intersect([1], [1])
 //ar.intersect([1,2], [1,1])
 
-ar.judgeCircle("UD")
-ar.judgeCircle("LL")
-ar.judgeCircle("RRDD")
-ar.judgeCircle("LDRRLRUULR")
+//ar.judgeCircle("UD")
+//ar.judgeCircle("LL")
+//ar.judgeCircle("RRDD")
+//ar.judgeCircle("LDRRLRUULR")
 
-
+//ar.removeElement([3,2,2,3], 3)
+//ar.removeElement([0,1,2,2,3,0,4,2], 2)
 
 
 public class TreeNode {
