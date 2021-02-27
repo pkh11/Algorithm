@@ -9,6 +9,23 @@ import Foundation
 
 class _Array {
     
+    func moveZeroes(_ nums: inout [Int]) {
+                
+        let count = nums.filter{ $0 == 0 }.count
+        if count != 0 {
+            while nums.contains(0) {
+                if let index = nums.firstIndex(of: 0) {
+                    nums.remove(at: index)
+                }
+            }
+            for i in 1...count {
+                nums.append(0)
+            }
+        }
+        
+        
+    }
+    
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
          
         if let firstIndex = nums.firstIndex(of: val) {
