@@ -8,6 +8,30 @@
 import Foundation
 
 class Stack {
+    
+    func buildArray(_ target: [Int], _ n: Int) -> [String] {
+                
+        var empty = [Int]()
+        var result = [String]()
+        
+        for i in 1...n {
+            result.append("Push")
+            if !target.contains(i) {
+                result.append("Pop")
+            } else {
+                empty.append(i)
+            }
+            
+            if empty == target {
+                break
+            }
+        }
+        
+        print(result)
+        
+        return result
+    }
+    
     func validateStackSequences(_ pushed: [Int], _ popped: [Int]) -> Bool {
         
         var result = [Int]()

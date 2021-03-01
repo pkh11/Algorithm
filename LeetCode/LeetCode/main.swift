@@ -104,8 +104,12 @@ var nums = [0,1,0,3,12]
 //ar.moveZeroes(&nums)
 
 var stack = Stack()
-stack.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
-stack.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
+//stack.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
+//stack.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
+stack.buildArray([1,3], 3)
+stack.buildArray([1,2,3], 3)
+stack.buildArray([1,2], 4)
+stack.buildArray([2,3,4], 4)
 
 public class TreeNode {
     public var val: Int
