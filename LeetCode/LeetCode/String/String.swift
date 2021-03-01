@@ -9,6 +9,26 @@ import Foundation
 
 class _String {
     
+    func thousandSeparator(_ n: Int) -> String {
+                
+        let str = String(n).map{ String($0) }
+        let size = str.count - 1
+        var new = ""
+        
+        for i in stride(from: size, through: 0, by: -1) {
+            let index = size - i
+            if index % 3 == 0 && index != 0 {
+                new += ".\(String(str[i]))"
+            } else {
+                new += "\(String(str[i]))"
+            }
+        }
+
+        new = new.reversed().map{ String($0) }.joined()
+        print(new)
+        return new
+    }
+    
     func addBinary(_ a: String, _ b: String) -> String {
         // 2진수(string) -> 10진수(int)
 //        let _a = Int64(a, radix: 2)!
