@@ -101,7 +101,11 @@ let ar = _Array()
 //ar.removeElement([3,2,2,3], 3)
 //ar.removeElement([0,1,2,2,3,0,4,2], 2)
 var nums = [0,1,0,3,12]
-ar.moveZeroes(&nums)
+//ar.moveZeroes(&nums)
+
+var stack = Stack()
+stack.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
+stack.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
 
 public class TreeNode {
     public var val: Int
