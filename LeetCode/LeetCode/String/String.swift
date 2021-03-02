@@ -9,6 +9,49 @@ import Foundation
 
 class _String {
     
+    func numSplits(_ s: String) -> Int {
+        // 시간초과나서 딕셔너리로 품
+        
+        let distinct = Set(s).count
+        if distinct == 1 {
+            return s.count - 1
+        }
+    
+        if distinct == s.count {
+            if distinct % 2 == 0 {
+                return 1
+            } else {
+                return 0
+            }
+        }
+        
+        var leftSet = [Character:Int]()
+        var rightSet = [Character:Int]()
+        var count = 0
+        
+        for char in s {
+            leftSet[char] = (leftSet[char] ?? 0) + 1
+        }
+        
+        for char in s {
+            rightSet[char] = (rightSet[char] ?? 0) + 1
+            
+            if leftSet[char] == 1 {
+                leftSet[char] = nil
+            } else {
+                leftSet[char] = leftSet[char]! - 1
+            }
+            
+            if leftSet.keys.count == rightSet.keys.count {
+                count += 1
+            }
+        }
+        
+        print(count)
+        
+        return 0
+    }
+    
     func isPalindrome(_ x: Int) -> Bool {
         
         let str = String(x)
