@@ -67,7 +67,8 @@ class 블록이동하기 {
                 visited[nx1][ny1][dir] = true
                 array.append(Robot(x: nx1, y: ny1, direction: dir, time: time+1))
             }
-            
+            // i == 1 : 시계방향
+            // i == 3 : 반시계방향
             for i in stride(from: 1, through: 4, by: 2) {
                 let nextDir = (dir+i) % 4
                 nx2 = x1 + dx[nextDir]
@@ -94,8 +95,11 @@ class 블록이동하기 {
                 array.append(Robot(x: x1, y: y1, direction: nextDir, time: time+1))
             }
             
+            // 반대방향
             dir = (dir+2) % 4
             
+            // i == 1 : 시계방향
+            // i == 3 : 반시계방향
             for i in stride(from: 1, through: 4, by: 2) {
                 var nextDir = (dir+i) % 4
                 nx1 = x2 + dx[nextDir]
