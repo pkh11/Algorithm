@@ -9,6 +9,21 @@ import Foundation
 
 class _String {
     
+    func isPalindrome(_ x: Int) -> Bool {
+        
+        let str = String(x)
+        let reversed = str.reversed().map{ String($0) }.joined()
+        
+//        print("str : \(str)")
+//        print("reversed : \(reversed)")
+        
+        if str.elementsEqual(reversed) {
+            return true
+        }
+        
+        return false
+    }
+    
     func thousandSeparator(_ n: Int) -> String {
                 
         let str = String(n).map{ String($0) }
