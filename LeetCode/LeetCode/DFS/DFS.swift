@@ -8,7 +8,34 @@
 import Foundation
 
 class DFS {
+    func isSymmetric(_ root: TreeNode?) -> Bool {
+        
+        guard root != nil else { return true }
+        
+        var queue = [TreeNode?]()
+        queue.append(root?.left)
+        queue.append(root?.right)
+        
+        while !queue.isEmpty {
+            var leftNode = queue.removeFirst()
+            var rightNode = queue.removeFirst()
+            
+            if leftNode == nil && rightNode == nil { continue }
+            if leftNode == nil || rightNode == nil { return false }
+            if leftNode?.val != rightNode?.val { return false }
+            
+            queue.append(leftNode?.left)
+            queue.append(rightNode?.right)
+            queue.append(leftNode?.right)
+            queue.append(rightNode?.left)
+        }
+        print(queue)
+        return true
+    }
     
+    
+    
+   
     func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
         
         guard !nums.isEmpty else {
