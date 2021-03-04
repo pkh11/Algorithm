@@ -8,6 +8,38 @@
 import Foundation
 
 class DFS {
+    
+    func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
+                
+        // BFS
+        guard let root = root else {
+            return 0
+        }
+        
+        var result = 0
+        var queue = [TreeNode]()
+        
+        queue.append(root)
+        while !queue.isEmpty {
+            let node = queue.removeFirst()
+            
+            if let leftNode = node.left {
+                if leftNode.left == nil && leftNode.right == nil {
+                    result += leftNode.val
+                } else {
+                    queue.append(leftNode)
+                }
+            }
+            if let rightNode = node.right {
+                if rightNode.left != nil || rightNode.right != nil {
+                    queue.append(rightNode)
+                }
+            }
+        }
+        
+        return result
+    }
+    
     func isSymmetric(_ root: TreeNode?) -> Bool {
         
         guard root != nil else { return true }
