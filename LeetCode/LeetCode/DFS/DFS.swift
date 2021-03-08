@@ -9,6 +9,15 @@ import Foundation
 
 class DFS {
     
+    func isBalanced(_ root: TreeNode?) -> Bool {
+        
+        guard let root = root else { return true }
+        
+        
+        
+        return true
+    }
+    
     func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
                 
         // BFS
@@ -40,31 +49,46 @@ class DFS {
         return result
     }
     
+//    func isSymmetric(_ root: TreeNode?) -> Bool {
+//
+//        guard root != nil else { return true }
+//
+//        var queue = [TreeNode?]()
+//        queue.append(root?.left)
+//        queue.append(root?.right)
+//
+//        while !queue.isEmpty {
+//            var leftNode = queue.removeFirst()
+//            var rightNode = queue.removeFirst()
+//
+//            if leftNode == nil && rightNode == nil { continue }
+//            if leftNode == nil || rightNode == nil { return false }
+//            if leftNode?.val != rightNode?.val { return false }
+//
+//            queue.append(leftNode?.left)
+//            queue.append(rightNode?.right)
+//            queue.append(leftNode?.right)
+//            queue.append(rightNode?.left)
+//        }
+//        print(queue)
+//        return true
+//    }
+    
     func isSymmetric(_ root: TreeNode?) -> Bool {
         
-        guard root != nil else { return true }
+        guard let root = root else { return true }
         
-        var queue = [TreeNode?]()
-        queue.append(root?.left)
-        queue.append(root?.right)
-        
-        while !queue.isEmpty {
-            var leftNode = queue.removeFirst()
-            var rightNode = queue.removeFirst()
-            
-            if leftNode == nil && rightNode == nil { continue }
-            if leftNode == nil || rightNode == nil { return false }
-            if leftNode?.val != rightNode?.val { return false }
-            
-            queue.append(leftNode?.left)
-            queue.append(rightNode?.right)
-            queue.append(leftNode?.right)
-            queue.append(rightNode?.left)
-        }
-        print(queue)
-        return true
+        return isSymmetricDFS(root.left, root.right)
     }
     
+    func isSymmetricDFS(_ left: TreeNode?, _ right: TreeNode?) -> Bool {
+        
+        guard let leftNode = left, let rightNode = right else { return left === right }
+        
+        if leftNode.val != rightNode.val { return false }
+
+        return isSymmetricDFS(leftNode.left, rightNode.right) && isSymmetricDFS(leftNode.right, rightNode.left)
+    }
     
     
    
