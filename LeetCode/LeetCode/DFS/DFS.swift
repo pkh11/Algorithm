@@ -9,6 +9,162 @@ import Foundation
 
 class DFS {
     
+    var sum = 0
+    func getImportance(_ employees: [Employee], _ id: Int) -> Int {
+        
+        dfsRecursion(id, employees)
+        
+        return sum
+    }
+    
+    func dfsRecursion(_ id: Int, _ employees: [Employee]) {
+        // 찾고자 하는 직원 index 가져오기
+        guard let index = employees.firstIndex(where: { $0.id == id }) else { return }
+        
+        // 해당 index의 직원 importance 더하기
+        sum += employees[index].importance
+        
+        // 해당 index의 직원의 부하 직원정보 재귀호출
+        for e in employees[index].subordinates {
+            dfsRecursion(e, employees)
+        }
+    }
+    
+//    var dic = [Int: Employee]()
+//    var result = 0
+//    func getImportance(_ employees: [Employee], _ id: Int) -> Int {
+//
+//        for employee in employees {
+//            dic[employee.id] = employee
+//        }
+//
+//        sumOfImportance(dic, id)
+//
+//        return result
+//    }
+//
+//    func sumOfImportance(_ dic: [Int: Employee], _ target: Int) {
+//        guard let employee = dic[target] else { return }
+//
+//        result += employee.importance
+//
+//        for sub in employee.subordinates {
+//            sumOfImportance(dic, sub)
+//        }
+//    }
+    
+    
+//    func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
+//        // cousins : same depth , different parent
+//
+//        var xDepth = 1
+//        var yDepth = 1
+//        var xParent: TreeNode?
+//        var yParent: TreeNode?
+//
+//        func findCousins(_ root: (TreeNode?, Int), _ x: Int, _ y: Int,_ parent: TreeNode?) {
+//
+//            guard let root = root as? (TreeNode, Int) else { return }
+//
+//            if root.0.val == x {
+//                xDepth = root.1
+//                xParent = parent
+//            }
+//            if root.0.val == y {
+//                yDepth = root.1
+//                yParent = parent
+//            }
+//
+//            findCousins((root.0.left, root.1 + 1), x, y, root.0)
+//            findCousins((root.0.right, root.1 + 1), x, y, root.0)
+//        }
+//
+//
+//        findCousins((root, 1), x, y, nil)
+//
+//        if xDepth == yDepth && xParent?.val != yParent?.val { return true }
+//
+//        return false
+//    }
+    
+    func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
+    
+        guard let root = root else {
+            return false
+        }
+        
+        var queue: [TreeNode] = [root]
+        var xParent: Int?
+        var yParent: Int?
+        
+        while !queue.isEmpty {
+            let node = queue.removeFirst()
+            
+            for _ in 0..<queue.count {
+                if let leftNode = node.left {
+                    queue.append(leftNode)
+                    if leftNode.val == x {
+                        xParent = node.val
+                    } else if leftNode.val == y {
+                        yParent = node.val
+                    }
+                }
+                
+                if let rightNode = node.right {
+                    queue.append(rightNode)
+                    if rightNode.val == x {
+                        xParent = node.val
+                    } else if rightNode.val == y {
+                        yParent = node.val
+                    }
+                }
+            }
+            
+            if xParent != nil && yParent != nil && xParent != yParent {
+                return true
+            }
+            
+            xParent = nil
+            yParent = nil
+        }
+        
+        return false
+    }
+    
+    
+    
+    
+    
+    func minDepth(_ root: TreeNode?) -> Int {
+        
+        guard let root = root else {
+            return 0
+        }
+        
+        var queue = [(TreeNode?, Int)]()
+        queue.append((root, 1))
+        
+        while !queue.isEmpty {
+            let tuple = queue.removeFirst()
+            let node = tuple.0
+            let depth = tuple.1
+            
+            if node?.left == nil && node?.right == nil {
+                return depth
+            }
+            
+            if let leftNode = node?.left {
+                queue.append((leftNode, depth + 1))
+            }
+            if let rightNode = node?.right {
+                queue.append((rightNode, depth + 1))
+            }
+        }
+        
+        
+        return 0
+    }
+    
     func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
                 
         // BFS
