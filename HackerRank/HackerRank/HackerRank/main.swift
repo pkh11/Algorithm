@@ -21,4 +21,13 @@ let maxmin = MaxMin()
 //maxmin.maxMin(k: 3, arr: [10, 100, 300, 200, 1000, 20, 30])
 
 let mark = MarkandToys()
-mark.maximumToys(prices: [1, 12, 5, 111, 200, 1000, 10], k: 50)
+//mark.maximumToys(prices: [1, 12, 5, 111, 200, 1000, 10], k: 50)
+
+let bigger = BiggerIsGreater()
+//imllmmcslslkyoegyoam
+//print(bigger.biggerIsGreater(w: "rrcntnbqchsfhvijh"))
+print(bigger.biggerIsGreater(w: "ab"))
+//print(bigger.biggerIsGreater(w: "bb"))
+//print(bigger.biggerIsGreater(w: "dkhc"))
+//print(bigger.biggerIsGreater(w: "fedcbabcd"))
+//print(bigger.biggerIsGreater(w: "abc"))
