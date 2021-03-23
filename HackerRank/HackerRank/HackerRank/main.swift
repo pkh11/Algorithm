@@ -26,8 +26,15 @@ let mark = MarkandToys()
 let bigger = BiggerIsGreater()
 //imllmmcslslkyoegyoam
 //print(bigger.biggerIsGreater(w: "rrcntnbqchsfhvijh"))
-print(bigger.biggerIsGreater(w: "ab"))
+//print(bigger.biggerIsGreater(w: "ab"))
 //print(bigger.biggerIsGreater(w: "bb"))
 //print(bigger.biggerIsGreater(w: "dkhc"))
 //print(bigger.biggerIsGreater(w: "fedcbabcd"))
 //print(bigger.biggerIsGreater(w: "abc"))
+
+let between = BetweenTwoSets()
+//between.getTotalX(a: [2, 6], b: [24, 36])
+//between.getTotalX(a: [2, 4], b: [16, 32, 96])
+
+let grade = GradingStudents()
+grade.gradingStudents(grades: [73, 67, 38, 33])

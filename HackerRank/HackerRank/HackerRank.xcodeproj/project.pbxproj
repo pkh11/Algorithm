@@ -15,6 +15,8 @@
 		6B45D95C25A2D45100E19344 /* GridChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45D95B25A2D45100E19344 /* GridChallenge.swift */; };
 		6B45D95F25A2E23E00E19344 /* TwoArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45D95E25A2E23E00E19344 /* TwoArrays.swift */; };
 		6BE145102608D75A00F839F5 /* BiggerIsGreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1450F2608D75A00F839F5 /* BiggerIsGreater.swift */; };
+		6BE14513260A2D6B00F839F5 /* BetweenTwoSets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE14512260A2D6B00F839F5 /* BetweenTwoSets.swift */; };
+		6BE14516260A314500F839F5 /* GradingStudents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE14515260A314500F839F5 /* GradingStudents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +41,8 @@
 		6B45D95B25A2D45100E19344 /* GridChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridChallenge.swift; sourceTree = "<group>"; };
 		6B45D95E25A2E23E00E19344 /* TwoArrays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoArrays.swift; sourceTree = "<group>"; };
 		6BE1450F2608D75A00F839F5 /* BiggerIsGreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiggerIsGreater.swift; sourceTree = "<group>"; };
+		6BE14512260A2D6B00F839F5 /* BetweenTwoSets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetweenTwoSets.swift; sourceTree = "<group>"; };
+		6BE14515260A314500F839F5 /* GradingStudents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradingStudents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				6BE1450F2608D75A00F839F5 /* BiggerIsGreater.swift */,
+				6BE14512260A2D6B00F839F5 /* BetweenTwoSets.swift */,
+				6BE14515260A314500F839F5 /* GradingStudents.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -156,8 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE14516260A314500F839F5 /* GradingStudents.swift in Sources */,
 				6B45D95925A2AA2800E19344 /* MarcsCakewalk.swift in Sources */,
 				6B317E6525A2F9E300B2B5A7 /* MaxMin.swift in Sources */,
+				6BE14513260A2D6B00F839F5 /* BetweenTwoSets.swift in Sources */,
 				6B45D95F25A2E23E00E19344 /* TwoArrays.swift in Sources */,
 				6B317E6925A4ADAC00B2B5A7 /* MarkandToys.swift in Sources */,
 				6B45D95625A2A37900E19344 /* MinimumAbsoluteDifferenceArray.swift in Sources */,
