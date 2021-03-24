@@ -40,4 +40,7 @@ let grade = GradingStudents()
 //grade.gradingStudents(grades: [73, 67, 38, 33])
 
 let breakingRecores = BreakingRecords()
-breakingRecores.breakingRecords(scores: [10, 5, 20, 20, 4, 5, 2, 25, 1])
+//breakingRecores.breakingRecords(scores: [10, 5, 20, 20, 4, 5, 2, 25, 1])
+
+let divisible = DivisibleSumPairs()
+divisible.divisibleSumPairs(n: 6, k: 3, ar: [1,3,2,6,1,2])
