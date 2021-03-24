@@ -37,4 +37,7 @@ let between = BetweenTwoSets()
 //between.getTotalX(a: [2, 4], b: [16, 32, 96])
 
 let grade = GradingStudents()
-grade.gradingStudents(grades: [73, 67, 38, 33])
+//grade.gradingStudents(grades: [73, 67, 38, 33])
+
+let breakingRecores = BreakingRecords()
+breakingRecores.breakingRecords(scores: [10, 5, 20, 20, 4, 5, 2, 25, 1])
