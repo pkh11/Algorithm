@@ -43,4 +43,7 @@ let breakingRecores = BreakingRecords()
 //breakingRecores.breakingRecords(scores: [10, 5, 20, 20, 4, 5, 2, 25, 1])
 
 let divisible = DivisibleSumPairs()
-divisible.divisibleSumPairs(n: 6, k: 3, ar: [1,3,2,6,1,2])
+//divisible.divisibleSumPairs(n: 6, k: 3, ar: [1,3,2,6,1,2])
+
+let twochar = TwoCharacters()
+twochar.alternate(s: "beabeefeab")
