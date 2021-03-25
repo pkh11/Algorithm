@@ -9,7 +9,27 @@ import Foundation
 
 class DFS {
     
-<<<<<<< HEAD
+    func hasPathSum(_ root: TreeNode?, _ targetSum: Int) -> Bool {
+        return getTotalSum(root, 0, targetSum)
+    }
+    
+    func getTotalSum(_ root: TreeNode?, _ currentSum: Int, _ totalSum: Int) -> Bool {
+        guard let root = root else { return false }
+        
+        let sum = root.val + currentSum
+        
+        if root.left == nil && root.right == nil && sum == totalSum {
+            return true
+        }
+        if getTotalSum(root.left, sum, totalSum) {
+            return true
+        }
+        if getTotalSum(root.right, sum, totalSum) {
+            return true
+        }
+        return false
+    }
+    
     var sum = 0
     func getImportance(_ employees: [Employee], _ id: Int) -> Int {
         
@@ -132,10 +152,6 @@ class DFS {
         return false
     }
     
-    
-    
-    
-    
     func minDepth(_ root: TreeNode?) -> Int {
         
         guard let root = root else {
@@ -164,7 +180,7 @@ class DFS {
         
         
         return 0
-=======
+    }
     func isBalanced(_ root: TreeNode?) -> Bool {
         
         guard let root = root else { return true }
@@ -172,7 +188,6 @@ class DFS {
         
         
         return true
->>>>>>> 934d0bcfb2b5b3f20d6970d199adb2967575658f
     }
     
     func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
@@ -262,10 +277,6 @@ class DFS {
         tree.right = sortedArrayToBST(Array(nums[mid+1..<nums.count]))
         
         return tree
-    }
-    
-    func makeTree(_ num: Int) {
-        
     }
     
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
