@@ -8,6 +8,37 @@
 import Foundation
 
 class DFS {
+    func maxLevelSum(_ root: TreeNode?) -> Int {
+        
+        guard let root = root else { return 0 }
+        
+        var result = [Int:Int]()
+        var level = 1
+        
+        var queue = [TreeNode]()
+        queue.append(root)
+        
+        while !queue.isEmpty {
+            
+            var sum = 0
+            for _ in 0..<queue.count {
+                let node = queue.removeFirst()
+                sum += node.val
+                
+                if let leftNode = node.left {
+                    queue.append(leftNode)
+                }
+                if let rightNode = node.right {
+                    queue.append(rightNode)
+                }
+            }
+            
+            result[level] = sum
+            level+=1
+        }
+        
+        return result.max(by: { $0.value < $1.value }).map{ $0.key }!
+    }
     
     func hasPathSum(_ root: TreeNode?, _ targetSum: Int) -> Bool {
         return getTotalSum(root, 0, targetSum)
