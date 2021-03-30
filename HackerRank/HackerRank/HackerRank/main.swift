@@ -46,4 +46,7 @@ let divisible = DivisibleSumPairs()
 //divisible.divisibleSumPairs(n: 6, k: 3, ar: [1,3,2,6,1,2])
 
 let twochar = TwoCharacters()
-twochar.alternate(s: "beabeefeab")
+//twochar.alternate(s: "beabeefeab")
+
+let rotate = CircularArrayRotation()
+rotate.circularArrayRotation(a: [1,2,3], k: 2, queries: [0,1,2])
