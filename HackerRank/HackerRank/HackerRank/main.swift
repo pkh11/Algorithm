@@ -49,4 +49,7 @@ let twochar = TwoCharacters()
 //twochar.alternate(s: "beabeefeab")
 
 let rotate = CircularArrayRotation()
-rotate.circularArrayRotation(a: [1,2,3], k: 2, queries: [0,1,2])
+//rotate.circularArrayRotation(a: [1,2,3], k: 2, queries: [0,1,2])
+
+let ransomeNote = RansomeNote()
+ransomeNote.checkMagazine(magazine: ["two", "times", "three", "is", "not", "four"], note: ["two", "times", "two", "is", "four"])

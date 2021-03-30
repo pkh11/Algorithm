@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6B0013682612F3950024E046 /* CircularArrayRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0013672612F3950024E046 /* CircularArrayRotation.swift */; };
+		6B00136C2613603A0024E046 /* RansomeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B00136B2613603A0024E046 /* RansomeNode.swift */; };
 		6B317E6525A2F9E300B2B5A7 /* MaxMin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B317E6425A2F9E300B2B5A7 /* MaxMin.swift */; };
 		6B317E6925A4ADAC00B2B5A7 /* MarkandToys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B317E6825A4ADAC00B2B5A7 /* MarkandToys.swift */; };
 		6B45D94D25A2A33D00E19344 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45D94C25A2A33D00E19344 /* main.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		6B0013672612F3950024E046 /* CircularArrayRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularArrayRotation.swift; sourceTree = "<group>"; };
+		6B00136B2613603A0024E046 /* RansomeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RansomeNode.swift; sourceTree = "<group>"; };
 		6B317E6425A2F9E300B2B5A7 /* MaxMin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxMin.swift; sourceTree = "<group>"; };
 		6B317E6825A4ADAC00B2B5A7 /* MarkandToys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkandToys.swift; sourceTree = "<group>"; };
 		6B45D94925A2A33D00E19344 /* HackerRank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HackerRank; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B00136A2613601D0024E046 /* HashTables */ = {
+			isa = PBXGroup;
+			children = (
+				6B00136B2613603A0024E046 /* RansomeNode.swift */,
+			);
+			path = HashTables;
+			sourceTree = "<group>";
+		};
 		6B45D94025A2A33D00E19344 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		6B45D94B25A2A33D00E19344 /* HackerRank */ = {
 			isa = PBXGroup;
 			children = (
+				6B00136A2613601D0024E046 /* HashTables */,
 				6BE1451E260B776500F839F5 /* Strings */,
 				6BE1450E2608D72A00F839F5 /* Implementation */,
 				6B45D95425A2A34E00E19344 /* Greedy */,
@@ -192,6 +203,7 @@
 				6BE14519260B1A1600F839F5 /* BreakingRecords.swift in Sources */,
 				6B317E6925A4ADAC00B2B5A7 /* MarkandToys.swift in Sources */,
 				6B45D95625A2A37900E19344 /* MinimumAbsoluteDifferenceArray.swift in Sources */,
+				6B00136C2613603A0024E046 /* RansomeNode.swift in Sources */,
 				6B45D94D25A2A33D00E19344 /* main.swift in Sources */,
 				6BE1451C260B1EDB00F839F5 /* DivisibleSumPairs.swift in Sources */,
 				6BE145102608D75A00F839F5 /* BiggerIsGreater.swift in Sources */,
