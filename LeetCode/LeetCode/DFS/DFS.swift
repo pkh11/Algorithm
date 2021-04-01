@@ -8,65 +8,142 @@
 import Foundation
 
 class DFS {
-//    let streets: [Int:[[Int]]] = [1: [[0,0,0,0],[0,1,0,-1]],
-//                                2: [[1,0,-1,0], [0,0,0,0]],
-//                                3: [0,0,1,1],
-//                                4: [0,1,1,0],
-//                                5: [1,0,0,1],
-//                                6: [1,1,0,0]]
+    // [key:[[dx], [dy]]]
+    let streets: [Int:[[Int]]] = [1: [[0,0,0,0],
+                                      [0,1,0,-1]],
+                                2: [[-1,0,1,0],
+                                    [0,0,0,0]],
+                                3: [[0,0,1,0],
+                                    [0,0,0,-1]],
+                                4: [[0,0,1,0],
+                                    [0,1,0,0]],
+                                5: [[-1,0,0,0],
+                                    [0,0,0,-1]],
+                                6: [[-1,0,0,0],
+                                    [0,1,0,0]]]
     func hasValidPath(_ grid: [[Int]]) -> Bool {
         
         // key: street 번호
         // value: 갈 수 있는 방향 (위, 오, 아래, 왼)
         // direction: [0, 1, 2, 3]
         
+        let streetNumber = grid[0][0]
+        let width = grid[0].count
+        let height = grid.count
         
-        let row = grid[0].count
-        let col = grid.count
+        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
         
-        var visited = Array(repeating: Array(repeating: false, count: row), count: col)
+        if streetNumber == 1 {
+            dfs(grid, 1, grid[0][0], &visited, 0, 0, width, height)
+        } else if streetNumber == 2 {
+            dfs(grid, 2, grid[0][0], &visited, 0, 0, width, height)
+        } else if streetNumber == 3 {
+            dfs(grid, 2, grid[0][0], &visited, 0, 0, width, height)
+        } else if streetNumber == 4 {
+            dfs(grid, 1, grid[0][0], &visited, 0, 0, width, height)
+            dfs(grid, 2, grid[0][0], &visited, 0, 0, width, height)
+        } else if streetNumber == 5 {
+            return false
+        } else {
+            dfs(grid, 1, grid[0][0], &visited, 0, 0, width, height)
+        }
+        
+        if visited[height-1][width-1] {
+            return true
+        }
         
         return false
     }
     
-    func dfs(_ map: [[Int]], _ beforeDirection: Int, _ nextDirection: Int, _ streetNumber: Int, _ visited: inout [[Bool]], _ x: Int, _ y: Int) {
+    func dfs(_ map: [[Int]], _ nextDirection: Int, _ streetNumber: Int, _ visited: inout [[Bool]], _ x: Int, _ y: Int, _ width: Int, _ height: Int) {
+
         visited[x][y] = true
         
-        let currentStreetNumber = map[x][y]
-//        let directions = streets[currentStreetNumber]!
-        let street = map[x][y]
+        if x == height - 1 && y == width - 1 {
+            return
+        }
+        
+        let currentStreetNumber = map[x][y] // key
+        let directions = streets[currentStreetNumber]!
+        
+        let dx = directions[0]
+        let dy = directions[1]
         
         for i in 0..<4 {
-            /*
-            if directions[i] == 1 && !visited[x][y] {
-                var dx = x
-                var dy = y
-                if currentStreetNumber == 1 {
-                    
-                } else if currentStreetNumber == 2 {
-                    
-                } else if currentStreetNumber == 3 {
-                    
-                } else if currentStreetNumber == 4 {
-                    
-                } else if currentStreetNumber == 5 {
-                    
-                } else {
-                    
+            let nx = x + dx[i]
+            let ny = y + dy[i]
+            
+            if nx >= 0 && nx < height && ny >= 0 && ny < width {
+                if !visited[nx][ny] && isGo(currentStreetNumber, i, map[nx][ny]) {
+                   dfs(map, i, currentStreetNumber, &visited, nx, ny, width, height)
                 }
             }
-            */
         }
-        
-        if beforeDirection == 0 {
-            
-        } else if beforeDirection == 1 {
-            
-        } else if beforeDirection == 2 {
-            
+    }
+    
+    func isGo(_ streetNumber: Int, _ direction: Int, _ nextStreetNumber: Int) -> Bool {
+        if streetNumber == 1 {
+            if direction == 1 {
+                if nextStreetNumber == 1 || nextStreetNumber == 3 || nextStreetNumber == 4 {
+                    return true
+                }
+            } else if direction == 3 {
+                if nextStreetNumber == 1 || nextStreetNumber == 4 || nextStreetNumber == 6 {
+                    return true
+                }
+            }
+        } else if streetNumber == 2 {
+            if direction == 0 {
+                if nextStreetNumber == 2 || nextStreetNumber == 3 || nextStreetNumber == 4 {
+                    return true
+                }
+            } else if direction == 2 {
+                if nextStreetNumber == 2 || nextStreetNumber == 5 || nextStreetNumber == 6 {
+                    return true
+                }
+            }
+        } else if streetNumber == 3 {
+            if direction == 2 {
+                if nextStreetNumber == 2 || nextStreetNumber == 5 || nextStreetNumber == 6 {
+                    return true
+                }
+            } else if direction == 3 {
+                if nextStreetNumber == 1 || nextStreetNumber == 4 || nextStreetNumber == 6 {
+                    return true
+                }
+            }
+        } else if streetNumber == 4 {
+            if direction == 1 {
+                if nextStreetNumber == 1 || nextStreetNumber == 3 || nextStreetNumber == 5 {
+                    return true
+                }
+            } else if direction == 2 {
+                if nextStreetNumber == 2 || nextStreetNumber == 5 || nextStreetNumber == 6 {
+                    return true
+                }
+            }
+        } else if streetNumber == 5 {
+            if direction == 0 {
+                if nextStreetNumber == 2 || nextStreetNumber == 3 || nextStreetNumber == 4 {
+                    return true
+                }
+            } else if direction == 3 {
+                if nextStreetNumber == 1 || nextStreetNumber == 4 || nextStreetNumber == 6 {
+                    return true
+                }
+            }
         } else {
-            
+            if direction == 0 {
+                if nextStreetNumber == 2 || nextStreetNumber == 3 || nextStreetNumber == 4 {
+                    return true
+                }
+            } else if direction == 1 {
+                if nextStreetNumber == 1 || nextStreetNumber == 3 || nextStreetNumber == 5 {
+                    return true
+                }
+            }
         }
+        return false
     }
     
     func maxLevelSum(_ root: TreeNode?) -> Int {
