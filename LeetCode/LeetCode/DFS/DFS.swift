@@ -8,6 +8,67 @@
 import Foundation
 
 class DFS {
+//    let streets: [Int:[[Int]]] = [1: [[0,0,0,0],[0,1,0,-1]],
+//                                2: [[1,0,-1,0], [0,0,0,0]],
+//                                3: [0,0,1,1],
+//                                4: [0,1,1,0],
+//                                5: [1,0,0,1],
+//                                6: [1,1,0,0]]
+    func hasValidPath(_ grid: [[Int]]) -> Bool {
+        
+        // key: street 번호
+        // value: 갈 수 있는 방향 (위, 오, 아래, 왼)
+        // direction: [0, 1, 2, 3]
+        
+        
+        let row = grid[0].count
+        let col = grid.count
+        
+        var visited = Array(repeating: Array(repeating: false, count: row), count: col)
+        
+        return false
+    }
+    
+    func dfs(_ map: [[Int]], _ beforeDirection: Int, _ nextDirection: Int, _ streetNumber: Int, _ visited: inout [[Bool]], _ x: Int, _ y: Int) {
+        visited[x][y] = true
+        
+        let currentStreetNumber = map[x][y]
+//        let directions = streets[currentStreetNumber]!
+        let street = map[x][y]
+        
+        for i in 0..<4 {
+            /*
+            if directions[i] == 1 && !visited[x][y] {
+                var dx = x
+                var dy = y
+                if currentStreetNumber == 1 {
+                    
+                } else if currentStreetNumber == 2 {
+                    
+                } else if currentStreetNumber == 3 {
+                    
+                } else if currentStreetNumber == 4 {
+                    
+                } else if currentStreetNumber == 5 {
+                    
+                } else {
+                    
+                }
+            }
+            */
+        }
+        
+        if beforeDirection == 0 {
+            
+        } else if beforeDirection == 1 {
+            
+        } else if beforeDirection == 2 {
+            
+        } else {
+            
+        }
+    }
+    
     func maxLevelSum(_ root: TreeNode?) -> Int {
         
         guard let root = root else { return 0 }
