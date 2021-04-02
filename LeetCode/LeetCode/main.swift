@@ -66,9 +66,9 @@ let string = _String()
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
-
-print(dfs.hasValidPath([[2,4,3],[6,5,2]]))
+//print(dfs.hasValidPath([[2,4,3],[6,5,2]]))
 //print(dfs.hasValidPath([[1,1,1,1,3],[1,1,1,1,2],[1,1,1,1,2],[1,1,1,1,2],[1,1,1,1,2]]))
+//dfs.findBottomLeftValue(<#T##root: <<error type>>##<<error type>>#>)
 
 let dp = DP()
 //dp.minCostClimbingStairs([10, 15, 20])

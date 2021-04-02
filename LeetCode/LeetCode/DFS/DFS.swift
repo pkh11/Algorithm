@@ -8,6 +8,36 @@
 import Foundation
 
 class DFS {
+    
+    func findBottomLeftValue(_ root: TreeNode?) -> Int {
+        guard let root = root else { return 0 }
+        
+        var queue = [TreeNode]()
+        queue.append(root)
+        
+        var mostLeftValue = 0
+        
+        while !queue.isEmpty {
+            for i in 0..<queue.count {
+                let node = queue.removeFirst()
+                
+                if i == 0 {
+                    mostLeftValue = node.val
+                }
+                
+                if let leftNode = node.left {
+                    queue.append(leftNode)
+                }
+                if let rightNode = node.right {
+                    queue.append(rightNode)
+                }
+            }
+        }
+        
+        return mostLeftValue
+    }
+    
+    
     // [key:[[dx], [dy]]]
     let streets: [Int:[[Int]]] = [1: [[0,0,0,0],
                                       [0,1,0,-1]],
