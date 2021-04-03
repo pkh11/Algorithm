@@ -53,7 +53,7 @@ class 블록이동하기 {
             var ny1 = 0
             var nx2 = 0
             var ny2 = 0
-            
+            // 이동
             for i in 0...3 {
                 nx1 = x1 + dx[i]
                 ny1 = y1 + dy[i]
