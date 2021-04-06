@@ -9,6 +9,36 @@ import Foundation
 
 class _Array {
     
+    func oddCells(_ m: Int, _ n: Int, _ indices: [[Int]]) -> Int {
+            
+        var array = Array(repeating: Array(repeating: 0, count: n), count: m)
+        
+        for i in 0..<indices.count {
+            let k = indices[i]
+            
+            for j in 0..<n {
+                array[k[0]][j] += 1
+            }
+            for j in 0..<m {
+                array[j][k[1]] += 1
+            }
+        }
+        
+        var count = 0
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if array[i][j] % 2 != 0 {
+                    count += 1
+                }
+            }
+        }
+        print(count)
+        print(array)
+        
+        return count
+    }
+    
     func advantageCount(_ A: [Int], _ B: [Int]) -> [Int] {
         
         var A = A.sorted()
