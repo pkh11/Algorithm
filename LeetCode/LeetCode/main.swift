@@ -63,6 +63,12 @@ let string = _String()
 //string.numSplits("abcd")
 //string.numSplits("aaaaa")
 //string.numSplits("acbadbaada")
+//string.camelMatch(["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], "FB")
+//string.camelMatch(["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], "FoBa")
+string.camelMatch(["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], "FoBaT")
+//string.camelMatch(["CompetitiveProgramming","CounterPick","ControlPanel"], "CooP")
+
+
 
 let dfs = DFS()
 //dfs.sortedArrayToBST([-10,-3,0,5,9])

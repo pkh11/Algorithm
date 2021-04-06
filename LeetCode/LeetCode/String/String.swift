@@ -9,6 +9,33 @@ import Foundation
 
 class _String {
     
+    func camelMatch(_ queries: [String], _ pattern: String) -> [Bool] {
+//        string.camelMatch(["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], "FoBaT")
+
+        var answer: [Bool] = []
+        let patternArray = Array(pattern)
+        
+        for query in queries {
+            var index = 0
+            var isMatching = true
+            
+            for char in query {
+                if index < patternArray.count && char == patternArray[index] {
+                    index += 1
+                } else if char.isUppercase {
+                    isMatching = false
+                    break
+                }
+            }
+            isMatching = isMatching && index == patternArray.count
+            answer.append(isMatching)
+        }
+        
+        print(answer)
+
+        return answer
+    }
+    
     func numSplits(_ s: String) -> Int {
         // 시간초과나서 딕셔너리로 품
         
