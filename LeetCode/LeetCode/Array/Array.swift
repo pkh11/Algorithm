@@ -8,6 +8,84 @@
 import Foundation
 
 class _Array {
+    
+    func advantageCount(_ A: [Int], _ B: [Int]) -> [Int] {
+        
+        var A = A.sorted()
+        let n = A.count
+        
+        if n == 1 {
+            if A[0] > B[0] {
+                return A
+            } else {
+                return [0]
+            }
+        }
+        
+        for i in 0..<n {
+            let index = insert(B[i], A, i, n-1)
+            if index == -1 { continue }
+            let val = A.remove(at: index)
+            A.insert(val, at: i)
+        }
+        print(A)
+        
+        
+//        var maxCount = 0
+//        permutation(A, 0)
+//
+//        for arr in permutations {
+//            var count = 0
+//            for i in 0..<B.count {
+//                if arr[i] > B[i] {
+//                    count += 1
+//                }
+//            }
+//            if maxCount < count {
+//                maxCount = count
+//                result.removeAll()
+//                result = arr
+//            }
+//        }
+//        print(result)
+        return []
+    }
+    
+    func insert(_ num: Int, _ arr: [Int],_ left: Int, _ right: Int) -> Int {
+        if num > arr[right] {
+            return -1
+        }
+        
+        var left = left
+        var right = right
+        
+        while left < right {
+            let mid = (left + right) / 2
+            if arr[mid] <= num {
+                left = mid + 1
+            } else {
+                right = mid
+            }
+        }
+        
+        return arr[left] > num ? left : left + 1
+    }
+    
+    func permutation(_ array: [Int], _ start: Int) {
+        var array = array
+        
+        if start == array.count-1 {
+//            permutations.append(array)
+            return
+        }
+        
+        for i in start..<array.count {
+            array.swapAt(start, i)
+            permutation(array, start+1)
+            array.swapAt(start, i)
+        }
+    }
+    
     func canMakeArithmeticProgression(_ arr: [Int]) -> Bool {
      
         let increse = arr.sorted(by: <)
