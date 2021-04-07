@@ -8,6 +8,27 @@
 import Foundation
 
 class _Array {
+    func arrayPairSum(_ nums: [Int]) -> Int {
+        // [6,2,6,5,1,2]
+        
+        let sorted = nums.sorted(by: <)
+        var pairs = [(Int, Int)]()
+        var result = 0
+        
+        for i in stride(from: 0, through: sorted.count-1, by: 2) {
+            let pair = (sorted[i], sorted[i+1])
+            pairs.append(pair)
+        }
+        
+        for pair in pairs {
+            let minValue = min(pair.0, pair.1)
+            result += minValue
+        }
+        
+        print(result)
+        
+        return result
+    }
     
     func distanceBetweenBusStops(_ distance: [Int], _ start: Int, _ destination: Int) -> Int {
         // distance = 1,2,3,4 / start = 0 / destination = 0
