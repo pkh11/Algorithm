@@ -9,6 +9,47 @@ import Foundation
 
 class _Array {
     
+    func distanceBetweenBusStops(_ distance: [Int], _ start: Int, _ destination: Int) -> Int {
+        // distance = 1,2,3,4 / start = 0 / destination = 0
+        var dist1 = 0
+        var dist2 = 0
+        
+        let stop1 = min(start, destination)
+        let stop2 = max(start, destination)
+        
+        for i in stop1..<stop2 {
+            dist1 += distance[i]
+        }
+        
+        for i in 0..<stop1 {
+            dist2 += distance[i]
+        }
+        
+        for i in stop2..<distance.count {
+            dist2 += distance[i]
+        }
+        
+        return min(dist1, dist2)
+    }
+    
+//    func dfs(_ array: [[Int]],_ visited: inout [[Bool]],_ x: Int,_ size: Int,_ destination: Int,_ sum: Int) {
+//
+//        if x == destination {
+//            if minSum > sum {
+//                minSum = sum
+//            }
+//            return
+//        }
+//
+//        for i in 0..<size {
+//            if !visited[x][i] && array[x][i] > -1 {
+//                visited[x][i] = true
+//                visited[i][x] = true
+//                dfs(array, &visited, i, size, destination, sum + array[x][i])
+//            }
+//        }
+//    }
+    
     func oddCells(_ m: Int, _ n: Int, _ indices: [[Int]]) -> Int {
             
         var array = Array(repeating: Array(repeating: 0, count: n), count: m)
