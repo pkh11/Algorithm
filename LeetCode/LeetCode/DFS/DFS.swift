@@ -9,8 +9,20 @@ import Foundation
 
 class DFS {
     
-    func largestValues(_ root: TreeNode?) -> [Int] {
+    func largestValues_DFS(_ root: TreeNode?, _ result: inout [Int], _ depth: Int) {
+        guard let root = root else { return }
         
+        if depth == result.count {
+            result.append(root.val)
+        } else {
+            result[depth] = max(result[depth], root.val)
+        }
+        
+        largestValues_DFS(root.left, &result, depth+1)
+        largestValues_DFS(root.right, &result, depth+1)
+    }
+    
+    func largestValues_BFS(_ root: TreeNode?) -> [Int] {
         guard let root = root else {
             return []
         }
@@ -43,6 +55,13 @@ class DFS {
         
         print(result)
         
+        return result
+    }
+    
+    func largestValues(_ root: TreeNode?) -> [Int] {
+//        return largestValues_BFS(root)
+        var result = [Int]()
+        largestValues_DFS(root, &result, 0)
         return result
     }
     
