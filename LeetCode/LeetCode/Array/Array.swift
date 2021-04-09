@@ -8,6 +8,42 @@
 import Foundation
 
 class _Array {
+    
+    func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
+        
+        var result = [Int]()
+// n2
+//        for i in 0..<numbers.count {
+//            for j in i+1..<numbers.count {
+//                if numbers[i] + numbers[j] == target {
+//                    result.append(i+1)
+//                    result.append(j+1)
+//                }
+//            }
+//        }
+        var start = 0
+        var end = numbers.count - 1
+        
+        while true {
+            let sum = numbers[start] + numbers[end]
+            
+            if sum == target {
+                result.append(start+1)
+                result.append(end+1)
+                break
+            }
+            
+            if sum < target {
+                start += 1
+            } else if sum > target {
+                end -= 1
+            }
+        }
+        
+        print(result)
+        return result
+    }
+    
     func arrayPairSum(_ nums: [Int]) -> Int {
         // [6,2,6,5,1,2]
         

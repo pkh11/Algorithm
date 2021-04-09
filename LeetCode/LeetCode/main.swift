@@ -93,6 +93,8 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
+ar.twoSum([2,7,11,15], 9)
+ar.twoSum([2,3,4], 6)
 //ar.arrayPairSum([6,2,6,5,1,2])
 //ar.distanceBetweenBusStops([1,2,3,4], 0, 1)
 //ar.distanceBetweenBusStops([1,2,3,4], 0, 2)
