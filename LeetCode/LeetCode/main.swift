@@ -70,7 +70,17 @@ let string = _String()
 
 
 
+
 let dfs = DFS()
+//dfs.updateBoard([["E", "E", "E", "E", "E"],
+//                 ["E", "E", "M", "E", "E"],
+//                 ["E", "E", "E", "E", "E"],
+//                 ["E", "E", "E", "E", "E"]], [3,0])
+
+dfs.updateBoard([["B", "1", "E", "1", "B"],
+                 ["B", "1", "M", "1", "B"],
+                 ["B", "1", "1", "1", "B"],
+                 ["B", "B", "B", "B", "B"]], [1,2])
 //dfs.sortedArrayToBST([-10,-3,0,5,9])
 //print(dfs.hasValidPath([[2,4,3],[6,5,2]]))
 //print(dfs.hasValidPath([[1,1,1,1,3],[1,1,1,1,2],[1,1,1,1,2],[1,1,1,1,2],[1,1,1,1,2]]))
@@ -83,7 +93,7 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
-ar.arrayPairSum([6,2,6,5,1,2])
+//ar.arrayPairSum([6,2,6,5,1,2])
 //ar.distanceBetweenBusStops([1,2,3,4], 0, 1)
 //ar.distanceBetweenBusStops([1,2,3,4], 0, 2)
 //ar.distanceBetweenBusStops([1,2,3,4], 0, 3)

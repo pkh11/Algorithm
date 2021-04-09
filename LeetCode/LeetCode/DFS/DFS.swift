@@ -9,6 +9,63 @@ import Foundation
 
 class DFS {
     
+    // 위에서부터 시계방향(8방향)
+    var dx = [-1, -1, 0, 1, 1, 1, 0, -1]
+    var dy = [0, 1, 1, 1, 0, -1, -1, -1]
+    
+    func updateBoard(_ board: [[Character]], _ click: [Int]) -> [[Character]] {
+        
+        var board = board
+        let width = board[0].count // 가로
+        let height = board.count // 세로
+        
+        // start
+        findMine(&board, click[0], click[1], width, height)
+        
+        return board
+    }
+
+    func findMine(_ board: inout [[Character]], _ x: Int, _ y: Int, _ width: Int, _ height: Int) {
+        
+        if board[x][y] == "M" {
+            board[x][y] = "X"
+            return
+        }
+        
+        if board[x][y] == "E" {
+            board[x][y] = "B"
+        }
+        
+        var count = 0
+        
+        for i in 0..<8 {
+            let nx = x + dx[i]
+            let ny = y + dy[i]
+            
+            if nx >= 0 && ny >= 0 && nx < height && ny < width {
+                if board[nx][ny] == "M" {
+                    count += 1
+                }
+            }
+        }
+        
+        if count > 0 {
+            board[x][y] = Character("\(count)")
+        } else {
+            for i in 0..<8 {
+                let nx = x + dx[i]
+                let ny = y + dy[i]
+                
+                if nx >= 0 && ny >= 0 && nx < height && ny < width {
+                    if board[nx][ny] == "E" {
+                        // dfs
+                        findMine(&board, nx, ny, width, height)
+                    }
+                }
+            }
+        }
+    }
+    
     func findBottomLeftValue(_ root: TreeNode?) -> Int {
         guard let root = root else { return 0 }
         
