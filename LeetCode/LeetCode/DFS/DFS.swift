@@ -9,6 +9,43 @@ import Foundation
 
 class DFS {
     
+    func largestValues(_ root: TreeNode?) -> [Int] {
+        
+        guard let root = root else {
+            return []
+        }
+        
+        var result = [Int]()
+        var queue = [TreeNode]()
+        queue.append(root)
+        
+        while !queue.isEmpty {
+            
+            var max = Int.min
+            
+            for _ in 0..<queue.count {
+                let node = queue.removeFirst()
+                
+                if max < node.val {
+                    max = node.val
+                }
+                
+                if let leftNode = node.left {
+                    queue.append(leftNode)
+                }
+                if let rightNode = node.right {
+                    queue.append(rightNode)
+                }
+            }
+            
+            result.append(max)
+        }
+        
+        print(result)
+        
+        return result
+    }
+    
     // 위에서부터 시계방향(8방향)
     var dx = [-1, -1, 0, 1, 1, 1, 0, -1]
     var dy = [0, 1, 1, 1, 0, -1, -1, -1]
