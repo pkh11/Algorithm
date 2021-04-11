@@ -9,6 +9,30 @@ import Foundation
 
 class _Array {
     
+    func maximumSwap(_ num: Int) -> Int {
+            
+        var array = String(num).map{ String($0) }
+        var result = Set<String>()
+        
+        for i in 0..<array.count {
+            for j in i..<array.count {
+                array.swapAt(i, j)
+                result.insert(String(array.joined()))
+                array.swapAt(i, j)
+            }
+        }
+        
+//        print(result)
+        
+        if let maxNumber = result.max(),
+           let strToInt = Int(maxNumber) {
+            print(strToInt)
+            return strToInt
+        }
+        
+        return 0
+    }
+    
     func findNumbers(_ nums: [Int]) -> Int {
             
         let filtered = nums.map{ String($0) }.filter{ $0.count % 2 == 0 }
