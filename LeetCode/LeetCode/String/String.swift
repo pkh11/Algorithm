@@ -9,6 +9,50 @@ import Foundation
 
 class _String {
     
+    // 다시풀기
+    // https://leetcode.com/problems/rearrange-spaces-between-words/
+    func reorderSpaces(_ text: String) -> String {
+        //"  hello"
+        let array = text.split(separator: " ")
+        let numberOfWords = array.count
+        var numberOfSpaces = 0
+        
+        for char in text {
+            if !char.isLetter {
+                numberOfSpaces += 1
+            }
+        }
+        
+        var possibleSpaces = 0
+        var extraSpaces = 0
+        
+        if numberOfWords == 1 {
+            possibleSpaces = numberOfSpaces
+            extraSpaces = numberOfSpaces
+        } else {
+            possibleSpaces = numberOfSpaces / (numberOfWords - 1)
+            extraSpaces = numberOfSpaces % (numberOfWords - 1)
+        }
+    
+        var result = ""
+        
+        for (index, word) in array.enumerated() {
+            result += word
+            if index != array.count - 1 {
+                for _ in 0..<possibleSpaces {
+                    result += " "
+                }
+            }
+        }
+        
+        for _ in 0..<extraSpaces {
+            result += " "
+        }
+        print(result)
+        
+        return result
+    }
+    
     func camelMatch(_ queries: [String], _ pattern: String) -> [Bool] {
 //        string.camelMatch(["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], "FoBaT")
 
