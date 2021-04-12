@@ -9,6 +9,61 @@ import Foundation
 
 class _Array {
     
+    var dx = [0,1,0,-1]
+    var dy = [1,0,-1,0]
+    
+    var width = 0
+    var height = 0
+    
+    func exist(_ board: [[Character]], _ word: String) -> Bool {
+        var words = Array(word)
+        width = board[0].count
+        height = board.count
+        
+        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+        
+        for i in 0..<height {
+            for j in 0..<width {
+                if board[i][j] == words[0] {
+                    if dfs(board, &visited, i, j, words, 0) {
+                        return true
+                    }
+                }
+            }
+        }
+        
+        return false
+    }
+    
+    func dfs(_ board: [[Character]], _ visited: inout [[Bool]],_ x: Int, _ y: Int, _ current: [Character], _ index: Int) -> Bool {
+        guard x < height, y < width, x >= 0, y >= 0 else { return false }
+        
+        if visited[x][y] {
+            return false
+        }
+        
+        if board[x][y] != current[index] {
+            return false
+        }
+        
+        if index == current.count - 1 {
+            return true
+        }
+        
+        visited[x][y] = true
+        
+        if dfs(board, &visited, x+1, y, current, index+1) ||
+            dfs(board, &visited, x-1, y, current, index+1) ||
+            dfs(board, &visited, x, y+1, current, index+1) ||
+            dfs(board, &visited, x, y-1, current, index+1) {
+            return true
+        }
+        
+        visited[x][y] = false
+        
+        return false
+    }
+    
     func maximumSwap(_ num: Int) -> Int {
             
         var array = String(num).map{ String($0) }
