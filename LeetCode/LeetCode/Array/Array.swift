@@ -9,61 +9,127 @@ import Foundation
 
 class _Array {
     
-    var dx = [0,1,0,-1]
-    var dy = [1,0,-1,0]
-    
     var width = 0
     var height = 0
     
-    func exist(_ board: [[Character]], _ word: String) -> Bool {
-        var words = Array(word)
+    class TrieNode {
+        var word: String?
+        var children = [Character:TrieNode]()
+    }
+    
+    func findWords(_ board: [[Character]], _ words: [String]) -> [String] {
+        
         width = board[0].count
         height = board.count
         
-        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+        var result = [String]()
+        var board = board
+        let root = makeTrie(with: words)
         
         for i in 0..<height {
             for j in 0..<width {
-                if board[i][j] == words[0] {
-                    if dfs(board, &visited, i, j, words, 0) {
-                        return true
-                    }
-                }
+                find(&board, &result, i, j, root)
             }
         }
         
-        return false
+        return result
     }
     
-    func dfs(_ board: [[Character]], _ visited: inout [[Bool]],_ x: Int, _ y: Int, _ current: [Character], _ index: Int) -> Bool {
-        guard x < height, y < width, x >= 0, y >= 0 else { return false }
+    func makeTrie(with words: [String]) -> TrieNode {
+        let root = TrieNode()
         
-        if visited[x][y] {
-            return false
+        for word in words {
+            var node = root
+            
+            for char in word {
+                if node.children[char] == nil{
+                    node.children[char] = TrieNode()
+                }
+                node = node.children[char]!
+            }
+            node.word = word
         }
         
-        if board[x][y] != current[index] {
-            return false
-        }
-        
-        if index == current.count - 1 {
-            return true
-        }
-        
-        visited[x][y] = true
-        
-        if dfs(board, &visited, x+1, y, current, index+1) ||
-            dfs(board, &visited, x-1, y, current, index+1) ||
-            dfs(board, &visited, x, y+1, current, index+1) ||
-            dfs(board, &visited, x, y-1, current, index+1) {
-            return true
-        }
-        
-        visited[x][y] = false
-        
-        return false
+        return root
     }
     
+    func find(_ board: inout [[Character]],_ result: inout [String],_ x: Int, _ y: Int, _ node: TrieNode) {
+        guard x < height, y < width, x >= 0 , y >= 0 else { return }
+        guard let currentNode = node.children[board[x][y]] else { return }
+        
+        if let word = currentNode.word {
+            result.append(word)
+            currentNode.word = nil
+        }
+        
+        let char = board[x][y]
+        board[x][y] = "0"
+        
+        find(&board, &result, x-1, y, currentNode)
+        find(&board, &result, x+1, y, currentNode)
+        find(&board, &result, x, y-1, currentNode)
+        find(&board, &result, x, y+1, currentNode)
+        
+        board[x][y] = char
+    }
+    
+//
+//
+//    var dx = [0,1,0,-1]
+//    var dy = [1,0,-1,0]
+//
+//    var width = 0
+//    var height = 0
+//
+//    func exist(_ board: [[Character]], _ word: String) -> Bool {
+//        var words = Array(word)
+//        width = board[0].count
+//        height = board.count
+//
+//        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+//
+//        for i in 0..<height {
+//            for j in 0..<width {
+//                if board[i][j] == words[0] {
+//                    if dfs(board, &visited, i, j, words, 0) {
+//                        return true
+//                    }
+//                }
+//            }
+//        }
+//
+//        return false
+//    }
+//
+//    func dfs(_ board: [[Character]], _ visited: inout [[Bool]],_ x: Int, _ y: Int, _ current: [Character], _ index: Int) -> Bool {
+//        guard x < height, y < width, x >= 0, y >= 0 else { return false }
+//
+//        if visited[x][y] {
+//            return false
+//        }
+//
+//        if board[x][y] != current[index] {
+//            return false
+//        }
+//
+//        if index == current.count - 1 {
+//            return true
+//        }
+//
+//        visited[x][y] = true
+//
+//        if dfs(board, &visited, x+1, y, current, index+1) ||
+//            dfs(board, &visited, x-1, y, current, index+1) ||
+//            dfs(board, &visited, x, y+1, current, index+1) ||
+//            dfs(board, &visited, x, y-1, current, index+1) {
+//            return true
+//        }
+//
+//        visited[x][y] = false
+//
+//        return false
+//    }
+//
     func maximumSwap(_ num: Int) -> Int {
             
         var array = String(num).map{ String($0) }
