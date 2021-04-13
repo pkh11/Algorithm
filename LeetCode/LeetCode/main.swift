@@ -78,6 +78,8 @@ let string = _String()
 
 
 let dfs = DFS()
+dfs.canVisitAllRooms([[1],[2],[3],[]])
+dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
 //dfs.updateBoard([["E", "E", "E", "E", "E"],
 //                 ["E", "E", "M", "E", "E"],
 //                 ["E", "E", "E", "E", "E"],
@@ -102,7 +104,7 @@ let ar = _Array()
 
 //ar.findWords([["o","a","b","n"],["o","t","a","e"],["a","h","k","r"],["a","f","l","v"]], ["oa","oaa"])
 //ar.findWords([["a","b"],["c","d"]], ["abcb"])
-ar.findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], ["oath","pea","eat","rain"])
+//ar.findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], ["oath","pea","eat","rain"])
 //ar.exist([["a","a","b","a","a","b"],["a","a","b","b","b","a"],["a","a","a","a","b","a"],["b","a","b","b","a","b"],["a","b","b","a","b","a"],["b","a","a","a","a","b"]], "bbbaabbbbbab")
 //ar.exist([["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "SEE")
 //ar.exist([["C","A","A"],["A","A","A"],["B","C","D"]], "AAB")

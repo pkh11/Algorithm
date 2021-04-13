@@ -8,6 +8,30 @@
 import Foundation
 
 class DFS {
+ 
+    func canVisitAllRooms(_ rooms: [[Int]]) -> Bool {
+        // dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
+        var visited = Array(repeating: false, count: rooms.count)
+        visitRooms(rooms, &visited, 0)
+        
+        if visited.contains(false) {
+            return false
+        }
+        return true
+    }
+    func visitRooms(_ rooms: [[Int]], _ visited: inout [Bool], _ index: Int) {
+        visited[index] = true
+        
+        let childs = rooms[index]
+        
+        for i in 0..<childs.count {
+            let roomNum = childs[i]
+            if !visited[roomNum] {
+                visitRooms(rooms, &visited, roomNum)
+            }
+        }
+        
+    }
     
     func largestValues_DFS(_ root: TreeNode?, _ result: inout [Int], _ depth: Int) {
         guard let root = root else { return }
