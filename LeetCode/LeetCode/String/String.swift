@@ -9,6 +9,50 @@ import Foundation
 
 class _String {
     
+    func addStrings(_ num1: String, _ num2: String) -> String {
+        var array1 = Array(num1)
+        var array2 = Array(num2)
+        let countOfnum1 = array1.count
+        let countOfnum2 = array2.count
+        var index = 0
+        var gap = 0
+        
+        if countOfnum1 > countOfnum2 {
+            index = countOfnum1 - 1
+            gap = countOfnum1 - countOfnum2
+            for _ in 0..<gap {
+                array2.insert("0", at: 0)
+            }
+        } else {
+            index = countOfnum2 - 1
+            gap = countOfnum2 - countOfnum1
+            for _ in 0..<gap {
+                array1.insert("0", at: 0)
+            }
+        }
+        
+        var result = ""
+        var next = 0
+        for i in stride(from: index, through: 0, by: -1) {
+            let sum = Int(String(array1[i]))! + Int(String(array2[i]))! + next
+            
+            if sum / 10 == 1 {
+                next = 1
+                result.insert(contentsOf: "\(sum % 10)", at: result.startIndex)
+            } else {
+                next = 0
+                result.insert(contentsOf: "\(sum)", at: result.startIndex)
+            }
+        }
+        
+        if next == 1 {
+            result.insert(contentsOf: "\(next)", at: result.startIndex)
+        }
+        
+        print(result)
+        return ""
+    }
+    
     // 다시풀기
     // https://leetcode.com/problems/rearrange-spaces-between-words/
     func reorderSpaces(_ text: String) -> String {

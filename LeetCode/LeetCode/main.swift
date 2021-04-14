@@ -29,6 +29,10 @@ let greedy = Greedy()
 //greedy.lemonadeChange([5,5,5,5,20,20,5,5,20,5])
 
 let string = _String()
+string.addStrings("11", "123")
+string.addStrings("456", "77")
+string.addStrings("0", "0")
+string.addStrings("1", "9")
 //string.reorderSpaces("  hello")
 //string.reorderSpaces("  this   is  a sentence ")
 //string.reorderSpaces(" practice   makes   perfect")
@@ -75,8 +79,8 @@ let string = _String()
 //string.camelMatch(["CompetitiveProgramming","CounterPick","ControlPanel"], "CooP")
 
 let backtracking = BackTracking()
-backtracking.numberOfMatches(200)
-backtracking.numberOfMatches(14)
+//backtracking.numberOfMatches(200)
+//backtracking.numberOfMatches(14)
 //backtracking.numberOfMatches(7)
 
 
