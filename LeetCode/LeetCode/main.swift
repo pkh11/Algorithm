@@ -74,12 +74,16 @@ let string = _String()
 //string.camelMatch(["FooBar","FooBarTest","FootBall","FrameBuffer","ForceFeedBack"], "FoBaT")
 //string.camelMatch(["CompetitiveProgramming","CounterPick","ControlPanel"], "CooP")
 
+let backtracking = BackTracking()
+backtracking.numberOfMatches(200)
+backtracking.numberOfMatches(14)
+//backtracking.numberOfMatches(7)
 
 
 
 let dfs = DFS()
-dfs.canVisitAllRooms([[1],[2],[3],[]])
-dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
+//dfs.canVisitAllRooms([[1],[2],[3],[]])
+//dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
 //dfs.updateBoard([["E", "E", "E", "E", "E"],
 //                 ["E", "E", "M", "E", "E"],
 //                 ["E", "E", "E", "E", "E"],
