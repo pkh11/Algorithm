@@ -8,6 +8,57 @@
 import Foundation
 
 class _String {
+    func addToArrayForm(_ num: [Int], _ k: Int) -> [Int] {
+//        num = [1,2,0,0], k = 34
+        var k = k
+        var result = ""
+        
+        while k != 0 {
+            result.insert(contentsOf: String(k % 10), at: result.startIndex)
+            k = k / 10
+        }
+        
+        var array1 = num
+        var array2 = Array(result)
+        
+        let size1 = array1.count
+        let size2 = array2.count
+        var index = 0
+        
+        if array1.count > array2.count {
+            index = size1
+            for _ in 0..<size1-size2 {
+                array2.insert("0", at: 0)
+            }
+        } else {
+            index = size2
+            for _ in 0..<size2-size1 {
+                array1.insert(0, at: 0)
+            }
+        }
+        
+        var answer = [Int]()
+        var next = 0
+        for i in stride(from: index-1, through: 0, by: -1) {
+            let sum = array1[i] + Int(String(array2[i]))! + next
+            
+            if sum / 10 == 1 {
+                next = 1
+                answer.insert(sum%10, at: 0)
+            } else {
+                next = 0
+                answer.insert(sum, at: 0)
+            }
+        }
+        
+        if next == 1 {
+            answer.insert(next, at: 0)
+        }
+        
+        print(answer)
+        
+        return []
+    }
     
     func addStrings(_ num1: String, _ num2: String) -> String {
         var array1 = Array(num1)
