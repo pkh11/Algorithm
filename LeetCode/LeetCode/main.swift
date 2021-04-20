@@ -29,7 +29,7 @@ let greedy = Greedy()
 //greedy.lemonadeChange([5,5,5,5,20,20,5,5,20,5])
 
 let string = _String()
-string.addToArrayForm([1,2,0,0], 34)
+//string.addToArrayForm([1,2,0,0], 34)
 //string.addStrings("11", "123")
 //string.addStrings("456", "77")
 //string.addStrings("0", "0")
@@ -87,6 +87,11 @@ let backtracking = BackTracking()
 
 
 let dfs = DFS()
+//dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,true,false,true,true,false])
+//dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,true,false,false,true,false])
+//dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,false,false,false,false,false])
+//dfs.minTime(8, [[0,1],[1,2],[2,3],[1,4],[2,5],[2,6],[4,7]], [true,true,false,true,false,true,true,false])
+print(dfs.minTime(4, [[0,2],[0,3],[1,2]], [false,true,false,false]))
 //dfs.canVisitAllRooms([[1],[2],[3],[]])
 //dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
 //dfs.updateBoard([["E", "E", "E", "E", "E"],

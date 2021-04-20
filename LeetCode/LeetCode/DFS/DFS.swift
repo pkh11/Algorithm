@@ -8,7 +8,109 @@
 import Foundation
 
 class DFS {
- 
+    
+    var count = 0
+    func goodNodes(_ root: TreeNode?) -> Int {
+        guard let root = root else { return 0 }
+        isGoodNodes(root, root.val)
+        return count
+    }
+    
+    func isGoodNodes(_ root: TreeNode?, _ maxVal: Int) {
+        guard let root = root else { return }
+        let value = root.val
+        var maxValue = maxVal
+        
+        if value >= maxValue {
+            maxValue = value
+            count += 1
+        }
+        
+        if let leftNode = root.left {
+            isGoodNodes(leftNode, maxValue)
+        }
+        
+        if let rightNode = root.right {
+            isGoodNodes(rightNode, maxValue)
+        }
+    }
+    
+    var time = 0
+    
+    func minTime(_ n: Int, _ edges: [[Int]], _ hasApple: [Bool]) -> Int {
+        
+//        var trees: [Int:AppleTree] = [:]
+        var trees = Array(repeating: AppleTree((0,false)), count: n)
+        var visited = Array(repeating: false, count: n)
+        
+        for i in 0..<n {
+            trees[i] = AppleTree((i, hasApple[i]))
+        }
+          
+        for edge in edges {
+            let start = edge[0]
+            let end = edge[1]
+            
+            trees[start].childrens.append(trees[end])
+            trees[end].childrens.append(trees[start])
+        }
+        
+//        for i in 0..<trees.count {
+//            print("\(trees[i].vertex.0)")
+//            for j in 0..<trees[i].childrens.count {
+//                print("\(trees[i].childrens[j].vertex)")
+//            }
+//        }
+        
+        visited[0] = true
+        return dfs(trees, hasApple, &visited, 0)
+    }
+    
+    func dfs(_ tree: [AppleTree], _ hasApple: [Bool], _ visited: inout [Bool],_ current: Int) -> Int {
+//        guard let node = tree else { return 0 }
+        
+        var result = 0
+        
+//        print("현재 \(current)//")
+        for index in 0..<tree[current].childrens.count {
+            let childIndex = tree[current].childrens[index].vertex.0
+//            print(childIndex)
+            if !visited[childIndex] {
+                visited[childIndex] = true
+                result += dfs(tree, hasApple, &visited, childIndex)
+            }
+        }
+        
+//        print(result)
+        
+        if hasApple[current] {
+            if current == 0 {
+                return result
+            } else {
+                return result + 2
+            }
+        } else {
+            if current == 0 {
+                return result
+            } else {
+                if result == 0 {
+                    return 0
+                } else {
+                    return result + 2
+                }
+            }
+        }
+    }
+    
+    class AppleTree {
+        var vertex: (Int,Bool)
+        var childrens: [AppleTree] = []
+        
+        init(_ vertex: (Int,Bool)) {
+            self.vertex = vertex
+        }
+    }
+    
     func canVisitAllRooms(_ rooms: [[Int]]) -> Bool {
         // dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
         var visited = Array(repeating: false, count: rooms.count)
@@ -83,7 +185,7 @@ class DFS {
     }
     
     func largestValues(_ root: TreeNode?) -> [Int] {
-//        return largestValues_BFS(root)
+        //        return largestValues_BFS(root)
         var result = [Int]()
         largestValues_DFS(root, &result, 0)
         return result
@@ -104,7 +206,7 @@ class DFS {
         
         return board
     }
-
+    
     func findMine(_ board: inout [[Character]], _ x: Int, _ y: Int, _ width: Int, _ height: Int) {
         
         if board[x][y] == "M" {
@@ -178,16 +280,16 @@ class DFS {
     // [key:[[dx], [dy]]]
     let streets: [Int:[[Int]]] = [1: [[0,0,0,0],
                                       [0,1,0,-1]],
-                                2: [[-1,0,1,0],
-                                    [0,0,0,0]],
-                                3: [[0,0,1,0],
-                                    [0,0,0,-1]],
-                                4: [[0,0,1,0],
-                                    [0,1,0,0]],
-                                5: [[-1,0,0,0],
-                                    [0,0,0,-1]],
-                                6: [[-1,0,0,0],
-                                    [0,1,0,0]]]
+                                  2: [[-1,0,1,0],
+                                      [0,0,0,0]],
+                                  3: [[0,0,1,0],
+                                      [0,0,0,-1]],
+                                  4: [[0,0,1,0],
+                                      [0,1,0,0]],
+                                  5: [[-1,0,0,0],
+                                      [0,0,0,-1]],
+                                  6: [[-1,0,0,0],
+                                      [0,1,0,0]]]
     func hasValidPath(_ grid: [[Int]]) -> Bool {
         
         // key: street 번호
@@ -223,7 +325,7 @@ class DFS {
     }
     
     func dfs(_ map: [[Int]], _ nextDirection: Int, _ streetNumber: Int, _ visited: inout [[Bool]], _ x: Int, _ y: Int, _ width: Int, _ height: Int) {
-
+        
         visited[x][y] = true
         
         if x == height - 1 && y == width - 1 {
@@ -242,7 +344,7 @@ class DFS {
             
             if nx >= 0 && nx < height && ny >= 0 && ny < width {
                 if !visited[nx][ny] && isGo(currentStreetNumber, i, map[nx][ny]) {
-                   dfs(map, i, currentStreetNumber, &visited, nx, ny, width, height)
+                    dfs(map, i, currentStreetNumber, &visited, nx, ny, width, height)
                 }
             }
         }
@@ -387,65 +489,65 @@ class DFS {
         }
     }
     
-//    var dic = [Int: Employee]()
-//    var result = 0
-//    func getImportance(_ employees: [Employee], _ id: Int) -> Int {
-//
-//        for employee in employees {
-//            dic[employee.id] = employee
-//        }
-//
-//        sumOfImportance(dic, id)
-//
-//        return result
-//    }
-//
-//    func sumOfImportance(_ dic: [Int: Employee], _ target: Int) {
-//        guard let employee = dic[target] else { return }
-//
-//        result += employee.importance
-//
-//        for sub in employee.subordinates {
-//            sumOfImportance(dic, sub)
-//        }
-//    }
+    //    var dic = [Int: Employee]()
+    //    var result = 0
+    //    func getImportance(_ employees: [Employee], _ id: Int) -> Int {
+    //
+    //        for employee in employees {
+    //            dic[employee.id] = employee
+    //        }
+    //
+    //        sumOfImportance(dic, id)
+    //
+    //        return result
+    //    }
+    //
+    //    func sumOfImportance(_ dic: [Int: Employee], _ target: Int) {
+    //        guard let employee = dic[target] else { return }
+    //
+    //        result += employee.importance
+    //
+    //        for sub in employee.subordinates {
+    //            sumOfImportance(dic, sub)
+    //        }
+    //    }
     
     
-//    func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
-//        // cousins : same depth , different parent
-//
-//        var xDepth = 1
-//        var yDepth = 1
-//        var xParent: TreeNode?
-//        var yParent: TreeNode?
-//
-//        func findCousins(_ root: (TreeNode?, Int), _ x: Int, _ y: Int,_ parent: TreeNode?) {
-//
-//            guard let root = root as? (TreeNode, Int) else { return }
-//
-//            if root.0.val == x {
-//                xDepth = root.1
-//                xParent = parent
-//            }
-//            if root.0.val == y {
-//                yDepth = root.1
-//                yParent = parent
-//            }
-//
-//            findCousins((root.0.left, root.1 + 1), x, y, root.0)
-//            findCousins((root.0.right, root.1 + 1), x, y, root.0)
-//        }
-//
-//
-//        findCousins((root, 1), x, y, nil)
-//
-//        if xDepth == yDepth && xParent?.val != yParent?.val { return true }
-//
-//        return false
-//    }
+    //    func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
+    //        // cousins : same depth , different parent
+    //
+    //        var xDepth = 1
+    //        var yDepth = 1
+    //        var xParent: TreeNode?
+    //        var yParent: TreeNode?
+    //
+    //        func findCousins(_ root: (TreeNode?, Int), _ x: Int, _ y: Int,_ parent: TreeNode?) {
+    //
+    //            guard let root = root as? (TreeNode, Int) else { return }
+    //
+    //            if root.0.val == x {
+    //                xDepth = root.1
+    //                xParent = parent
+    //            }
+    //            if root.0.val == y {
+    //                yDepth = root.1
+    //                yParent = parent
+    //            }
+    //
+    //            findCousins((root.0.left, root.1 + 1), x, y, root.0)
+    //            findCousins((root.0.right, root.1 + 1), x, y, root.0)
+    //        }
+    //
+    //
+    //        findCousins((root, 1), x, y, nil)
+    //
+    //        if xDepth == yDepth && xParent?.val != yParent?.val { return true }
+    //
+    //        return false
+    //    }
     
     func isCousins(_ root: TreeNode?, _ x: Int, _ y: Int) -> Bool {
-    
+        
         guard let root = root else {
             return false
         }
@@ -527,7 +629,7 @@ class DFS {
     }
     
     func sumOfLeftLeaves(_ root: TreeNode?) -> Int {
-                
+        
         // BFS
         guard let root = root else {
             return 0
@@ -557,30 +659,30 @@ class DFS {
         return result
     }
     
-//    func isSymmetric(_ root: TreeNode?) -> Bool {
-//
-//        guard root != nil else { return true }
-//
-//        var queue = [TreeNode?]()
-//        queue.append(root?.left)
-//        queue.append(root?.right)
-//
-//        while !queue.isEmpty {
-//            var leftNode = queue.removeFirst()
-//            var rightNode = queue.removeFirst()
-//
-//            if leftNode == nil && rightNode == nil { continue }
-//            if leftNode == nil || rightNode == nil { return false }
-//            if leftNode?.val != rightNode?.val { return false }
-//
-//            queue.append(leftNode?.left)
-//            queue.append(rightNode?.right)
-//            queue.append(leftNode?.right)
-//            queue.append(rightNode?.left)
-//        }
-//        print(queue)
-//        return true
-//    }
+    //    func isSymmetric(_ root: TreeNode?) -> Bool {
+    //
+    //        guard root != nil else { return true }
+    //
+    //        var queue = [TreeNode?]()
+    //        queue.append(root?.left)
+    //        queue.append(root?.right)
+    //
+    //        while !queue.isEmpty {
+    //            var leftNode = queue.removeFirst()
+    //            var rightNode = queue.removeFirst()
+    //
+    //            if leftNode == nil && rightNode == nil { continue }
+    //            if leftNode == nil || rightNode == nil { return false }
+    //            if leftNode?.val != rightNode?.val { return false }
+    //
+    //            queue.append(leftNode?.left)
+    //            queue.append(rightNode?.right)
+    //            queue.append(leftNode?.right)
+    //            queue.append(rightNode?.left)
+    //        }
+    //        print(queue)
+    //        return true
+    //    }
     
     func isSymmetric(_ root: TreeNode?) -> Bool {
         
@@ -594,12 +696,12 @@ class DFS {
         guard let leftNode = left, let rightNode = right else { return left === right }
         
         if leftNode.val != rightNode.val { return false }
-
+        
         return isSymmetricDFS(leftNode.left, rightNode.right) && isSymmetricDFS(leftNode.right, rightNode.left)
     }
     
     
-   
+    
     func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
         
         guard !nums.isEmpty else {
