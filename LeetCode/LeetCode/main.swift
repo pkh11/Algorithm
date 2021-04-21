@@ -28,7 +28,10 @@ let greedy = Greedy()
 //print(greedy.lemonadeChange([5,5,10,10,20]))
 //greedy.lemonadeChange([5,5,5,5,20,20,5,5,20,5])
 
+
 let string = _String()
+print(string.checkIfPangram("leetcode"))
+print(string.checkIfPangram("thequickbrownfoxjumpsoverthelazydog"))
 //string.addToArrayForm([1,2,0,0], 34)
 //string.addStrings("11", "123")
 //string.addStrings("456", "77")

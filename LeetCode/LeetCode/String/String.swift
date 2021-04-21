@@ -8,6 +8,25 @@
 import Foundation
 
 class _String {
+    
+    func checkIfPangram(_ sentence: String) -> Bool {
+            
+        var map = [Character:Int]()
+        
+        for char in sentence {
+            if let value = map[char] {
+                map[char] = value + 1
+            } else {
+                map[char] = 1
+            }
+        }
+        if map.keys.count == 26 {
+            return true
+        }
+        
+        return false
+    }
+    
     func addToArrayForm(_ num: [Int], _ k: Int) -> [Int] {
 //        num = [1,2,0,0], k = 34
         var k = k
