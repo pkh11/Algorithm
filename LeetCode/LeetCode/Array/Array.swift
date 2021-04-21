@@ -9,6 +9,20 @@ import Foundation
 
 class _Array {
     
+    func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        var nums = nums
+        
+        nums.append(target)
+        
+        nums = nums.sorted()
+        
+        let index = nums.firstIndex(of:target)!
+        
+        print(index)
+        
+        return index
+    }
+    
     var width = 0
     var height = 0
     
