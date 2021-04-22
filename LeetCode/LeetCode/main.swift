@@ -30,8 +30,8 @@ let greedy = Greedy()
 
 
 let string = _String()
-print(string.checkIfPangram("leetcode"))
-print(string.checkIfPangram("thequickbrownfoxjumpsoverthelazydog"))
+//print(string.checkIfPangram("leetcode"))
+//print(string.checkIfPangram("thequickbrownfoxjumpsoverthelazydog"))
 //string.addToArrayForm([1,2,0,0], 34)
 //string.addStrings("11", "123")
 //string.addStrings("456", "77")
@@ -94,7 +94,7 @@ let dfs = DFS()
 //dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,true,false,false,true,false])
 //dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,false,false,false,false,false])
 //dfs.minTime(8, [[0,1],[1,2],[2,3],[1,4],[2,5],[2,6],[4,7]], [true,true,false,true,false,true,true,false])
-print(dfs.minTime(4, [[0,2],[0,3],[1,2]], [false,true,false,false]))
+//print(dfs.minTime(4, [[0,2],[0,3],[1,2]], [false,true,false,false]))
 //dfs.canVisitAllRooms([[1],[2],[3],[]])
 //dfs.canVisitAllRooms([[1,3],[3,0,1],[2],[0]])
 //dfs.updateBoard([["E", "E", "E", "E", "E"],
@@ -190,6 +190,13 @@ var stack = Stack()
 //stack.buildArray([1,2], 4)
 //stack.buildArray([2,3,4], 4)
 
+
+var bit = Bit()
+//bit.sortByBits([0,1,2,3,4,5,6,7,8])
+//bit.sortByBits([1024,512,256,128,64,32,16,8,4,2,1])
+bit.sortByBits([10000,10000])
+//bit.sortByBits([2,3,5,7,11,13,17,19])
+//bit.sortByBits([10,100,1000,10000])
 
 
 public class TreeNode {
