@@ -8,6 +8,31 @@
 import Foundation
 
 class Bit {
+    
+    var bit = ""
+    
+    func getDecimalValue(_ head: ListNode?) -> Int {
+        guard let head = head else { return 0 }
+        
+        let result = getValue(head)
+        
+        return Int(result)!
+    }
+    
+    func getValue(_ head: ListNode?) -> String {
+        guard let head = head else { return "" }
+        bit += String(head.val)
+        if let next = head.next {
+            return getValue(next)
+        } else {
+            if let number = Int(bit, radix: 2) {
+                return String(number)
+            }
+        }
+    
+        return ""
+    }
+    
     func sortByBits(_ arr: [Int]) -> [Int] {
         
         var tuple = [(Int,Int)]()
@@ -24,9 +49,20 @@ class Bit {
                 return $0.1 < $1.1
             }
         }.map{ $0.0 }
-      
+        
         print(sorted)
         
         return sorted
     }
 }
+
+
+
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init() { self.val = 0; self.next = nil; }
+    public init(_ val: Int) { self.val = val; self.next = nil; }
+    public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+}
+
