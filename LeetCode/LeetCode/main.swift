@@ -186,7 +186,7 @@ var stack = Stack()
 //stack.minRemoveToMakeValid("lee(t(c)o)de)")
 //stack.minRemoveToMakeValid("a)b(c)d")
 //stack.minRemoveToMakeValid("))((")
-stack.minRemoveToMakeValid("(a(b(c)d)")
+//stack.minRemoveToMakeValid("(a(b(c)d)")
 
 //stack.validateStackSequences([1,2,3,4,5], [4,5,3,2,1])
 //stack.validateStackSequences([1,2,3,4,5], [4,3,5,1,2])
@@ -197,7 +197,9 @@ stack.minRemoveToMakeValid("(a(b(c)d)")
 
 
 var bit = Bit()
-
+bit.checkPowersOfThree(12)
+bit.checkPowersOfThree(91)
+bit.checkPowersOfThree(21)
 //bit.sortByBits([0,1,2,3,4,5,6,7,8])
 //bit.sortByBits([1024,512,256,128,64,32,16,8,4,2,1])
 //bit.sortByBits([10000,10000])

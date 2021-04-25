@@ -9,6 +9,14 @@ import Foundation
 
 class Bit {
     
+    func checkPowersOfThree(_ n: Int) -> Bool {
+        // 3진법으로 표현했을때, bits에 2가 포함되어 있으면 3의 제곱근 형태로 표현할 수 없음
+        let bits = String(n, radix: 3)
+        if bits.contains("2") { return false }
+        
+        return true
+    }
+    
     var bit = ""
     
     func getDecimalValue(_ head: ListNode?) -> Int {
