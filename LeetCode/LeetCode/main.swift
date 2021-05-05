@@ -90,6 +90,10 @@ let backtracking = BackTracking()
 
 
 let dfs = DFS()
+//dfs.minimumJumps([14,4,18,1,15], 3, 15, 9)
+//dfs.minimumJumps([8,3,16,6,12,20], 15, 13, 11)
+//dfs.minimumJumps([1,6,2,14,5,17,4], 16, 9, 7)
+print(dfs.minimumJumps([162,118,178,152,167,100,40,74,199,186,26,73,200,127,30,124,193,84,184,36,103,149,153,9,54,154,133,95,45,198,79,157,64,122,59,71,48,177,82,35,14,176,16,108,111,6,168,31,134,164,136,72,98], 29, 98, 80))
 //dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,true,false,true,true,false])
 //dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,true,false,false,true,false])
 //dfs.minTime(7, [[0,1],[0,2],[1,4],[1,5],[2,3],[2,6]], [false,false,false,false,false,false,false])
@@ -118,7 +122,8 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
-
+print(ar.checkPossibility([4,2,3]))
+print(ar.checkPossibility([4,2,1]))
 //ar.findWords([["o","a","b","n"],["o","t","a","e"],["a","h","k","r"],["a","f","l","v"]], ["oa","oaa"])
 //ar.findWords([["a","b"],["c","d"]], ["abcb"])
 //ar.findWords([["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], ["oath","pea","eat","rain"])

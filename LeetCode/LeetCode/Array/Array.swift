@@ -9,6 +9,30 @@ import Foundation
 
 class _Array {
     
+    func checkPossibility(_ nums: [Int]) -> Bool {
+        
+        //
+        
+        var nums = nums
+        var isDecresed = false
+        
+        for i in 0..<nums.count-1 {
+            if nums[i] > nums[i+1] {
+                if isDecresed {
+                    return false
+                }
+                
+                isDecresed = true
+                
+                if i >= 1 && nums[i-1] > nums[i+1] {
+                    nums[i+1] = nums[i]
+                }
+            }
+        }
+        
+        return true
+    }
+    
     func searchInsert(_ nums: [Int], _ target: Int) -> Int {
         var nums = nums
         

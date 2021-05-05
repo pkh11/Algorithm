@@ -9,6 +9,59 @@ import Foundation
 
 class DFS {
     
+    var result = 0
+    func minimumJumps(_ forbidden: [Int], _ a: Int, _ b: Int, _ x: Int) -> Int {
+        // 29, 98, 80
+        
+//        print(forbidden.sorted(by: <))
+//        frugJumps(forbidden, a, x, a, b, 0)
+        var forbidden = forbidden
+        var queue = [(Int, Int, Bool)]()
+        
+        while !queue.isEmpty {
+            let obj = queue.removeFirst()
+            let now = obj.0
+            
+            let next = now + a
+            let prev = now - b
+            let step = obj.1
+            let canGoBack = obj.2
+            
+            if now == x { return step }
+            if forbidden.contains(now) { continue }
+            forbidden.append(now)
+            
+            if !forbidden.contains(next) {
+                queue.append((next, step+1, true))
+            }
+            
+            if !forbidden.contains(prev) && prev >= 0 && canGoBack {
+                queue.append((prev, step+1, false))
+            }
+            
+        }
+        
+        return -1
+    }
+    
+    func frugJumps(_ forbidden: [Int], _ now: Int, _ target: Int, _ forward: Int, _ backword: Int, _ step: Int) {
+        print(now)
+        if forbidden.contains(now) || now < 0 {
+//            result = -1
+            return
+        }
+        
+        if now == target {
+            result = step
+            return
+        }
+        
+        frugJumps(forbidden, now+forward, target, forward, backword, step+1)
+        frugJumps(forbidden, now-backword, target, forward, backword, step+1)
+
+    }
+    
+    
     var count = 0
     func goodNodes(_ root: TreeNode?) -> Int {
         guard let root = root else { return 0 }
