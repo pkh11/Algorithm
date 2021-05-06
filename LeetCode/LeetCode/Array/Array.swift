@@ -9,6 +9,33 @@ import Foundation
 
 class _Array {
     
+    func uniqueMorseRepresentations(_ words: [String]) -> Int {
+        let morseArray = [".-","-...","-.-.","-..",".","..-.","--.","....","..",
+                     ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
+                     "...","-","..-","...-",".--","-..-","-.--","--.."]
+        let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
+        var map = [String:String]()
+        
+        for i in 0..<alphabet.count {
+            map[String(describing: alphabet[i])] = morseArray[i]
+        }
+//        print(alphabet)
+//        print(map)
+        var set = Set<String>()
+        
+        for word in words {
+            var morse = ""
+            for char in word {
+                morse += map[String(char)]!
+            }
+            set.insert(morse)
+        }
+        
+//        print(set)
+        
+        return set.count
+    }
+    
     func numIdenticalPairs(_ nums: [Int]) -> Int {
         var count = 0
         for i in 0..<nums.count {
