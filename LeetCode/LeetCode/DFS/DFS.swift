@@ -11,34 +11,49 @@ class DFS {
     
     var result = 0
     func minimumJumps(_ forbidden: [Int], _ a: Int, _ b: Int, _ x: Int) -> Int {
-        // 29, 98, 80
         
-//        print(forbidden.sorted(by: <))
-//        frugJumps(forbidden, a, x, a, b, 0)
-        var forbidden = forbidden
+        guard x > 0 else { return 0 }
+        
+        var visited = Array(repeating: Array(repeating: true, count: 2), count: 6000)
+
+        // visited[i][0] = forward
+        // visited[i][1] = backward
+        for i in forbidden {
+            visited[i][0] = false
+            visited[i][1] = false
+        }
+        
         var queue = [(Int, Int, Bool)]()
+        queue.append((0,1,true))
         
         while !queue.isEmpty {
-            let obj = queue.removeFirst()
-            let now = obj.0
+            
+            let data = queue.removeFirst()
+            let now = data.0
             
             let next = now + a
             let prev = now - b
-            let step = obj.1
-            let canGoBack = obj.2
+            let step = data.1
+            let canGoBack = data.2
             
-            if now == x { return step }
-            if forbidden.contains(now) { continue }
-            forbidden.append(now)
+            if next == x || prev == x && canGoBack {
+                
+//                print("next: \(next)")
+//                print("prev: \(prev)")
+//                print("canGoBack: \(canGoBack)")
+                
+                return step
+            }
             
-            if !forbidden.contains(next) {
+            if  next < 6000 && visited[next][0] {
+                visited[next][0] = false
                 queue.append((next, step+1, true))
             }
             
-            if !forbidden.contains(prev) && prev >= 0 && canGoBack {
+            if  prev > 0 && canGoBack && visited[prev][1] {
+                visited[prev][1] = false
                 queue.append((prev, step+1, false))
             }
-            
         }
         
         return -1
