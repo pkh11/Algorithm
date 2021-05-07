@@ -9,6 +9,10 @@ import Foundation
 
 class _Array {
     
+    func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
+        return matrix.contains(where: { $0.contains(target)})
+    }
+    
     func uniqueMorseRepresentations(_ words: [String]) -> Int {
         let morseArray = [".-","-...","-.-.","-..",".","..-.","--.","....","..",
                      ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
@@ -50,9 +54,6 @@ class _Array {
     }
     
     func checkPossibility(_ nums: [Int]) -> Bool {
-        
-        //
-        
         var nums = nums
         var isDecresed = false
         
