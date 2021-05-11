@@ -8,6 +8,52 @@
 import Foundation
 
 class _String {
+    func restoreIpAddresses(_ s: String) -> [String] {
+        // 255 255 111 35 -> 11개
+        // 010010 -> 6개
+        
+        let array = Array(s)
+        var result = [String]()
+        
+        guard array.count >= 4 else {
+            return []
+        }
+        
+        for i in 1...3 {
+            if isNumber(array[0..<i]) && i <= array.count {
+                for j in i...i+3 where j <= array.count {
+                    if isNumber(array[i..<j]) {
+                        for k in j...j+3 where k <= array.count {
+                            if isNumber(array[j..<k]) && isNumber(array[k..<array.count]) {
+                                let nums = [0..<i, i..<j, j..<k, k..<s.count].map{ String(array[$0]) }
+                                result.append(nums.joined(separator: "."))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+//        print(result)
+        
+        return result
+    }
+    
+    func isNumber(_ slice: ArraySlice<Character>) -> Bool {
+        let str = String(slice)
+        
+        if str.first == "0" {
+            if str == "0" {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            guard let num = Int(str) else { return false }
+            return num >= 0 && num <= 255
+        }
+    }
+    
+    
     
     func checkIfPangram(_ sentence: String) -> Bool {
             
