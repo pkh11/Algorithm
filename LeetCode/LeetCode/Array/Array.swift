@@ -9,6 +9,37 @@ import Foundation
 
 class _Array {
     
+    func countNicePairs(_ nums: [Int]) -> Int {
+        
+        var dict = [Int:Int]()
+        let mod = 1000000007
+        var dp = [String:Int]()
+        var count = 0
+        
+        func rev(_ number: Int) -> Int {
+            if let value = dp[String(number)] {
+               return value
+           }
+           
+           let res = Int(String(String(number).reversed()) ?? "0") ?? 0
+           dp[String(number)] = res
+           return res
+        }
+        
+        for num in nums {
+            dict[num - rev(num), default: 0] += 1
+        }
+        
+        for (key, value) in dict {
+            count += ((value-1)*value) / 2
+            count %= mod
+        }
+        
+        return count
+    }
+    
+    
+    
     func searchMatrix(_ matrix: [[Int]], _ target: Int) -> Bool {
         return matrix.contains(where: { $0.contains(target)})
     }

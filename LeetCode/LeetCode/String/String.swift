@@ -21,8 +21,8 @@ class _String {
         
         for i in 1...3 {
             if isNumber(array[0..<i]) && i <= array.count {
-                for j in i...i+3 where j <= array.count {
-                    if isNumber(array[i..<j]) {
+                for j in i...i+3 {
+                    if j <= array.count && isNumber(array[i..<j]) {
                         for k in j...j+3 where k <= array.count {
                             if isNumber(array[j..<k]) && isNumber(array[k..<array.count]) {
                                 let nums = [0..<i, i..<j, j..<k, k..<s.count].map{ String(array[$0]) }
@@ -33,7 +33,7 @@ class _String {
                 }
             }
         }
-//        print(result)
+        print(result)
         
         return result
     }
