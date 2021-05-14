@@ -8,6 +8,18 @@
 import Foundation
 
 class _String {
+    
+    func strStr(_ haystack: String, _ needle: String) -> Int {
+        if haystack.count == needle.count {
+            return haystack != needle ? -1 : 0
+        } else if let range = haystack.range(of: needle) {
+            print(haystack[haystack.startIndex..<range.lowerBound])
+            return haystack[haystack.startIndex..<range.lowerBound].count
+        } else {
+            return needle.isEmpty ? 0 : -1
+        }
+    }
+    
     func restoreIpAddresses(_ s: String) -> [String] {
         // 255 255 111 35 -> 11개
         // 010010 -> 6개
