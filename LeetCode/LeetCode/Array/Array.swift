@@ -8,6 +8,31 @@
 import Foundation
 
 class _Array {
+    func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
+        // Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+        
+//        Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+        
+        var arr1 = Array(repeating: 0, count: n)
+        var arr2 = Array(repeating: 0, count: n)
+        var result = [Int]()
+        
+        for i in 0..<n {
+            arr1[i] = nums[i]
+        }
+        for j in n..<2*n {
+            arr2[j-n] = nums[j]
+        }
+        
+        zip(arr1, arr2).forEach {
+            result.append($0.0)
+            result.append($0.1)
+        }
+        
+        print(result)
+        
+        return result
+    }
     
     func canThreePartsEqualSum(_ arr: [Int]) -> Bool {
             
