@@ -9,6 +9,45 @@ import Foundation
 
 class _String {
     
+    func reverseVowels(_ s: String) -> String {
+        // a e i o u 만 리버스
+        
+        // hello -> holle
+        
+        // step1. stack에 모음 담기
+        // step2.
+        
+        var stack = [Character]()
+        
+        for char in s {
+            if char == "a" || char == "A" ||
+                char == "e" || char == "E" ||
+                char == "i" || char == "I" ||
+                char == "o" || char == "O" ||
+                char == "u" || char == "U" {
+                stack.append(char)
+            }
+        }
+        var str = ""
+        
+        for char in s {
+            if char == "a" || char == "A" ||
+                char == "e" || char == "E" ||
+                char == "i" || char == "I" ||
+                char == "o" || char == "O" ||
+                char == "u" || char == "U" {
+                if let last = stack.popLast() {
+                    str += String(last)
+                }
+            } else {
+                str += String(char)
+            }
+        }
+        print(str)
+        
+        return str
+    }
+    
     func repeatedSubstringPattern(_ s: String) -> Bool {
         // abcabc
         // aba

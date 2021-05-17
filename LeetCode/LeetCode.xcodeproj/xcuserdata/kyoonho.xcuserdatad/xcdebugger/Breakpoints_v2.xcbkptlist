@@ -14,8 +14,8 @@
             filePath = "LeetCode/String/String.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "reorderSpaces(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "LeetCode/String/String.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "reorderSpaces(_:)"
             landmarkType = "7">
          </BreakpointContent>
