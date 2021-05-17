@@ -9,6 +9,30 @@ import Foundation
 
 class _String {
     
+    func repeatedSubstringPattern(_ s: String) -> Bool {
+        // abcabc
+        // aba
+        // abab
+        
+        guard s.count > 1 else { return false }
+        
+        var str = s
+        var map = [Character:Int]()
+        var pattern = ""
+        
+        for char in s {
+            if let value = map[char] {
+                map[char] = value + 1
+//                str.split(separator: <#T##Character#>)
+            } else {
+                pattern += String(char)
+                map[char] = 1
+            }
+        }
+        
+        return true
+    }
+    
     func strStr(_ haystack: String, _ needle: String) -> Int {
         if haystack.count == needle.count {
             return haystack != needle ? -1 : 0

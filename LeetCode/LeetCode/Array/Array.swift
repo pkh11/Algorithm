@@ -8,6 +8,31 @@
 import Foundation
 
 class _Array {
+    
+    func canThreePartsEqualSum(_ arr: [Int]) -> Bool {
+            
+        let sum = arr.reduce(0, +)
+        
+        if sum % 3 != 0 { return false }
+        
+        var count = 0
+        var total = 0
+        
+        for num in arr {
+            total += num
+            if total == sum / 3 {
+                total = 0
+                count += 1
+            }
+        }
+        
+        if count >= 3 {
+            return true
+        }
+        
+        return false
+    }
+    
     func numTeams(_ rating: [Int]) -> Int {
     
         var count = 0
