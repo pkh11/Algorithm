@@ -8,6 +8,24 @@
 import Foundation
 
 class Bit {
+    func bitwiseComplement(_ n: Int) -> Int {
+            
+        let bits = String(n, radix: 2)
+        var result = ""
+        
+        for char in bits {
+            if char == "1" {
+                result += "0"
+            } else {
+                result += "1"
+            }
+        }
+        
+        let num = Int(result, radix: 2)
+//        print(num)
+        
+        return num!
+    }
     
     func checkPowersOfThree(_ n: Int) -> Bool {
         // 3진법으로 표현했을때, bits에 2가 포함되어 있으면 3의 제곱근 형태로 표현할 수 없음

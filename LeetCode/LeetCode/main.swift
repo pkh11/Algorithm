@@ -30,7 +30,7 @@ let greedy = Greedy()
 
 
 let string = _String()
-string.reverseVowels("hello")
+//string.reverseVowels("hello")
 //print(string.repeatedSubstringPattern("abab"))
 //print(string.repeatedSubstringPattern("aba"))
 //print(string.repeatedSubstringPattern("abcabcabcabc"))
@@ -228,6 +228,8 @@ var stack = Stack()
 
 
 var bit = Bit()
+bit.bitwiseComplement(5)
+bit.bitwiseComplement(7)
 //bit.checkPowersOfThree(12)
 //bit.checkPowersOfThree(91)
 //bit.checkPowersOfThree(21)
