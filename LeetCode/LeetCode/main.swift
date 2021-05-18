@@ -228,8 +228,8 @@ var stack = Stack()
 
 
 var bit = Bit()
-bit.bitwiseComplement(5)
-bit.bitwiseComplement(7)
+//bit.bitwiseComplement(5)
+//bit.bitwiseComplement(7)
 //bit.checkPowersOfThree(12)
 //bit.checkPowersOfThree(91)
 //bit.checkPowersOfThree(21)
@@ -254,24 +254,24 @@ public class TreeNode {
 }
 
 
- 
+
 public class Node {
-  public var val: Int
-  public var children: [Node]
-  public init(_ val: Int) {
-      self.val = val
-      self.children = []
-  }
+    public var val: Int
+    public var children: [Node]
+    public init(_ val: Int) {
+        self.val = val
+        self.children = []
+    }
 }
 
 public class Employee {
-      public var id: Int
-      public var importance: Int
-      public var subordinates: [Int]
-      public init(_ id: Int, _ importance: Int, _ subordinates: [Int]) {
-          self.id = id
-          self.importance = importance
-          self.subordinates = subordinates
-      }
-  }
+    public var id: Int
+    public var importance: Int
+    public var subordinates: [Int]
+    public init(_ id: Int, _ importance: Int, _ subordinates: [Int]) {
+        self.id = id
+        self.importance = importance
+        self.subordinates = subordinates
+    }
+}
 
