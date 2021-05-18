@@ -9,14 +9,7 @@ import Foundation
 
 class _String {
     
-    func reverseVowels(_ s: String) -> String {
-        // a e i o u 만 리버스
-        
-        // hello -> holle
-        
-        // step1. stack에 모음 담기
-        // step2.
-        
+    func reverseVowels(_ s: String) -> String {        
         var stack = [Character]()
         
         for char in s {

@@ -22,7 +22,6 @@ class Bit {
         }
         
         let num = Int(result, radix: 2)
-//        print(num)
         
         return num!
     }
