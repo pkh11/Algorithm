@@ -8,6 +8,43 @@
 import Foundation
 
 class DP {
+    
+    func maxProfit(_ prices: [Int]) -> Int {
+        // [7,1,5,3,6,4]
+        
+        var dp = Array(repeating: 0, count: prices.count)
+//  code 1
+//        var start = 0
+//        var end = 0
+//        var index = 1
+//        var temp = prices[0]
+//
+//        while index < prices.count {
+//            if temp > prices[index] {
+//                end += 1
+//                start = end
+//                temp = prices[index]
+//            } else {
+//                end += 1
+//                dp[index] = prices[end] - prices[start]
+//            }
+//            index += 1
+//        }
+        
+// code 2
+        var result = 0
+        var minPrice = Int.max
+        for i in 0..<prices.count {
+            if prices[i] < minPrice {
+                minPrice = prices[i]
+            }
+            result = max(result, prices[i] - minPrice)
+            print(result)
+        }
+    
+        return dp.max()!
+    }
+    
     func divisorGame(_ N: Int) -> Bool {
         
         let turn = 0
