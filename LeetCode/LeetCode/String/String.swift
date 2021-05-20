@@ -9,6 +9,25 @@ import Foundation
 
 class _String {
     
+    func sortSentence(_ s: String) -> String {
+        let array = s.split(separator: " ")
+        
+        var sentences = [(String,Int)]()
+        var map = [String:Int]()
+        
+        for sentence in array {
+            var str = String(sentence)
+            let number = String(str.removeLast())
+            sentences.append((str,Int(number)!))
+//            map[str] = Int(number)
+        }
+        var result = sentences.sorted { $0.1 < $1.1 }.map{ $0.0 }.joined(separator: " ")
+//        var result = map.sorted { $0.value < $1.value }.map{ $0.key }.joined(separator: " ")
+        print(result)
+        
+        return result
+    }
+    
     func reverseVowels(_ s: String) -> String {        
         var stack = [Character]()
         
