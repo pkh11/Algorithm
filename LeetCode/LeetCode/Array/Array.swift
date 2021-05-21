@@ -8,6 +8,65 @@
 import Foundation
 
 class _Array {
+    
+    func plusOne(_ digits: [Int]) -> [Int] {
+        var digits = digits
+        guard let last = digits.last else { return [] }
+        let size = digits.count
+        var lastNumber = Int(last)
+        lastNumber += 1
+        
+        if size > 1 {
+            if lastNumber >= 10 {
+                var parity = 1
+                var index = size
+                while index > 0 {
+                    let num = digits[index-1] + parity
+                    if num >= 10 {
+                        parity = 1
+                        digits[index-1] = 0
+                    } else {
+                        parity = 0
+                        digits[index-1] = num
+                        break
+                    }
+                    index -= 1
+                }
+                
+                if parity == 1 {
+                    digits.insert(parity, at: 0)
+                }
+            } else {
+                digits.removeLast()
+                digits.append(lastNumber)
+            }
+        } else {
+            // size == 1
+            if lastNumber >= 10 {
+                digits.removeAll()
+                digits.append(lastNumber/10)
+                digits.append(lastNumber%10)
+            } else {
+                digits.removeLast()
+                digits.append(lastNumber)
+            }
+        }
+     
+        print(digits)
+        
+        return digits
+    }
+    
+    func isBoomerang(_ points: [[Int]]) -> Bool {
+            
+        let r1 = points[1][1] - points[0][1]
+        let r2 = points[1][0] - points[0][0]
+        let r3 = points[2][1] - points[0][1]
+        let r4 = points[2][0] - points[0][0]
+        
+        return r2 * r3 != r1 * r4
+    }
+    
     func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
         // Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
         
