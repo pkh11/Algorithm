@@ -30,6 +30,7 @@ let greedy = Greedy()
 
 
 let string = _String()
+string.sortSentence("is2 sentence4 This1 a3")
 //string.reverseVowels("hello")
 //print(string.repeatedSubstringPattern("abab"))
 //print(string.repeatedSubstringPattern("aba"))
@@ -128,6 +129,8 @@ let dfs = DFS()
 //dfs.findBottomLeftValue(<#T##root: <<error type>>##<<error type>>#>)
 
 let dp = DP()
+//dp.maxProfit([7,1,5,3,6,4])
+//dp.maxProfit([7,6,4,3,1])
 //dp.minCostClimbingStairs([10, 15, 20])
 //dp.minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1])
 //dp.divisorGame(2)
