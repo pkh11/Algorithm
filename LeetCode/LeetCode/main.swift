@@ -30,6 +30,7 @@ let greedy = Greedy()
 
 
 let string = _String()
+string.letterCombinations("23")
 //string.sortSentence("is2 sentence4 This1 a3")
 //string.reverseVowels("hello")
 //print(string.repeatedSubstringPattern("abab"))
@@ -137,19 +138,16 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
-<<<<<<< HEAD
-ar.fizzBuzz(3)
-ar.fizzBuzz(5)
-ar.fizzBuzz(15)
-=======
-ar.plusOne([8,9,9,9])
+//ar.fizzBuzz(3)
+//ar.fizzBuzz(5)
+//ar.fizzBuzz(15)
+//ar.plusOne([8,9,9,9])
 //ar.plusOne([9,9])
 //ar.plusOne([9])
 //ar.plusOne([1,2,3])
 //ar.plusOne([4,3,2,1])
 //ar.isBoomerang([[1,1],[2,3],[3,2]])
 //ar.isBoomerang([[1,1],[2,2],[3,3]])
->>>>>>> 1db5473045df3ac72a445b263741b72d339a2e2c
 //ar.shuffle([2,5,1,3,4,7], 3)
 //print(ar.canThreePartsEqualSum([1,-1,1,-1]))
 //print(ar.canThreePartsEqualSum([10,-10,10,-10,10,-10,10,-10]))

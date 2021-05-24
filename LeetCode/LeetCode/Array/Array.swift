@@ -9,7 +9,7 @@ import Foundation
 
 class _Array {
     
-<<<<<<< HEAD
+
     func fizzBuzz(_ n: Int) -> [String] {
         
         var array = Array(repeating: "", count: n)
@@ -32,7 +32,7 @@ class _Array {
         
         return []
     }
-=======
+
     func plusOne(_ digits: [Int]) -> [Int] {
         var digits = digits
         guard let last = digits.last else { return [] }
@@ -91,7 +91,6 @@ class _Array {
         return r2 * r3 != r1 * r4
     }
     
->>>>>>> 1db5473045df3ac72a445b263741b72d339a2e2c
     func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
         // Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
         
