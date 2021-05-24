@@ -84,4 +84,27 @@ let no11 = 외벽점검()
 //no11.solution(12, [1,3,4,9,10], [3,5,7])
 
 let no12 = 블록이동하기()
-no12.solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])
+//no12.solution([[0, 0, 0, 1, 1],[0, 0, 0, 1, 0],[0, 1, 0, 1, 1],[1, 1, 0, 0, 1],[0, 0, 0, 0, 0]])
+
+
+let kno1 = KaKaoEnterpriseNo1()
+
+let kno2 = KaKaoEnterpriseNo2()
+
+let kno3 = KaKaoEnterpriseNo3()
+//kno3.minOperations(n: 4)
+
+let kno4 = KaKaoEnterpriseNo4()
+//kno4.getEventsOrder(team1: "edc", team2: "cde", events1: ["alex 12 G", "sam 43 Y"], events2: ["kris 45+1 S avery","robin 46 G"])
+//kno4.getEventsOrder(team1: "abc", team2: "cda", events1: ["mo sa 45+2 Y", "a 13 G"], events2: ["d 23 S f","z 46 G"])
+
+
+//[3, 5]
+//[1, 6]
+//[1, 1]
+
+
+let lotto = 로또의최고순위와최저순위()
+print(lotto.solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
+print(lotto.solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
+print(lotto.solution([45, 4, 35, 20, 3, 9], [20, 9, 3, 45, 4, 35]))

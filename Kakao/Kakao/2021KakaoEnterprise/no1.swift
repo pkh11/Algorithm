@@ -6,3 +6,33 @@
 //
 
 import Foundation
+
+class KaKaoEnterpriseNo1 {
+//    func condense(head: SinglyLinnkedListNode?) -> SinglyLinnkedListNode {
+//        
+//        
+//        var current: SinglyLinnkedListNode? = head
+//        var previous: SinglyLinnkedListNode? = nil
+//        
+//        var set = Set<Int>()
+//        
+//        while current != nil {
+//            if set.contains(current!.data) {
+//                previous?.next = current?.next
+//            } else {
+//                set.insert(current!.data)
+//                previous = current
+//            }
+//            current = previous?.next
+//        }
+//        
+//        
+//        
+//        return
+//    }
+    
+    class SinglyLinnkedListNode {
+        var data: Int = 0
+        var next: SinglyLinnkedListNode?
+    }
+}
