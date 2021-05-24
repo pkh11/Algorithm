@@ -30,7 +30,7 @@ let greedy = Greedy()
 
 
 let string = _String()
-string.sortSentence("is2 sentence4 This1 a3")
+//string.sortSentence("is2 sentence4 This1 a3")
 //string.reverseVowels("hello")
 //print(string.repeatedSubstringPattern("abab"))
 //print(string.repeatedSubstringPattern("aba"))
@@ -137,6 +137,9 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
+ar.fizzBuzz(3)
+ar.fizzBuzz(5)
+ar.fizzBuzz(15)
 //ar.shuffle([2,5,1,3,4,7], 3)
 //print(ar.canThreePartsEqualSum([1,-1,1,-1]))
 //print(ar.canThreePartsEqualSum([10,-10,10,-10,10,-10,10,-10]))

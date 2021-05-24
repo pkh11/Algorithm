@@ -8,6 +8,29 @@
 import Foundation
 
 class _Array {
+    
+    func fizzBuzz(_ n: Int) -> [String] {
+        
+        var array = Array(repeating: "", count: n)
+        
+        for i in 0..<n {
+            let index = i+1
+            
+            if (index%3 == 0) && (index%5 == 0) {
+                array[i] = "FizzBuzz"
+            } else if (index%3==0) {
+                array[i] = "Fizz"
+            } else if (index%5==0) {
+                array[i] = "Buzz"
+            } else {
+                array[i] = "\(index)"
+            }
+        }
+        
+        print(array)
+        
+        return []
+    }
     func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
         // Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
         
