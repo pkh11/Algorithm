@@ -138,6 +138,7 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
+ar.uniquePaths(3, 7)
 //ar.fizzBuzz(3)
 //ar.fizzBuzz(5)
 //ar.fizzBuzz(15)

@@ -8,6 +8,26 @@
 import Foundation
 
 class _Array {
+    func uniquePaths(_ m: Int, _ n: Int) -> Int {
+        
+        var array = Array(repeating: Array(repeating: 0, count: n), count: m)
+        
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if i == 0 || j == 0 {
+                    array[i][j] = 1
+                } else {
+                    array[i][j] = array[i-1][j] + array[i][j-1]
+                }
+            }
+        }
+        
+        print(array)
+        
+        
+        return array[m-1][n-1]
+    }
     
 
     func fizzBuzz(_ n: Int) -> [String] {
