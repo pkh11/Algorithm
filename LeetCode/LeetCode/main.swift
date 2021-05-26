@@ -138,7 +138,9 @@ let dp = DP()
 //dp.divisorGame(3)
 
 let ar = _Array()
-ar.minPathSum([[1,3,1],[1,5,1],[4,2,1]])
+var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+ar.setZeroes(&matrix)
+//ar.minPathSum([[1,3,1],[1,5,1],[4,2,1]])
 //ar.uniquePaths(3, 7)
 //ar.fizzBuzz(3)
 //ar.fizzBuzz(5)

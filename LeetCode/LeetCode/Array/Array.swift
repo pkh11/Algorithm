@@ -9,10 +9,44 @@ import Foundation
 
 class _Array {
     
-    func minPathSum(_ grid: [[Int]]) -> Int {
-//        Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
-//        Note: You can only move either down or right at any point in time.
+    func setZeroes(_ matrix: inout [[Int]]) {
+//        Given an m x n matrix. If an element is 0, set its entire row and column to 0. Do it in-place.
+//
+//        Follow up:
+//
+//        A straight forward solution using O(mn) space is probably a bad idea.
+//        A simple improvement uses O(m + n) space, but still not the best solution.
+//        Could you devise a constant space solution?
+        let m = matrix.count
+        let n = matrix[0].count
         
+        var stack = [(Int, Int)]()
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if matrix[i][j] == 0 {
+                    stack.append((i,j))
+                }
+            }
+        }
+        
+        while !stack.isEmpty {
+            let data = stack.removeLast()
+            let x = data.0
+            let y = data.1
+            
+            for i in 0..<m {
+                matrix[i][y] = 0
+            }
+            for j in 0..<n {
+                matrix[x][j] = 0
+            }
+        }
+        
+        print(matrix)
+    }
+    
+    func minPathSum(_ grid: [[Int]]) -> Int {
         let m = grid.count
         let n = grid[0].count
         
