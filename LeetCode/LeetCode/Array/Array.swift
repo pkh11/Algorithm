@@ -8,6 +8,36 @@
 import Foundation
 
 class _Array {
+    
+    func minPathSum(_ grid: [[Int]]) -> Int {
+//        Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.
+//        Note: You can only move either down or right at any point in time.
+        
+        let m = grid.count
+        let n = grid[0].count
+        
+        var array = Array(repeating: Array(repeating: 0, count: n), count: m)
+        array[0][0] = grid[0][0]
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if i == 0 && j == 0 {
+                    array[i][j] = grid[i][j]
+                } else {
+                    if i == 0 {
+                        array[i][j] = array[i][j-1] + grid[i][j]
+                    } else if j == 0 {
+                        array[i][j] = array[i-1][j] + grid[i][j]
+                    } else {
+                        array[i][j] = min(array[i-1][j], array[i][j-1]) + grid[i][j]
+                    }
+                }
+            }
+        }
+        print(array[m-1][n-1])
+        return array[m-1][n-1]
+    }
+    
     func uniquePaths(_ m: Int, _ n: Int) -> Int {
         
         var array = Array(repeating: Array(repeating: 0, count: n), count: m)
@@ -24,7 +54,6 @@ class _Array {
         }
         
         print(array)
-        
         
         return array[m-1][n-1]
     }
