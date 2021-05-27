@@ -9,6 +9,19 @@ import Foundation
 
 class DP {
     
+    func countBits(_ n: Int) -> [Int] {
+        
+        var dp = Array(repeating: 0, count: n+1)
+        
+        for i in 0...n {
+            dp[i] = String(i, radix: 2).filter{ $0 == "1" }.count
+        }
+        print(dp)
+        
+        
+        return dp
+    }
+    
     func maxProfit(_ prices: [Int]) -> Int {
         // [7,1,5,3,6,4]
         

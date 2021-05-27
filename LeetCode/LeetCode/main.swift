@@ -130,6 +130,8 @@ let dfs = DFS()
 //dfs.findBottomLeftValue(<#T##root: <<error type>>##<<error type>>#>)
 
 let dp = DP()
+dp.countBits(5)
+dp.countBits(2)
 //dp.maxProfit([7,1,5,3,6,4])
 //dp.maxProfit([7,6,4,3,1])
 //dp.minCostClimbingStairs([10, 15, 20])
@@ -139,7 +141,7 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
-ar.setZeroes(&matrix)
+//ar.setZeroes(&matrix)
 //ar.minPathSum([[1,3,1],[1,5,1],[4,2,1]])
 //ar.uniquePaths(3, 7)
 //ar.fizzBuzz(3)
