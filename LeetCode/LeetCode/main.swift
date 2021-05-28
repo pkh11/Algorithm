@@ -130,8 +130,8 @@ let dfs = DFS()
 //dfs.findBottomLeftValue(<#T##root: <<error type>>##<<error type>>#>)
 
 let dp = DP()
-dp.countBits(5)
-dp.countBits(2)
+//dp.countBits(5)
+//dp.countBits(2)
 //dp.maxProfit([7,1,5,3,6,4])
 //dp.maxProfit([7,6,4,3,1])
 //dp.minCostClimbingStairs([10, 15, 20])
@@ -259,6 +259,9 @@ var bit = Bit()
 //bit.sortByBits([2,3,5,7,11,13,17,19])
 //bit.sortByBits([10,100,1000,10000])
 
+var graph = Graph()
+graph.findKthLargest([3,2,1,5,6,4], 2)
+graph.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
 
 public class TreeNode {
     public var val: Int
