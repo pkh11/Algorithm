@@ -260,8 +260,10 @@ var bit = Bit()
 //bit.sortByBits([10,100,1000,10000])
 
 var graph = Graph()
-graph.topKFrequent([1,1,1,2,2,3], 2)
-graph.topKFrequent([1], 1)
+graph.topKFrequent(["i", "love", "leetcode", "i", "love", "coding"], 2)
+graph.topKFrequent(["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], 4)
+//graph.topKFrequent([1,1,1,2,2,3], 2)
+//graph.topKFrequent([1], 1)
 //graph.findKthLargest([3,2,1,5,6,4], 2)
 //graph.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
 
