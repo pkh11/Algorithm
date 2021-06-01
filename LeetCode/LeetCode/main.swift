@@ -30,7 +30,12 @@ let greedy = Greedy()
 
 
 let string = _String()
-string.letterCombinations("23")
+//string.decodeString("100[leetcode]")
+//string.decodeString("abc3[cd]xyz")
+//string.decodeString("2[abc]3[cd]ef")
+//string.decodeString("3[a]2[bc]")
+//string.decodeString("3[a2[c]]")
+//string.letterCombinations("23")
 //string.sortSentence("is2 sentence4 This1 a3")
 //string.reverseVowels("hello")
 //print(string.repeatedSubstringPattern("abab"))
