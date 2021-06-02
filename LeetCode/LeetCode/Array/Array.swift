@@ -9,6 +9,49 @@ import Foundation
 
 class _Array {
     
+    func countServers(_ grid: [[Int]]) -> Int {
+            
+        let m = grid.count
+        let n = grid[0].count
+        
+        var comunicated = Array(repeating: Array(repeating: false, count: n), count: m)
+        var result = 0
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if grid[i][j] == 1 {
+                    
+                    // 가로
+                    var countOfServerInRow = 0
+                    for row in 0..<n {
+                        if grid[i][row] == 1 && !comunicated[i][row] && j != row {
+                            countOfServerInRow += 1
+                            comunicated[i][row] = true
+                        }
+                    }
+                    
+                    // 세로
+                    var countOfServerInCol = 0
+                    for col in 0..<m {
+                        if grid[col][j] == 1 && !comunicated[col][j] && i != col {
+                            countOfServerInCol += 1
+                            comunicated[col][j] = true
+                        }
+                    }
+                }
+            }
+        }
+        
+        for i in 0..<m {
+            for j in 0..<n {
+                if comunicated[i][j] {
+                    result += 1
+                }
+            }
+        }
+        return result
+    }
+    
     func setZeroes(_ matrix: inout [[Int]]) {
 //        Given an m x n matrix. If an element is 0, set its entire row and column to 0. Do it in-place.
 //

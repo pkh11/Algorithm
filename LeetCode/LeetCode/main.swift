@@ -146,6 +146,10 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+//ar.countServers([[1,0],[0,1]])
+//ar.countServers([[1,0],[1,1]])
+//ar.countServers([[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]])
+
 //ar.setZeroes(&matrix)
 //ar.minPathSum([[1,3,1],[1,5,1],[4,2,1]])
 //ar.uniquePaths(3, 7)
