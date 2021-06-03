@@ -30,6 +30,11 @@ let greedy = Greedy()
 
 
 let string = _String()
+//string.largestNumber([10,2])
+string.largestNumber([3,30,34,5,9])
+//string.largestNumber([1])
+//string.largestNumber([10])
+string.largestNumber([10,2,9,39,17])
 //string.decodeString("100[leetcode]")
 //string.decodeString("abc3[cd]xyz")
 //string.decodeString("2[abc]3[cd]ef")
