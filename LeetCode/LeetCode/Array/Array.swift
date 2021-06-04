@@ -9,6 +9,40 @@ import Foundation
 
 class _Array {
     
+    func increasingTriplet(_ nums: [Int]) -> Bool {
+        
+//        Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+            
+//        [1,2,3,4,5]
+//        [5,4,3,2,1]
+//        [2,1,5,0,4,6]
+//        [20,100,10,12,5,13]
+        
+//        var stack = [Int]()
+        var first = Int.max
+        var second = Int.max
+        var third = Int.max
+        
+        for num in nums {
+            if first > num && second > num && third > num {
+                first = num
+                continue
+            }
+            if first < num && second > num && third > num {
+                second = num
+                continue
+            }
+            if first < num && second < num && third > num {
+                third = num
+                return true
+            }
+        }
+        
+        print("\(first) \(second) \(third)")
+        
+        return false
+    }
+    
     func countServers(_ grid: [[Int]]) -> Int {
             
         let m = grid.count
