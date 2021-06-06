@@ -11,96 +11,22 @@ class _String {
     
     func largestNumber(_ nums: [Int]) -> String {
         
-//        Given a list of non-negative integers nums, arrange them such that they form the largest number.
-//        Note: The result may be very large, so you need to return a string instead of an integer.
-        
-//        [10,2]
-//        [3,30,34,5,9]
-//        [10,2,9,39,17]
         let x = nums.reduce(0, +)
+        
         if x == 0 {
             return "0"
         }
         
-        var array = nums.map{ String($0) }
-        
-//        print(array.sorted(by: >))
-        
-        array = array.sorted {
+        var array = nums.sorted {
             let num1 = "\($0)\($1)"
             let num2 = "\($1)\($0)"
+            
             return num1 > num2
         }
         
+//        print(array.map{ String($0)})
         
-    
-        
-        /*
-        guard nums.count > 1 else {
-            return String(nums[0])
-        }
-        
-        var result = ""
-        
-        for num in nums {
-            
-            if let first = result.first {
-                let strToNum = String(num)
-                let firstIndex = strToNum.first!
-                let intToResult = Int(result)!
-                let countOfResult = result.count
-                
-                if first == firstIndex {
-                    // 같은 앞자리
-                    
-                    if countOfResult == strToNum.count {
-                        // 자리수 같을때
-                        if intToResult < num {
-                            result = "\(num)\(result)"
-                        } else {
-                            result = "\(result)\(num)"
-                        }
-                    } else {
-                        // 자리수 다를때
-                        let num1 = "\(num)\(result)"
-                        let num2 = "\(result)\(num)"
-                        
-                        if num1 > num2 {
-                            result = num1
-                        } else {
-                            result = num2
-                        }
-                    }
-                } else {
-                    // 다른 앞자리
-                    
-                    
-                    if countOfResult == strToNum.count {
-                        // 자리수 같을때
-                        if intToResult < num {
-                            result = "\(num)\(result)"
-                        } else {
-                            result = "\(result)\(num)"
-                        }
-                    } else {
-                        // 자리수 다를때
-                        if first < firstIndex {
-                            result = "\(num)\(result)"
-                        } else {
-                            result = "\(result)\(num)"
-                        }
-                    }
-                    
-                }
-                
-            } else {
-                result = String(num)
-            }
-        }
-        
-        print(result)
-        */
-        return array.joined()
+        return array.map{ String($0)}.joined()
     }
     
     func decodeString(_ s: String) -> String {

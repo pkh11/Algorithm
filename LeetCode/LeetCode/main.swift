@@ -156,7 +156,7 @@ var matrix = [[1,1,1],[1,0,1],[1,1,1]]
 //print(ar.increasingTriplet([20,100,10,12,5,13]))
 //ar.increasingTriplet([2,1,5,0,4,6])
 //ar.countServers([[1,0],[0,1]])
-ar.countServers([[1,0],[1,1]])
+//ar.countServers([[1,0],[1,1]])
 //ar.countServers([[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]])
 
 //ar.setZeroes(&matrix)
