@@ -153,10 +153,10 @@ let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
 //ar.increasingTriplet([1,2,3,4,5])
 //ar.increasingTriplet([5,4,3,2,1])
-print(ar.increasingTriplet([20,100,10,12,5,13]))
+//print(ar.increasingTriplet([20,100,10,12,5,13]))
 //ar.increasingTriplet([2,1,5,0,4,6])
 //ar.countServers([[1,0],[0,1]])
-//ar.countServers([[1,0],[1,1]])
+ar.countServers([[1,0],[1,1]])
 //ar.countServers([[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]])
 
 //ar.setZeroes(&matrix)

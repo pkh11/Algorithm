@@ -44,45 +44,45 @@ class _Array {
     }
     
     func countServers(_ grid: [[Int]]) -> Int {
-            
+        
         let m = grid.count
         let n = grid[0].count
         
-        var comunicated = Array(repeating: Array(repeating: false, count: n), count: m)
+        var visited = Array(repeating: Array(repeating: false, count: n), count: m)
         var result = 0
         
         for i in 0..<m {
             for j in 0..<n {
                 if grid[i][j] == 1 {
-                    
+
                     // 가로
-                    var countOfServerInRow = 0
                     for row in 0..<n {
-                        if grid[i][row] == 1 && !comunicated[i][row] && j != row {
-                            countOfServerInRow += 1
-                            comunicated[i][row] = true
+                        if grid[i][row] == 1 && !visited[i][row] && j != row {
+                            visited[i][row] = true
                         }
                     }
                     
                     // 세로
-                    var countOfServerInCol = 0
                     for col in 0..<m {
-                        if grid[col][j] == 1 && !comunicated[col][j] && i != col {
-                            countOfServerInCol += 1
-                            comunicated[col][j] = true
+                        if grid[col][j] == 1 && !visited[col][j] && i != col {
+                            visited[col][j] = true
                         }
                     }
+                    
                 }
             }
         }
         
+        print(visited)
+        
         for i in 0..<m {
             for j in 0..<n {
-                if comunicated[i][j] {
+                if visited[i][j] {
                     result += 1
                 }
             }
         }
+        
         return result
     }
     
