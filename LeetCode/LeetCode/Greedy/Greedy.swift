@@ -8,6 +8,49 @@
 import Foundation
 
 class Greedy {
+    
+    func maxDistance(_ nums1: [Int], _ nums2: [Int]) -> Int {
+//        You are given two non-increasing 0-indexed integer arrays nums1​​​​​​ and nums2​​​​​​.
+//        A pair of indices (i, j), where 0 <= i < nums1.length and 0 <= j < nums2.length, is valid if both i <= j and nums1[i] <= nums2[j]. The distance of the pair is j - i​​​​.
+//        Return the maximum distance of any valid pair (i, j). If there are no valid pairs, return 0.
+//        An array arr is non-increasing if arr[i-1] >= arr[i] for every 1 <= i < arr.length.
+        
+        var distance = 0
+        
+//        for i in 0..<nums1.count {
+//            if nums1[i] <= nums2[i] {
+//                for j in i+1..<nums2.count {
+//                    if nums1[i] <= nums2[j] {
+//                        distance = max(distance, j-i)
+//                    }
+//                }
+//            }
+//        }
+        // 런타임 에러를 해결 하는 방법
+        for i in 0..<nums1.count {
+            var start = 0
+            var end = nums2.count-1
+            
+            while start < end {
+                var mid = (start+end+1) / 2
+                if nums1[i] <= nums2[mid] {
+                    start = mid
+                } else {
+                    end = mid-1
+                }
+            }
+            
+            if nums1[i] <= nums2[start] {
+                distance = max(distance, start-i)
+            }
+        }
+        
+        
+        print(distance)
+        
+        return distance
+    }
+    
     func lemonadeChange(_ bills: [Int]) -> Bool {
         
         // lemonade 5
