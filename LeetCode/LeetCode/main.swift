@@ -8,10 +8,12 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.maxDistance([55,30,5,4,2], [100,20,10,10,5])
-greedy.maxDistance([2,2,2], [10,10,1])
-greedy.maxDistance([30,29,19,5], [25,25,25,25,25])
-greedy.maxDistance([5,4], [3,2])
+greedy.minPairSum([3,5,2,3])
+greedy.minPairSum([3,5,4,2,4,6])
+//greedy.maxDistance([55,30,5,4,2], [100,20,10,10,5])
+//greedy.maxDistance([2,2,2], [10,10,1])
+//greedy.maxDistance([30,29,19,5], [25,25,25,25,25])
+//greedy.maxDistance([5,4], [3,2])
 //greedy.isSubsequence2("rjufvjafbxnbgriwgokdgqdqewn", "mjmqqjrmzkvhxlyruonekhhofpzzslupzojfuoztvzmmqvmlhgqxehojfowtrinbatjujaxekbcydldglkbxsqbbnrkhfdnpfbuaktupfftiljwpgglkjqunvithzlzpgikixqeuimmtbiskemplcvljqgvlzvnqxgedxqnznddkiujwhdefziydtquoudzxstpjjitmiimbjfgfjikkjycwgnpdxpeppsturjwkgnifinccvqzwlbmgpdaodzptyrjjkbqmgdrftfbwgimsmjpknuqtijrsnwvtytqqvookinzmkkkrkgwafohflvuedssukjgipgmypakhlckvizmqvycvbxhlljzejcaijqnfgobuhuiahtmxfzoplmmjfxtggwwxliplntkfuxjcnzcqsaagahbbneugiocexcfpszzomumfqpaiydssmihdoewahoswhlnpctjmkyufsvjlrflfiktndubnymenlmpyrhjxfdcq")
 //greedy.maxProfit([7,1,5,3,6,4])
 //greedy.findContentChildren([1,2,3], [1,1])

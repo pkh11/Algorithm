@@ -9,6 +9,24 @@ import Foundation
 
 class Greedy {
     
+    func minPairSum(_ nums: [Int]) -> Int {
+        
+        let nums = nums.sorted(by: >)
+        var start = 0
+        var end = nums.count-1
+        var value = 0
+        
+        while start < end {
+            value = max(value, nums[start] + nums[end])
+            start += 1
+            end -= 1
+        }
+        
+        print(value)
+        
+        return 0
+    }
+    
     func maxDistance(_ nums1: [Int], _ nums2: [Int]) -> Int {
 //        You are given two non-increasing 0-indexed integer arrays nums1​​​​​​ and nums2​​​​​​.
 //        A pair of indices (i, j), where 0 <= i < nums1.length and 0 <= j < nums2.length, is valid if both i <= j and nums1[i] <= nums2[j]. The distance of the pair is j - i​​​​.
