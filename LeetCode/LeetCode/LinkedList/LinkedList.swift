@@ -8,6 +8,26 @@
 import Foundation
 
 class LinkedList {
+    
+    func oddEvenList(_ head: ListNode?) -> ListNode? {
+        guard let head = head else { return nil }
+        
+        var odd: ListNode? = head
+        var even: ListNode? = head.next
+        var evenHead = even
+        
+        while even != nil && even?.next != nil {
+            odd?.next = even?.next
+            odd = even?.next
+            even?.next = odd?.next
+            even = odd?.next
+        }
+        
+        odd?.next = evenHead
+        
+        return head
+    }
+    
     func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
     
         guard head != nil else { return head }
