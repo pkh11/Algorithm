@@ -9,6 +9,44 @@ import Foundation
 
 class _String {
     
+    func findAndReplacePattern(_ words: [String], _ pattern: String) -> [String] {
+//        Given a list of strings words and a string pattern, return a list of words[i] that match pattern. You may return the answer in any order.
+//        A word matches the pattern if there exists a permutation of letters p so that after replacing every letter x in the pattern with p(x), we get the desired word.
+//        Recall that a permutation of letters is a bijection from letters to letters: every letter maps to another letter, and no two letters map to the same letter.
+
+        var result = [String]()
+        var pattern = pattern.map{ String($0) }
+        
+        for word in words {
+            var map = [String:String]()
+            var set = Set<String>()
+            
+            let array = word.map{ String($0) }
+            var isTrue = true
+            for i in 0..<array.count {
+                if let value = map[pattern[i]] {
+                    if value != array[i] {
+                        isTrue = false
+                    }
+                } else {
+                    map[pattern[i]] = array[i]
+                    if set.contains(array[i]) {
+                        isTrue = false
+                    }
+                    set.insert(array[i])
+                }
+            }
+            
+            if isTrue {
+                result.append(word)
+            }
+        }
+
+        print(result)
+        
+        return result
+    }
+    
     func largestNumber(_ nums: [Int]) -> String {
         
         let x = nums.reduce(0, +)

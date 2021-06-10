@@ -8,8 +8,8 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.minPairSum([3,5,2,3])
-greedy.minPairSum([3,5,4,2,4,6])
+//greedy.minPairSum([3,5,2,3])
+//greedy.minPairSum([3,5,4,2,4,6])
 //greedy.maxDistance([55,30,5,4,2], [100,20,10,10,5])
 //greedy.maxDistance([2,2,2], [10,10,1])
 //greedy.maxDistance([30,29,19,5], [25,25,25,25,25])
@@ -36,6 +36,8 @@ greedy.minPairSum([3,5,4,2,4,6])
 
 
 let string = _String()
+string.findAndReplacePattern(["abc","deq","mee","aqq","dkd","ccc"], "abb")
+string.findAndReplacePattern(["a","b","c"], "a")
 //string.largestNumber([10,2])
 //string.largestNumber([3,30,34,5,9])
 //string.largestNumber([1])
