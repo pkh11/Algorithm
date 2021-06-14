@@ -9,6 +9,27 @@ import Foundation
 
 class _Array {
     
+    func findDuplicate(_ nums: [Int]) -> Int {
+        
+        var map = [Int:Int]()
+        
+        for num in nums {
+            if let value = map[num] {
+                map[num] = value + 1
+            } else {
+                map[num] = 1
+            }
+        }
+        
+//        print(map)
+        
+        if let result = map.filter{ $0.value >= 2 }.map{ $0.key }.first {
+            return result
+        }
+        
+        return 0
+    }
+    
     func increasingTriplet(_ nums: [Int]) -> Bool {
         
 //        Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
