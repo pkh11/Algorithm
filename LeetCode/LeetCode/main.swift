@@ -36,8 +36,12 @@ let greedy = Greedy()
 
 
 let string = _String()
-string.findAndReplacePattern(["abc","deq","mee","aqq","dkd","ccc"], "abb")
-string.findAndReplacePattern(["a","b","c"], "a")
+string.countSegments("Hello, my name is John")
+string.countSegments("Hello")
+string.countSegments("love live! mu'sic forever")
+string.countSegments("")
+//string.findAndReplacePattern(["abc","deq","mee","aqq","dkd","ccc"], "abb")
+//string.findAndReplacePattern(["a","b","c"], "a")
 //string.largestNumber([10,2])
 //string.largestNumber([3,30,34,5,9])
 //string.largestNumber([1])
@@ -328,4 +332,5 @@ public class Employee {
         self.subordinates = subordinates
     }
 }
+
 
