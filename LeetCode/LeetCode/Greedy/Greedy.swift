@@ -9,6 +9,27 @@ import Foundation
 
 class Greedy {
     
+    func getSumAbsoluteDifferences(_ nums: [Int]) -> [Int] {
+        
+//        You are given an integer array nums sorted in non-decreasing order.
+//
+//        Build and return an integer array result with the same length as nums such that result[i] is equal to the summation of absolute differences between nums[i] and all the other elements in the array.
+//
+//        In other words, result[i] is equal to sum(|nums[i]-nums[j]|) where 0 <= j < nums.length and j != i (0-indexed).
+        let n = nums.count
+        var result = Array(repeating: 0, count: n)
+        let sum = nums.reduce(0, +)
+        var currSum = 0
+        
+        for i in 0..<nums.count {
+            result[i] = (i * nums[i] - currSum) + (sum - currSum - (n-i) * nums[i])
+            currSum += nums[i]
+        }
+        
+        print(result)
+        return result
+    }
+    
     func minPairSum(_ nums: [Int]) -> Int {
         
         let nums = nums.sorted(by: >)
