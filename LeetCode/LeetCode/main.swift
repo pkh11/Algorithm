@@ -8,7 +8,7 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.getSumAbsoluteDifferences([2,3,5])
+//greedy.getSumAbsoluteDifferences([2,3,5])
 //greedy.minPairSum([3,5,2,3])
 //greedy.minPairSum([3,5,4,2,4,6])
 //greedy.maxDistance([55,30,5,4,2], [100,20,10,10,5])
@@ -164,6 +164,8 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+ar.waysToMakeFair([2,1,6,4])
+//ar.waysToMakeFair([1,1,1])
 //ar.findDuplicate([1,3,4,2,2])
 //ar.findDuplicate([3,1,3,4,2])
 //ar.findDuplicate([1,1])

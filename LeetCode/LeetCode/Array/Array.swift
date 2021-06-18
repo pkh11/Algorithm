@@ -9,6 +9,37 @@ import Foundation
 
 class _Array {
     
+    func waysToMakeFair(_ nums: [Int]) -> Int {
+        
+        var result = 0
+        
+        let size = nums.count
+        var presumLeft = [Int](repeating: 0, count: 2)
+        var presumRight = presumLeft
+        
+        for i in 0..<size {
+            presumRight[i % 2] += nums[i]
+        }
+        print(presumRight)
+        for i in 0..<size {
+            presumRight[i % 2] -= nums[i]
+            print("right : \(presumRight)")
+            if presumLeft[0] + presumRight[1] == presumLeft[1] + presumRight[0] {
+                result += 1
+            }
+            print("left : \(presumLeft)")
+            
+            presumLeft[i % 2] += nums[i]
+            
+            
+            
+        }
+        
+        print(result)
+        
+        return result
+    }
+    
     func findDuplicate(_ nums: [Int]) -> Int {
         
         var map = [Int:Int]()
