@@ -9,6 +9,57 @@ import Foundation
 
 class _String {
     
+    func findTheDifference(_ s: String, _ t: String) -> Character {
+        
+        var mapByS = [String: Int]()
+        var mapByT = [String: Int]()
+        var result = ""
+        
+        for char in s {
+            if let value = mapByS[String(char)] {
+                mapByS[String(char)] = value + 1
+            } else {
+                mapByS[String(char)] = 1
+            }
+        }
+        
+        for char in t {
+            if let value = mapByT[String(char)] {
+                mapByT[String(char)] = value + 1
+            } else {
+                mapByT[String(char)] = 1
+            }
+        }
+        
+        for char in t {
+            if !mapByS.contains(where: { $0.key == String(char) }) {
+                result = String(char)
+            } else {
+                let countOfS = mapByS[String(char)]
+                let countOfT = mapByT[String(char)]
+                
+                if countOfS != countOfT {
+                    result = String(char)
+                }
+            }
+        }
+        
+        return Character(result)
+    }
+    
+    func numDecodings(_ s: String) -> Int {
+        
+        let map = ["1":"A","2":"B","3":"C","4":"D","5":"E","6":"F","7":"G",
+                   "8":"H","9":"I","10":"J","11":"K","12":"L","13":"M","14":"N","15":"O",
+                   "16":"P","17":"Q","18":"R","19":"S","20":"T","21":"U","22":"V","23":"W","24":"X","25":"Y","Z":"26"]
+        
+        // 12
+        // 226
+        // 06
+        
+        return 0
+    }
+    
     func countSegments(_ s: String) -> Int {
         return s.split(separator: " ").count
     }
