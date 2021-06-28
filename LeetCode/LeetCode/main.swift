@@ -164,7 +164,9 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
-ar.waysToMakeFair([2,1,6,4])
+//ar.rearrangeBarcodes([1,1,1,2,2,2])
+ar.rearrangeBarcodes([1,1,1,1,2,2,3,3])
+//ar.waysToMakeFair([2,1,6,4])
 //ar.waysToMakeFair([1,1,1])
 //ar.findDuplicate([1,3,4,2,2])
 //ar.findDuplicate([3,1,3,4,2])

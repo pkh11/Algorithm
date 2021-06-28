@@ -9,6 +9,39 @@ import Foundation
 
 class _Array {
     
+    func rearrangeBarcodes(_ barcodes: [Int]) -> [Int] {
+//        In a warehouse, there is a row of barcodes, where the ith barcode is barcodes[i].
+//        Rearrange the barcodes so that no two adjacent barcodes are equal. You may return any answer, and it is guaranteed an answer exists.
+        
+        // [1,1,1,2,2,2]
+        // [1,1,1,1,2,2,3,3]
+        
+        var map = [Int: Int]()
+        for barcode in barcodes {
+            if let value = map[barcode] {
+                map[barcode] = value + 1
+            } else {
+                map[barcode] = 1
+            }
+        }
+        
+        let sortedKey = map.keys.sorted { map[$0]! > map[$1]! }
+
+        var index = 0
+        var rearranged = barcodes
+        for i in sortedKey {
+            for _ in 0..<map[i]! {
+                rearranged[index] = i
+                index += 2
+                if index >= barcodes.count {
+                    index = 1
+                }
+            }
+        }
+        
+        return rearranged
+    }
+    
     func waysToMakeFair(_ nums: [Int]) -> Int {
         
         var result = 0
