@@ -8,6 +8,9 @@
 import Foundation
 
 let greedy = Greedy()
+greedy.diStringMatch("IDID")
+greedy.diStringMatch("III")
+greedy.diStringMatch("DDI")
 //greedy.getSumAbsoluteDifferences([2,3,5])
 //greedy.minPairSum([3,5,2,3])
 //greedy.minPairSum([3,5,4,2,4,6])
@@ -37,10 +40,10 @@ let greedy = Greedy()
 
 
 let string = _String()
-string.numDecodings("12")
-string.numDecodings("226")
-string.numDecodings("0")
-string.numDecodings("06")
+//string.numDecodings("12")
+//string.numDecodings("226")
+//string.numDecodings("0")
+//string.numDecodings("06")
 //string.countSegments("Hello, my name is John")
 //string.countSegments("Hello")
 //string.countSegments("love live! mu'sic forever")

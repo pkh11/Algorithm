@@ -8,6 +8,35 @@
 import Foundation
 
 class Greedy {
+    func diStringMatch(_ s: String) -> [Int] {
+               
+        var result = [Int](repeating: 0, count: s.count+1)
+        let str = s.map{ String($0) }
+        let size = str.count
+        
+        var ivalue = 0
+        var dvalue = size
+        
+        for i in 0..<size {
+            if str[i] == "I" {
+                result[i] = ivalue
+                ivalue += 1
+            } else {
+                result[i] = dvalue
+                dvalue -= 1
+            }
+        }
+        
+        if str[size-1] == "I" {
+            result[size] = result[size-1] + 1
+        } else {
+            result[size] = result[size-1] - 1
+        }
+        
+        print(result)
+        
+        return result
+    }
     
     func getSumAbsoluteDifferences(_ nums: [Int]) -> [Int] {
         
