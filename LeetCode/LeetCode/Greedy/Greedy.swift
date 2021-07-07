@@ -8,6 +8,27 @@
 import Foundation
 
 class Greedy {
+    
+    func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
+            
+        var answer = false
+        var n = n
+        var flowerbed = flowerbed
+        
+        for i in 0..<flowerbed.count {
+            if flowerbed[i] == 0 && (i == 0 || flowerbed[i-1] == 0) && (i == flowerbed.count-1 || flowerbed[i+1] == 0){
+                flowerbed[i] = 1
+                n -= 1
+            }
+            
+            if n <= 0 {
+                answer = true
+            }
+        }
+        
+        return answer
+    }
+    
     func diStringMatch(_ s: String) -> [Int] {
                
         var result = [Int](repeating: 0, count: s.count+1)
