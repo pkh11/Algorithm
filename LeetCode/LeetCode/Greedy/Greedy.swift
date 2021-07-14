@@ -9,6 +9,30 @@ import Foundation
 
 class Greedy {
     
+    func maximum69Number (_ num: Int) -> Int {
+        var maxValue = num
+        let num = String(num).map{ String($0) }
+        var copy = num
+        
+        for i in 0..<num.count {
+            if num[i] == "6" {
+                copy[i] = "9"
+            } else {
+                copy[i] = "6"
+            }
+            
+            let joined = Int(copy.joined())!
+            maxValue = max(maxValue, joined)
+            
+            copy[i] = num[i]
+        }
+        
+        print(maxValue)
+        
+        return 0
+    }
+
+    
     func canPlaceFlowers(_ flowerbed: [Int], _ n: Int) -> Bool {
             
         var answer = false

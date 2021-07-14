@@ -8,9 +8,12 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.diStringMatch("IDID")
-greedy.diStringMatch("III")
-greedy.diStringMatch("DDI")
+greedy.maximum69Number(9669)
+greedy.maximum69Number(9996)
+greedy.maximum69Number(9999)
+//greedy.diStringMatch("IDID")
+//greedy.diStringMatch("III")
+//greedy.diStringMatch("DDI")
 //greedy.getSumAbsoluteDifferences([2,3,5])
 //greedy.minPairSum([3,5,2,3])
 //greedy.minPairSum([3,5,4,2,4,6])
