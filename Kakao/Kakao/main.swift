@@ -121,8 +121,10 @@ let ss = 조이스틱2()
 //ss.solution("JAN")
 
 let words = 숫자문자열과영단어()
-words.solution("one4seveneight")
-words.solution("23four5six7")
-words.solution("2three45sixseven")
-words.solution("123")
+let 거리두기 = 거리두기확인하기()
+거리두기.solution([["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"],
+                       ["POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"],
+                       ["PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"],
+                       ["OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"],
+                       ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]])
 
