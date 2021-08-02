@@ -8,6 +8,25 @@
 import Foundation
 
 class _Array {
+    
+    func longestWord(_ words: [String]) -> String {
+        
+        let words = words.sorted()
+        var set = Set<String>()
+        var answer = ""
+        
+        for word in words {
+            if word.count == 1 || set.contains(String(word.prefix(word.count-1))) {
+                answer = word.count > answer.count ? word : answer
+                set.insert(word)
+            }
+        }
+        print(set)
+        print(answer)
+        
+        return answer
+    }
+    
     func replaceWords(_ dictionary: [String], _ sentence: String) -> String {
     
         var sentences = sentence.split(separator: " ").map{ String($0) }
