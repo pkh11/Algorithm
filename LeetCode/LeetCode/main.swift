@@ -8,9 +8,9 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.maximum69Number(9669)
-greedy.maximum69Number(9996)
-greedy.maximum69Number(9999)
+//greedy.maximum69Number(9669)
+//greedy.maximum69Number(9996)
+//greedy.maximum69Number(9999)
 //greedy.diStringMatch("IDID")
 //greedy.diStringMatch("III")
 //greedy.diStringMatch("DDI")
@@ -174,6 +174,9 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+ar.replaceWords(["cat","bat","rat"], "the cattle was rattled by the battery")
+ar.replaceWords(["a","b","c"], "aadsfasf absbs bbab cadsfafs")
+ar.replaceWords(["ac","ab"], "it is abnormal that this solution is accepted")
 //ar.rearrangeBarcodes([1,1,1,2,2,2])
 //ar.rearrangeBarcodes([1,1,1,1,2,2,3,3])
 //ar.waysToMakeFair([2,1,6,4])

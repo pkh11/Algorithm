@@ -8,6 +8,22 @@
 import Foundation
 
 class _Array {
+    func replaceWords(_ dictionary: [String], _ sentence: String) -> String {
+    
+        var sentences = sentence.split(separator: " ").map{ String($0) }
+        
+        for word in dictionary {
+            for (index, sentence) in sentences.enumerated() {
+                if sentence.hasPrefix(word) {
+                    sentences[index] = word
+                }
+            }
+        }
+        
+        print(sentences.joined(separator: " "))
+        
+        return sentences.joined(separator: " ")
+    }
     
     func rearrangeBarcodes(_ barcodes: [Int]) -> [Int] {
 //        In a warehouse, there is a row of barcodes, where the ith barcode is barcodes[i].
