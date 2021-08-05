@@ -9,6 +9,29 @@ import Foundation
 
 class Greedy {
     
+    func minOperations(_ nums: [Int]) -> Int {
+            
+        var nums = nums
+        guard nums.count != 1 else { return 0 }
+        var answer = 0
+        
+        for i in 0..<nums.count {
+            for j in i+1..<nums.count {
+                if nums[i] > nums[j] {
+                    let gap = nums[i] - nums[j] + 1
+                    answer = answer + gap
+                    nums[j] += gap
+                } else if nums[i] == nums[j] {
+                    answer = answer + 1
+                    nums[j] += 1
+                }
+            }
+        }
+        print(answer)
+        
+        return answer
+    }
+    
     func maximum69Number (_ num: Int) -> Int {
         var maxValue = num
         let num = String(num).map{ String($0) }

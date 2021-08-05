@@ -8,6 +8,9 @@
 import Foundation
 
 let greedy = Greedy()
+greedy.minOperations([1,1,1])
+greedy.minOperations([1,5,2,4,1])
+greedy.minOperations([8])
 //greedy.maximum69Number(9669)
 //greedy.maximum69Number(9996)
 //greedy.maximum69Number(9999)
@@ -174,9 +177,9 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
-ar.dailyTemperatures([73,74,75,71,69,72,76,73])
-ar.dailyTemperatures([30,40,50,60])
-ar.dailyTemperatures([30,60,90])
+//ar.dailyTemperatures([73,74,75,71,69,72,76,73])
+//ar.dailyTemperatures([30,40,50,60])
+//ar.dailyTemperatures([30,60,90])
 //ar.dailyTemperatures([47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47,47])
 //ar.dailyTemperatures([55,38,53,81,61,93,97,32,43,78])
 //ar.longestWord(["w","wo","wor","worl","world"])
