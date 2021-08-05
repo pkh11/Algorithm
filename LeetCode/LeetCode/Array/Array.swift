@@ -9,6 +9,25 @@ import Foundation
 
 class _Array {
     
+    func dailyTemperatures(_ temperatures: [Int]) -> [Int] {
+//        [73,74,75,71,69,72,76,73]
+//        [55,38,53,81,61,93,97,32,43,78]
+        var answer = [Int](repeating: 0, count: temperatures.count)
+        if temperatures.count < 2 { return answer }
+        var stack = [Int]()
+
+        for i in 0..<temperatures.count {
+            while !stack.isEmpty && temperatures[stack.last!] < temperatures[i] {
+                let t = stack.removeLast()
+                answer[t] = i - t
+            }
+            stack.append(i)
+        }
+        
+        print(answer)
+        return answer
+    }
+    
     func longestWord(_ words: [String]) -> String {
         
         let words = words.sorted()
