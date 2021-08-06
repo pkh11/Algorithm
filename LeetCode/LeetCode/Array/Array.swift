@@ -8,6 +8,41 @@
 import Foundation
 
 class _Array {
+    func rankTeams(_ votes: [String]) -> String {
+        var map = [String:[Int]]()
+
+        for vote in votes {
+            let teams = vote.map{ String($0) }
+            let count = teams.count
+            var index = 0
+            
+            while index < count {
+                if var scores = map[teams[index]] {
+                    scores[index] += 1
+                    map[teams[index]] = scores
+                } else {
+                    var array = [Int](repeating: 0, count: count)
+                    array[index] = 1
+                    map[teams[index]] = array
+                }
+                index += 1
+            }
+        }
+        
+        let result = map.sorted {
+            let list1 = $0.value
+            let list2 = $1.value
+            
+            for i in 0..<list1.count {
+                if list1[i] != list2[i] {
+                    return list1[i] > list2[i]
+                }
+            }
+            return $0.key < $1.key
+        }.map{ $0.key }
+        
+        return result.joined()
+    }
     
     func dailyTemperatures(_ temperatures: [Int]) -> [Int] {
 //        [73,74,75,71,69,72,76,73]
