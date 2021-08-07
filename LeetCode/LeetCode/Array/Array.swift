@@ -8,9 +8,39 @@
 import Foundation
 
 class _Array {
+    func maxProduct(_ words: [String]) -> Int {
+        
+        var maxProduct = 0
+        
+        var words = words.sorted { $0.count > $1.count }
+        
+        for i in 0..<words.count {
+            
+            var set1 = Set<String>()
+            words[i].map{
+                set1.insert(String($0))
+            }
+            
+            next: for j in i+1..<words.count {
+                let word2 = words[j]
+                
+                for char in word2 {
+                    if set1.contains(String(char)) {
+                        continue next
+                    }
+                }
+                maxProduct = max(maxProduct, words[i].count * word2.count)
+            }
+        }
+        
+        print(maxProduct)
+        
+        return maxProduct
+    }
+    
     func rankTeams(_ votes: [String]) -> String {
         var map = [String:[Int]]()
-
+        
         for vote in votes {
             let teams = vote.map{ String($0) }
             let count = teams.count
@@ -45,12 +75,12 @@ class _Array {
     }
     
     func dailyTemperatures(_ temperatures: [Int]) -> [Int] {
-//        [73,74,75,71,69,72,76,73]
-//        [55,38,53,81,61,93,97,32,43,78]
+        //        [73,74,75,71,69,72,76,73]
+        //        [55,38,53,81,61,93,97,32,43,78]
         var answer = [Int](repeating: 0, count: temperatures.count)
         if temperatures.count < 2 { return answer }
         var stack = [Int]()
-
+        
         for i in 0..<temperatures.count {
             while !stack.isEmpty && temperatures[stack.last!] < temperatures[i] {
                 let t = stack.removeLast()
@@ -82,7 +112,7 @@ class _Array {
     }
     
     func replaceWords(_ dictionary: [String], _ sentence: String) -> String {
-    
+        
         var sentences = sentence.split(separator: " ").map{ String($0) }
         
         for word in dictionary {
@@ -99,8 +129,8 @@ class _Array {
     }
     
     func rearrangeBarcodes(_ barcodes: [Int]) -> [Int] {
-//        In a warehouse, there is a row of barcodes, where the ith barcode is barcodes[i].
-//        Rearrange the barcodes so that no two adjacent barcodes are equal. You may return any answer, and it is guaranteed an answer exists.
+        //        In a warehouse, there is a row of barcodes, where the ith barcode is barcodes[i].
+        //        Rearrange the barcodes so that no two adjacent barcodes are equal. You may return any answer, and it is guaranteed an answer exists.
         
         // [1,1,1,2,2,2]
         // [1,1,1,1,2,2,3,3]
@@ -115,7 +145,7 @@ class _Array {
         }
         
         let sortedKey = map.keys.sorted { map[$0]! > map[$1]! }
-
+        
         var index = 0
         var rearranged = barcodes
         for i in sortedKey {
@@ -174,7 +204,7 @@ class _Array {
             }
         }
         
-//        print(map)
+        //        print(map)
         
         if let result = map.filter{ $0.value >= 2 }.map{ $0.key }.first {
             return result
@@ -185,14 +215,14 @@ class _Array {
     
     func increasingTriplet(_ nums: [Int]) -> Bool {
         
-//        Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
-            
-//        [1,2,3,4,5]
-//        [5,4,3,2,1]
-//        [2,1,5,0,4,6]
-//        [20,100,10,12,5,13]
+        //        Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
         
-//        var stack = [Int]()
+        //        [1,2,3,4,5]
+        //        [5,4,3,2,1]
+        //        [2,1,5,0,4,6]
+        //        [20,100,10,12,5,13]
+        
+        //        var stack = [Int]()
         var first = Int.max
         var second = Int.max
         var third = Int.max
@@ -228,7 +258,7 @@ class _Array {
         for i in 0..<m {
             for j in 0..<n {
                 if grid[i][j] == 1 {
-
+                    
                     // 가로
                     for row in 0..<n {
                         if grid[i][row] == 1 && !visited[i][row] && j != row {
@@ -261,13 +291,13 @@ class _Array {
     }
     
     func setZeroes(_ matrix: inout [[Int]]) {
-//        Given an m x n matrix. If an element is 0, set its entire row and column to 0. Do it in-place.
-//
-//        Follow up:
-//
-//        A straight forward solution using O(mn) space is probably a bad idea.
-//        A simple improvement uses O(m + n) space, but still not the best solution.
-//        Could you devise a constant space solution?
+        //        Given an m x n matrix. If an element is 0, set its entire row and column to 0. Do it in-place.
+        //
+        //        Follow up:
+        //
+        //        A straight forward solution using O(mn) space is probably a bad idea.
+        //        A simple improvement uses O(m + n) space, but still not the best solution.
+        //        Could you devise a constant space solution?
         let m = matrix.count
         let n = matrix[0].count
         
@@ -343,7 +373,7 @@ class _Array {
         return array[m-1][n-1]
     }
     
-
+    
     func fizzBuzz(_ n: Int) -> [String] {
         
         var array = Array(repeating: "", count: n)
@@ -366,7 +396,7 @@ class _Array {
         
         return []
     }
-
+    
     func plusOne(_ digits: [Int]) -> [Int] {
         var digits = digits
         guard let last = digits.last else { return [] }
@@ -409,14 +439,14 @@ class _Array {
                 digits.append(lastNumber)
             }
         }
-     
+        
         print(digits)
         
         return digits
     }
     
     func isBoomerang(_ points: [[Int]]) -> Bool {
-            
+        
         let r1 = points[1][1] - points[0][1]
         let r2 = points[1][0] - points[0][0]
         let r3 = points[2][1] - points[0][1]
@@ -428,7 +458,7 @@ class _Array {
     func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
         // Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
         
-//        Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+        //        Return the array in the form [x1,y1,x2,y2,...,xn,yn].
         
         var arr1 = Array(repeating: 0, count: n)
         var arr2 = Array(repeating: 0, count: n)
@@ -452,7 +482,7 @@ class _Array {
     }
     
     func canThreePartsEqualSum(_ arr: [Int]) -> Bool {
-            
+        
         let sum = arr.reduce(0, +)
         
         if sum % 3 != 0 { return false }
@@ -476,7 +506,7 @@ class _Array {
     }
     
     func numTeams(_ rating: [Int]) -> Int {
-    
+        
         var count = 0
         for i in 0..<rating.count - 2 {
             for j in i+1..<rating.count - 1 {
@@ -488,7 +518,7 @@ class _Array {
         }
         return count
     }
-
+    
     func countNicePairs(_ nums: [Int]) -> Int {
         
         var dict = [Int:Int]()
@@ -498,12 +528,12 @@ class _Array {
         
         func rev(_ number: Int) -> Int {
             if let value = dp[String(number)] {
-               return value
-           }
-           
-           let res = Int(String(String(number).reversed()) ?? "0") ?? 0
-           dp[String(number)] = res
-           return res
+                return value
+            }
+            
+            let res = Int(String(String(number).reversed()) ?? "0") ?? 0
+            dp[String(number)] = res
+            return res
         }
         
         for num in nums {
@@ -526,16 +556,16 @@ class _Array {
     
     func uniqueMorseRepresentations(_ words: [String]) -> Int {
         let morseArray = [".-","-...","-.-.","-..",".","..-.","--.","....","..",
-                     ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
-                     "...","-","..-","...-",".--","-..-","-.--","--.."]
+                          ".---","-.-",".-..","--","-.","---",".--.","--.-",".-.",
+                          "...","-","..-","...-",".--","-..-","-.--","--.."]
         let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
         var map = [String:String]()
         
         for i in 0..<alphabet.count {
             map[String(describing: alphabet[i])] = morseArray[i]
         }
-//        print(alphabet)
-//        print(map)
+        //        print(alphabet)
+        //        print(map)
         var set = Set<String>()
         
         for word in words {
@@ -546,7 +576,7 @@ class _Array {
             set.insert(morse)
         }
         
-//        print(set)
+        //        print(set)
         
         return set.count
     }
@@ -663,65 +693,65 @@ class _Array {
         board[x][y] = char
     }
     
-//
-//
-//    var dx = [0,1,0,-1]
-//    var dy = [1,0,-1,0]
-//
-//    var width = 0
-//    var height = 0
-//
-//    func exist(_ board: [[Character]], _ word: String) -> Bool {
-//        var words = Array(word)
-//        width = board[0].count
-//        height = board.count
-//
-//        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
-//
-//        for i in 0..<height {
-//            for j in 0..<width {
-//                if board[i][j] == words[0] {
-//                    if dfs(board, &visited, i, j, words, 0) {
-//                        return true
-//                    }
-//                }
-//            }
-//        }
-//
-//        return false
-//    }
-//
-//    func dfs(_ board: [[Character]], _ visited: inout [[Bool]],_ x: Int, _ y: Int, _ current: [Character], _ index: Int) -> Bool {
-//        guard x < height, y < width, x >= 0, y >= 0 else { return false }
-//
-//        if visited[x][y] {
-//            return false
-//        }
-//
-//        if board[x][y] != current[index] {
-//            return false
-//        }
-//
-//        if index == current.count - 1 {
-//            return true
-//        }
-//
-//        visited[x][y] = true
-//
-//        if dfs(board, &visited, x+1, y, current, index+1) ||
-//            dfs(board, &visited, x-1, y, current, index+1) ||
-//            dfs(board, &visited, x, y+1, current, index+1) ||
-//            dfs(board, &visited, x, y-1, current, index+1) {
-//            return true
-//        }
-//
-//        visited[x][y] = false
-//
-//        return false
-//    }
-//
+    //
+    //
+    //    var dx = [0,1,0,-1]
+    //    var dy = [1,0,-1,0]
+    //
+    //    var width = 0
+    //    var height = 0
+    //
+    //    func exist(_ board: [[Character]], _ word: String) -> Bool {
+    //        var words = Array(word)
+    //        width = board[0].count
+    //        height = board.count
+    //
+    //        var visited = Array(repeating: Array(repeating: false, count: width), count: height)
+    //
+    //        for i in 0..<height {
+    //            for j in 0..<width {
+    //                if board[i][j] == words[0] {
+    //                    if dfs(board, &visited, i, j, words, 0) {
+    //                        return true
+    //                    }
+    //                }
+    //            }
+    //        }
+    //
+    //        return false
+    //    }
+    //
+    //    func dfs(_ board: [[Character]], _ visited: inout [[Bool]],_ x: Int, _ y: Int, _ current: [Character], _ index: Int) -> Bool {
+    //        guard x < height, y < width, x >= 0, y >= 0 else { return false }
+    //
+    //        if visited[x][y] {
+    //            return false
+    //        }
+    //
+    //        if board[x][y] != current[index] {
+    //            return false
+    //        }
+    //
+    //        if index == current.count - 1 {
+    //            return true
+    //        }
+    //
+    //        visited[x][y] = true
+    //
+    //        if dfs(board, &visited, x+1, y, current, index+1) ||
+    //            dfs(board, &visited, x-1, y, current, index+1) ||
+    //            dfs(board, &visited, x, y+1, current, index+1) ||
+    //            dfs(board, &visited, x, y-1, current, index+1) {
+    //            return true
+    //        }
+    //
+    //        visited[x][y] = false
+    //
+    //        return false
+    //    }
+    //
     func maximumSwap(_ num: Int) -> Int {
-            
+        
         var array = String(num).map{ String($0) }
         var result = Set<String>()
         
@@ -733,7 +763,7 @@ class _Array {
             }
         }
         
-//        print(result)
+        //        print(result)
         
         if let maxNumber = result.max(),
            let strToInt = Int(maxNumber) {
@@ -745,24 +775,24 @@ class _Array {
     }
     
     func findNumbers(_ nums: [Int]) -> Int {
-            
+        
         let filtered = nums.map{ String($0) }.filter{ $0.count % 2 == 0 }
-//        print(filtered)
+        //        print(filtered)
         return filtered.count
     }
     
     func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
         
         var result = [Int]()
-// n2
-//        for i in 0..<numbers.count {
-//            for j in i+1..<numbers.count {
-//                if numbers[i] + numbers[j] == target {
-//                    result.append(i+1)
-//                    result.append(j+1)
-//                }
-//            }
-//        }
+        // n2
+        //        for i in 0..<numbers.count {
+        //            for j in i+1..<numbers.count {
+        //                if numbers[i] + numbers[j] == target {
+        //                    result.append(i+1)
+        //                    result.append(j+1)
+        //                }
+        //            }
+        //        }
         var start = 0
         var end = numbers.count - 1
         
@@ -831,26 +861,26 @@ class _Array {
         return min(dist1, dist2)
     }
     
-//    func dfs(_ array: [[Int]],_ visited: inout [[Bool]],_ x: Int,_ size: Int,_ destination: Int,_ sum: Int) {
-//
-//        if x == destination {
-//            if minSum > sum {
-//                minSum = sum
-//            }
-//            return
-//        }
-//
-//        for i in 0..<size {
-//            if !visited[x][i] && array[x][i] > -1 {
-//                visited[x][i] = true
-//                visited[i][x] = true
-//                dfs(array, &visited, i, size, destination, sum + array[x][i])
-//            }
-//        }
-//    }
+    //    func dfs(_ array: [[Int]],_ visited: inout [[Bool]],_ x: Int,_ size: Int,_ destination: Int,_ sum: Int) {
+    //
+    //        if x == destination {
+    //            if minSum > sum {
+    //                minSum = sum
+    //            }
+    //            return
+    //        }
+    //
+    //        for i in 0..<size {
+    //            if !visited[x][i] && array[x][i] > -1 {
+    //                visited[x][i] = true
+    //                visited[i][x] = true
+    //                dfs(array, &visited, i, size, destination, sum + array[x][i])
+    //            }
+    //        }
+    //    }
     
     func oddCells(_ m: Int, _ n: Int, _ indices: [[Int]]) -> Int {
-            
+        
         var array = Array(repeating: Array(repeating: 0, count: n), count: m)
         
         for i in 0..<indices.count {
@@ -901,23 +931,23 @@ class _Array {
         print(A)
         
         
-//        var maxCount = 0
-//        permutation(A, 0)
-//
-//        for arr in permutations {
-//            var count = 0
-//            for i in 0..<B.count {
-//                if arr[i] > B[i] {
-//                    count += 1
-//                }
-//            }
-//            if maxCount < count {
-//                maxCount = count
-//                result.removeAll()
-//                result = arr
-//            }
-//        }
-//        print(result)
+        //        var maxCount = 0
+        //        permutation(A, 0)
+        //
+        //        for arr in permutations {
+        //            var count = 0
+        //            for i in 0..<B.count {
+        //                if arr[i] > B[i] {
+        //                    count += 1
+        //                }
+        //            }
+        //            if maxCount < count {
+        //                maxCount = count
+        //                result.removeAll()
+        //                result = arr
+        //            }
+        //        }
+        //        print(result)
         return []
     }
     
@@ -945,7 +975,7 @@ class _Array {
         var array = array
         
         if start == array.count-1 {
-//            permutations.append(array)
+            //            permutations.append(array)
             return
         }
         
@@ -957,7 +987,7 @@ class _Array {
     }
     
     func canMakeArithmeticProgression(_ arr: [Int]) -> Bool {
-     
+        
         let increse = arr.sorted(by: <)
         let decrese = arr.sorted(by: >)
         
@@ -981,7 +1011,7 @@ class _Array {
     }
     
     func moveZeroes(_ nums: inout [Int]) {
-                
+        
         let count = nums.filter{ $0 == 0 }.count
         if count != 0 {
             while nums.contains(0) {
@@ -998,7 +1028,7 @@ class _Array {
     }
     
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
-         
+        
         if let firstIndex = nums.firstIndex(of: val) {
             nums.remove(at: firstIndex)
             removeElement(&nums, val)
@@ -1007,7 +1037,7 @@ class _Array {
     }
     
     func judgeCircle(_ moves: String) -> Bool {
-       
+        
         var start = (0,0)
         
         for direction in moves {
@@ -1031,7 +1061,7 @@ class _Array {
             start = (x,y)
         }
         
-//        print(start)
+        //        print(start)
         
         if start == (0,0) {
             return true
