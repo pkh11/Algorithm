@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19480F302660765E00B4125D /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19480F2F2660765E00B4125D /* Graph.swift */; };
 		1973A96F265351BF000CD998 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973A96E265351BF000CD998 /* LinkedList.swift */; };
+		6B1A657726C15F1B00B58FA8 /* Simulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1A657626C15F1B00B58FA8 /* Simulation.swift */; };
 		6B1CCB2325ECBB5700890E73 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B1CCB2225ECBB5700890E73 /* Stack.swift */; };
 		6B317EC525ABE19900B2B5A7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B317EC425ABE19900B2B5A7 /* main.swift */; };
 		6B317ECE25ABE1E600B2B5A7 /* Greedy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B317ECD25ABE1E600B2B5A7 /* Greedy.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		19480F2F2660765E00B4125D /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		1973A96E265351BF000CD998 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		6B1A657626C15F1B00B58FA8 /* Simulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simulation.swift; sourceTree = "<group>"; };
 		6B1CCB2225ECBB5700890E73 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		6B317EC125ABE19900B2B5A7 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B317EC425ABE19900B2B5A7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 			path = LinkedList;
 			sourceTree = "<group>";
 		};
+		6B1A657526C15F0E00B58FA8 /* Simulation */ = {
+			isa = PBXGroup;
+			children = (
+				6B1A657626C15F1B00B58FA8 /* Simulation.swift */,
+			);
+			path = Simulation;
+			sourceTree = "<group>";
+		};
 		6B1CCB2125ECBB4C00890E73 /* Stack */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		6B317EC325ABE19900B2B5A7 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				6B1A657526C15F0E00B58FA8 /* Simulation */,
 				19480F2E2660765300B4125D /* Graph */,
 				1973A96D265351B3000CD998 /* LinkedList */,
 				6BC907BA2631348B0075E1A6 /* Bit */,
@@ -233,6 +244,7 @@
 				6BB99A26262718D100FBFCDA /* BackTracking.swift in Sources */,
 				1973A96F265351BF000CD998 /* LinkedList.swift in Sources */,
 				6BE14B6B25B66217000A56BA /* DFS.swift in Sources */,
+				6B1A657726C15F1B00B58FA8 /* Simulation.swift in Sources */,
 				6B1CCB2325ECBB5700890E73 /* Stack.swift in Sources */,
 				6B317ECE25ABE1E600B2B5A7 /* Greedy.swift in Sources */,
 				6B67185025CCC64D003DFEEC /* Array.swift in Sources */,

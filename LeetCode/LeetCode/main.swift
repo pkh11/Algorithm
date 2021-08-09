@@ -180,7 +180,7 @@ var matrix = [[1,1,1],[1,0,1],[1,1,1]]
 //ar.maxProduct(["abcw","baz","foo","bar","xtfn","abcdef"])
 //ar.maxProduct(["a","ab","abc","d","cd","bcd","abcd"])
 //ar.maxProduct(["a","aa","aaa","aaaa"])
-ar.maxProduct(["a","ab","abc","d","cd","bcd","abcd"])
+//ar.maxProduct(["a","ab","abc","d","cd","bcd","abcd"])
 //ar.rankTeams(["ABC","ACB","ABC","ACB","ACB"])
 //ar.rankTeams(["WXYZ","XYZW"])
 //ar.rankTeams(["FVSHJIEMNGYPTQOURLWCZKAX","AITFQORCEHPVJMXGKSLNZWUY","OTERVXFZUMHNIYSCQAWGPKJL","VMSERIJYLZNWCPQTOKFUHAXG","VNHOZWKQCEFYPSGLAMXJIUTR","ANPHQIJMXCWOSKTYGULFVERZ","RFYUXJEWCKQOMGATHZVILNSP","SCPYUMQJTVEXKRNLIOWGHAFZ","VIKTSJCEYQGLOMPZWAHFXURN","SVJICLXKHQZTFWNPYRGMEUAO","JRCTHYKIGSXPOZLUQAVNEWFM","NGMSWJITREHFZVQCUKXYAPOL","WUXJOQKGNSYLHEZAFIPMRCVT","PKYQIOLXFCRGHZNAMJVUTWES","FERSGNMJVZXWAYLIKCPUQHTO","HPLRIUQMTSGYJVAXWNOCZEKF","JUVWPTEGCOFYSKXNRMHQALIZ","MWPIAZCNSLEYRTHFKQXUOVGJ","EZXLUNFVCMORSIWKTYHJAQPG","HRQNLTKJFIEGMCSXAZPYOVUW","LOHXVYGWRIJMCPSQENUAKTZF","XKUTWPRGHOAQFLVYMJSNEIZC","WTCRQMVKPHOSLGAXZUEFYNJI"])
@@ -343,6 +343,11 @@ var graph = Graph()
 //graph.topKFrequent([1], 1)
 //graph.findKthLargest([3,2,1,5,6,4], 2)
 //graph.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
+
+var simulation = Simulation()
+//simulation.multiply("2", "3")
+simulation.multiply("123", "456")
+//simulation.multiply("123", "2")
 
 public class TreeNode {
     public var val: Int
