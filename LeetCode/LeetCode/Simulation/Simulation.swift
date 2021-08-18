@@ -8,6 +8,31 @@
 import Foundation
 
 class Simulation {
+    func flipAndInvertImage(_ image: [[Int]]) -> [[Int]] {
+        // reverse
+        var image = image
+        for (index, img) in image.enumerated() {
+            let reversed = img.reversed()
+            image[index] = Array(reversed)
+        }
+        
+        // invert
+        for (index, img) in image.enumerated() {
+            var data = img
+            for (j, value) in data.enumerated() {
+                if value == 0 {
+                    data[j] = 1
+                } else {
+                    data[j] = 0
+                }
+            }
+            image[index] = data
+        }
+        
+        print(image)
+        return image
+    }
+    
     func multiply(_ num1: String, _ num2: String) -> String {
         if num1 == "0" || num2 == "0" { return "0" }
         let len1 = num1.count

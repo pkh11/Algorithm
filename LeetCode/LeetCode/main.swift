@@ -345,8 +345,10 @@ var graph = Graph()
 //graph.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
 
 var simulation = Simulation()
+simulation.flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]])
+simulation.flipAndInvertImage([[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]])
 //simulation.multiply("2", "3")
-simulation.multiply("123", "456")
+//simulation.multiply("123", "456")
 //simulation.multiply("123", "2")
 
 public class TreeNode {
