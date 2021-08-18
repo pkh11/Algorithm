@@ -8,6 +8,36 @@
 import Foundation
 
 class Simulation {
+    func shortestToChar(_ s: String, _ c: Character) -> [Int] {
+        
+        var indexed = [Int]()
+        var result = [Int]()
+        
+        for (index, char) in s.enumerated() {
+            if char == c {
+                indexed.append(index)
+            }
+        }
+        
+        for (index, _) in s.enumerated() {
+            var minValue = s.count
+            
+            for num in indexed {
+                if index != num {
+                    minValue = min(minValue, abs(index - num))
+                } else {
+                    minValue = 0
+                }
+            }
+            
+            result.append(minValue)
+        }
+        
+        print(result)
+        
+        return result
+    }
+    
     func flipAndInvertImage(_ image: [[Int]]) -> [[Int]] {
         // reverse
         var image = image
