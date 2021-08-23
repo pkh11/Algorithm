@@ -55,5 +55,9 @@ let ransomeNote = RansomeNote()
 //ransomeNote.checkMagazine(magazine: ["two", "times", "three", "is", "not", "four"], note: ["two", "times", "two", "is", "four"])
 
 let caesarCipher = CaesarCipher()
-caesarCipher.caesarCipher(s: "middle-Outz", k: 2)
-caesarCipher.caesarCipher(s: "Always-Look-on-the-Bright-Side-of-Life", k: 5)
+//caesarCipher.caesarCipher(s: "middle-Outz", k: 2)
+//caesarCipher.caesarCipher(s: "Always-Look-on-the-Bright-Side-of-Life", k: 5)
+
+let money = GetMoneySpent()
+money.getMoneySpent(keyboards: [3, 1], drives: [5,2,8], b: 10)
+money.getMoneySpent(keyboards: [4], drives: [5], b: 5)
