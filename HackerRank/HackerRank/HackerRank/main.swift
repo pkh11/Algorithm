@@ -52,4 +52,8 @@ let rotate = CircularArrayRotation()
 //rotate.circularArrayRotation(a: [1,2,3], k: 2, queries: [0,1,2])
 
 let ransomeNote = RansomeNote()
-ransomeNote.checkMagazine(magazine: ["two", "times", "three", "is", "not", "four"], note: ["two", "times", "two", "is", "four"])
+//ransomeNote.checkMagazine(magazine: ["two", "times", "three", "is", "not", "four"], note: ["two", "times", "two", "is", "four"])
+
+let caesarCipher = CaesarCipher()
+caesarCipher.caesarCipher(s: "middle-Outz", k: 2)
+caesarCipher.caesarCipher(s: "Always-Look-on-the-Bright-Side-of-Life", k: 5)
