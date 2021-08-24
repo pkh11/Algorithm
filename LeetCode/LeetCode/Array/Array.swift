@@ -8,6 +8,39 @@
 import Foundation
 
 class _Array {
+    
+    func subdomainVisits(_ cpdomains: [String]) -> [String] {
+        
+        var setOfSubdomains = [String:Int]()
+        
+        for cpdomain in cpdomains {
+            let time = Int(cpdomain.split(separator: " ")[0])!
+            let domain = cpdomain.split(separator: " ")[1]
+            
+            var subdomains = domain.split(separator: ".")
+            
+            while !subdomains.isEmpty {
+                let joined = subdomains.joined(separator: ".")
+                if let value = setOfSubdomains[joined] {
+                    setOfSubdomains[joined] = value + time
+                } else {
+                    setOfSubdomains[joined] = time
+                }
+                subdomains.removeFirst()
+            }
+        }
+        var result = [String]()
+        
+        setOfSubdomains.forEach {
+            let answer = "\($0.value) \($0.key)"
+            result.append(answer)
+        }
+        
+        print(result)
+        
+        return result
+    }
+    
     func maxProduct(_ words: [String]) -> Int {
         
         var maxProduct = 0
