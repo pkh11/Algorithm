@@ -59,5 +59,9 @@ let caesarCipher = CaesarCipher()
 //caesarCipher.caesarCipher(s: "Always-Look-on-the-Bright-Side-of-Life", k: 5)
 
 let money = GetMoneySpent()
-money.getMoneySpent(keyboards: [3, 1], drives: [5,2,8], b: 10)
-money.getMoneySpent(keyboards: [4], drives: [5], b: 5)
+//money.getMoneySpent(keyboards: [3, 1], drives: [5,2,8], b: 10)
+//money.getMoneySpent(keyboards: [4], drives: [5], b: 5)
+
+let pairs = BeautifulPairs()
+pairs.beautifulPairs(A: [1,2,3,4], B: [1,2,3,3])
+pairs.beautifulPairs(A: [3,5,7,11,5,8], B: [5,7,11,10,5,8])
