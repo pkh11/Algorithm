@@ -9,6 +9,25 @@ import Foundation
 
 class _Array {
     
+    func findPeakElement(_ nums: [Int]) -> Int {
+        
+        let peek = nums.max()!
+        let indexOfPeek = nums.firstIndex(of: peek)!
+        
+        return indexOfPeek
+    }
+    
+    func truncateSentence(_ s: String, _ k: Int) -> String {
+        let splited = s.split(separator:" ")
+        var answer = s
+
+        if splited.count > k {
+            answer = splited[0..<k].joined(separator: " ")
+        }
+        
+        return answer
+    }
+    
     func subdomainVisits(_ cpdomains: [String]) -> [String] {
         
         var setOfSubdomains = [String:Int]()
@@ -37,7 +56,7 @@ class _Array {
         }
         
         print(result)
-        
+        result.j
         return result
     }
     
