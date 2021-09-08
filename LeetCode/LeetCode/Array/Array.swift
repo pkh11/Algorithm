@@ -8,6 +8,36 @@
 import Foundation
 
 class _Array {
+    func shiftingLetters(_ s: String, _ shifts: [Int]) -> String {
+        let str = Array(s).map { String($0) }
+        let alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+        
+        let size = shifts.count
+        let sum = shifts.reduce(0, +)
+        var gaps = Array(repeating: 0, count: size)
+        var answer = ""
+        
+        gaps[0] = sum
+        for i in 1..<size {
+            gaps[i] = gaps[i-1] - shifts[i-1]
+        }
+        
+        for i in 0..<size {
+            var index = gaps[i]
+            let firstIndex = alphabets.firstIndex(of: str[i])!
+            let gap = firstIndex + index
+            
+            if gap > 26{
+               index = gap % 26
+            } else {
+                index = gap
+            }
+            
+            answer += "\(alphabets[index])"
+        }
+        
+        return answer
+    }
     
     func findPeakElement(_ nums: [Int]) -> Int {
         
@@ -56,7 +86,7 @@ class _Array {
         }
         
         print(result)
-        result.j
+        
         return result
     }
     

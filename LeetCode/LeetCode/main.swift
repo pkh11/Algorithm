@@ -177,8 +177,11 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
-ar.subdomainVisits(["9001 discuss.leetcode.com"])
-ar.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
+ar.shiftingLetters("abc", [3,5,9])
+//ar.shiftingLetters("aaa", [1,2,3])
+//ar.shiftingLetters("bad", [10,20,30])
+//ar.subdomainVisits(["9001 discuss.leetcode.com"])
+//ar.subdomainVisits(["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"])
 //ar.maxProduct(["abcw","baz","foo","bar","xtfn","abcdef"])
 //ar.maxProduct(["a","ab","abc","d","cd","bcd","abcd"])
 //ar.maxProduct(["a","aa","aaa","aaaa"])
