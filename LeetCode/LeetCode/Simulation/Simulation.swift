@@ -8,6 +8,47 @@
 import Foundation
 
 class Simulation {
+    
+    func findPoisonedDuration(_ timeSeries: [Int], _ duration: Int) -> Int {
+        
+        guard let lastTime = timeSeries.last else {
+            return 0
+        }
+        
+        if duration == 0 {
+            return 0
+        }
+        
+        var array = [Bool](repeating: false, count: lastTime + duration + 1)
+        timeSeries.enumerated().forEach {
+            array[$0.element] = true
+        }
+//        print(array)
+        var index = 0
+        var poisonTime = 0
+        var answer = 0
+        
+        while index < array.count {
+            if array[index] {
+                poisonTime = 1
+                answer += 1
+            } else {
+                if poisonTime < duration && poisonTime != 0 {
+                    poisonTime += 1
+                    answer += 1
+                } else {
+                    poisonTime = 0
+                }
+            }
+
+            index += 1
+        }
+        
+        print(answer)
+        
+        return answer
+    }
+    
     func shortestToChar(_ s: String, _ c: Character) -> [Int] {
         
         var indexed = [Int]()
