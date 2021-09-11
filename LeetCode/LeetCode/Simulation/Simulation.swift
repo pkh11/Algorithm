@@ -9,6 +9,33 @@ import Foundation
 
 class Simulation {
     
+    func isHappy(_ n: Int) -> Bool {
+        var checked = Set<Int>()
+        var result = sumSquare(number: n)
+        
+        while !checked.contains(result) {
+            if result == 1 {
+                return true
+            }
+            checked.insert(result)
+            result =  sumSquare(number: result)
+        }
+        
+        return false
+    }
+    
+    func sumSquare(number: Int) -> Int {
+        var num = number
+        var sum = 0
+        
+        while num != 0 {
+            let remain = num % 10
+            sum += (remain * remain)
+            num /= 10
+        }
+        return sum
+    }
+    
     func addDigits(_ num: Int) -> Int {
         
         if num <= 9 {
