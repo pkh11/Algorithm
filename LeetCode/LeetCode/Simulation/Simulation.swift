@@ -9,6 +9,25 @@ import Foundation
 
 class Simulation {
     
+    func addDigits(_ num: Int) -> Int {
+        
+        if num <= 9 {
+            print(num)
+            return num
+        }
+        
+        let array = Array(String(num)).map{ String($0) }
+        
+        var sum = 0
+        for num in array {
+            let intNumber = Int(num)!
+            sum += intNumber
+        }
+//        print(sum)
+        
+        return addDigits(sum)
+    }
+    
     func findPoisonedDuration(_ timeSeries: [Int], _ duration: Int) -> Int {
         
         guard let lastTime = timeSeries.last else {
