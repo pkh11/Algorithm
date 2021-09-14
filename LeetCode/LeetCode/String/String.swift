@@ -8,6 +8,30 @@
 import Foundation
 
 class _String {
+    func reverse(_ x: Int) -> Int {
+        
+        var str = ""
+        var reversed = ""
+        
+        if x > 0 {
+            str = String(x)
+            reversed = String(str.reversed())
+            if Int(reversed)! > Int32.max {
+                return 0
+            }
+            return Int(reversed)!
+        } else if x < 0 && x > Int32.min {
+            str = String(0-x)
+            reversed = String(str.reversed())
+            var result = 0 - Int(reversed)!
+            if result < Int32.min {
+                return 0
+            }
+            return result
+        }
+
+        return 0
+    }
     
     func findTheDifference(_ s: String, _ t: String) -> Character {
         
