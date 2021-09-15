@@ -8,6 +8,22 @@
 import Foundation
 
 class Simulation {
+    func createTargetArray(_ nums: [Int], _ index: [Int]) -> [Int] {
+        
+        var target = [Int]()
+        
+        for (index, value) in index.enumerated() {
+            if target.isEmpty {
+                target.append(nums[index])
+            } else {
+                target.insert(nums[index], at: value)
+            }
+        }
+        
+        print(target)
+        
+        return target
+    }
     
     func isHappy(_ n: Int) -> Bool {
         var checked = Set<Int>()
