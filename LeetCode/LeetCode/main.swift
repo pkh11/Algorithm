@@ -177,6 +177,8 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+ar.majorityElement([3,2,3])
+ar.majorityElement([2,2,1,1,1,2,2])
 //ar.shiftingLetters("abc", [3,5,9])
 //ar.shiftingLetters("aaa", [1,2,3])
 //ar.shiftingLetters("bad", [10,20,30])
@@ -350,7 +352,7 @@ var graph = Graph()
 //graph.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
 
 var simulation = Simulation()
-simulation.createTargetArray([0,1,2,3,4], [0,1,2,2,1])
+//simulation.createTargetArray([0,1,2,3,4], [0,1,2,2,1])
 //simulation.addDigits(38)
 //simulation.findPoisonedDuration([1,4], 2)
 //simulation.findPoisonedDuration([1,2], 2)

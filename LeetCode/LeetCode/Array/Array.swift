@@ -8,6 +8,25 @@
 import Foundation
 
 class _Array {
+    func majorityElement(_ nums: [Int]) -> Int {
+        let size = nums.count
+        var map = [Int:Int]()
+        
+        for num in nums {
+            if let value = map[num] {
+                map[num] = value + 1
+            } else {
+                map[num] = 1
+            }
+        }
+        
+        let result = map.filter{ $0.value > size/2 }.map{ $0.key }.first!
+        
+        print(result)
+        
+        return result
+    }
+    
     func shiftingLetters(_ s: String, _ shifts: [Int]) -> String {
         let str = Array(s).map { String($0) }
         let alphabets = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
