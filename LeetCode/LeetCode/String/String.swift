@@ -8,6 +8,45 @@
 import Foundation
 
 class _String {
+    
+    func simplifyPath(_ path: String) -> String {
+        
+        let splited = path.split(separator: "/")
+        var stack = [String]()
+        
+        print(splited)
+        
+        for directory in splited {
+            switch directory {
+            case "..":
+                if !stack.isEmpty {
+                    stack.removeLast()
+                }
+                break
+            case ".":
+                break
+            default:
+                stack.append(String(directory))
+            }
+        }
+        
+        var result = ""
+        
+        if stack.count == 1 {
+            stack.insert("/", at: 0)
+            result = stack.joined()
+        } else if stack.isEmpty {
+            stack.append("/")
+            result = stack.joined()
+        } else {
+            result = stack.joined(separator: "/")
+            result = "/" + result
+        }
+        
+        
+        return result
+    }
+    
     func reverse(_ x: Int) -> Int {
         
         var str = ""

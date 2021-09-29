@@ -46,6 +46,11 @@ let greedy = Greedy()
 
 
 let string = _String()
+//string.simplifyPath("/home/")
+//string.simplifyPath("/../")
+string.simplifyPath("/home//foo/")
+//string.simplifyPath("/a/./b/../../c/")
+
 //string.numDecodings("12")
 //string.numDecodings("226")
 //string.numDecodings("0")
@@ -177,8 +182,8 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
-ar.majorityElement([3,2,3])
-ar.majorityElement([2,2,1,1,1,2,2])
+//ar.majorityElement([3,2,3])
+//ar.majorityElement([2,2,1,1,1,2,2])
 //ar.shiftingLetters("abc", [3,5,9])
 //ar.shiftingLetters("aaa", [1,2,3])
 //ar.shiftingLetters("bad", [10,20,30])
