@@ -8,6 +8,43 @@
 import Foundation
 
 class _Array {
+    
+    func findMinDifference(_ timePoints: [String]) -> Int {
+        
+        var array = [Int]()
+        
+        for timePoint in timePoints {
+            let splited = timePoint.split(separator: ":")
+
+            let hours = splited[0]
+            let minutes = splited[1]
+            
+            let convertHoursByMinutes = Int(hours)! * 60 + Int(minutes)!
+            array.append(convertHoursByMinutes)
+        }
+        
+        array = array.sorted(by: <)
+        var minGap = 0
+        var result = array.max()!
+        
+        for i in 0..<array.count {
+            for j in i+1..<array.count {
+                let gap = array[j] - array[i]
+                minGap = min(gap, 1440 - gap)
+                if minGap == 0 {
+                    return minGap
+                }
+                if result > minGap {
+                    result = minGap
+                }
+            }
+        }
+        
+        print(result)
+        
+        return result
+    }
+    
     func majorityElement(_ nums: [Int]) -> Int {
         let size = nums.count
         var map = [Int:Int]()

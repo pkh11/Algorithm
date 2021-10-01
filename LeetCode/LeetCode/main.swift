@@ -48,7 +48,7 @@ let greedy = Greedy()
 let string = _String()
 //string.simplifyPath("/home/")
 //string.simplifyPath("/../")
-string.simplifyPath("/home//foo/")
+//string.simplifyPath("/home//foo/")
 //string.simplifyPath("/a/./b/../../c/")
 
 //string.numDecodings("12")
@@ -182,6 +182,9 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
+ar.findMinDifference(["12:12","12:13"])
+//ar.findMinDifference(["23:59","00:00"])
+//ar.findMinDifference(["00:00","23:59","00:00"])
 //ar.majorityElement([3,2,3])
 //ar.majorityElement([2,2,1,1,1,2,2])
 //ar.shiftingLetters("abc", [3,5,9])
