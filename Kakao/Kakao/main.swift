@@ -53,11 +53,11 @@ let no7 = 기둥과보설치()
 //no7.solution(5, [[0,0,0,1],[2,0,0,1],[4,0,0,1],[0,1,1,1],[1,1,1,1],[2,1,1,1],[3,1,1,1],[2,0,0,0],[1,1,1,0],[2,2,0,1]])
 
 let no8 = 신규아이디추천()
-no8.solution2("...!@BaT#*..y.abcdefghijklm")
-no8.solution2("z-+.^.")
-no8.solution2("=.=")
-no8.solution2("123_.def")
-no8.solution2("abcdefghijklmn.p")
+//no8.solution2("...!@BaT#*..y.abcdefghijklm")
+//no8.solution2("z-+.^.")
+//no8.solution2("=.=")
+//no8.solution2("123_.def")
+//no8.solution2("abcdefghijklmn.p")
 
 let no9 = 메뉴리뉴얼()
 //no9.solution(["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"], [2,3,4])
@@ -122,9 +122,11 @@ let ss = 조이스틱2()
 
 let words = 숫자문자열과영단어()
 let 거리두기 = 거리두기확인하기()
-거리두기.solution([["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"],
-                       ["POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"],
-                       ["PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"],
-                       ["OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"],
-                       ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]])
+//거리두기.solution([["POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"],
+//                       ["POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"],
+//                       ["PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"],
+//                       ["OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"],
+//                       ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]])
 
+let week1 = Week1()
+week1.solution(3, 20, 4)
