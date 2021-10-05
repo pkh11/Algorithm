@@ -8,6 +8,8 @@
 import Foundation
 
 let greedy = Greedy()
+greedy.maxSumDivThree([2,6,2,2,7])
+greedy.maxSumDivThree([1,2,3,4,4])
 //greedy.minOperations([1,1,1])
 //greedy.minOperations([1,5,2,4,1])
 //greedy.minOperations([8])
@@ -182,7 +184,7 @@ let dp = DP()
 
 let ar = _Array()
 var matrix = [[1,1,1],[1,0,1],[1,1,1]]
-ar.findMinDifference(["12:12","12:13"])
+//ar.findMinDifference(["12:12","12:13"])
 //ar.findMinDifference(["23:59","00:00"])
 //ar.findMinDifference(["00:00","23:59","00:00"])
 //ar.majorityElement([3,2,3])

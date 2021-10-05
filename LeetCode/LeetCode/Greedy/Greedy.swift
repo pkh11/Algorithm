@@ -9,6 +9,39 @@ import Foundation
 
 class Greedy {
     
+    func maxSumDivThree(_ nums: [Int]) -> Int {
+        
+        var oneRemainder = 20000
+        var twoRemainder = 20000
+        var sum = 0
+        
+        for num in nums {
+            sum += num
+            
+            if num % 3 == 1 {
+                twoRemainder = min(twoRemainder, oneRemainder + num)
+                oneRemainder = min(oneRemainder, num)
+            }
+            
+            if num % 3 == 2 {
+                oneRemainder = min(oneRemainder, twoRemainder + num)
+                twoRemainder = min(twoRemainder, num)
+            }
+        }
+        
+        if sum % 3 == 0 {
+            return sum
+        }
+        if sum % 3 == 1 {
+            return sum - oneRemainder
+        }
+        if sum % 3 == 2 {
+            return sum - twoRemainder
+        }
+        
+        return 0
+    }
+    
     func minOperations(_ nums: [Int]) -> Int {
             
         var nums = nums
