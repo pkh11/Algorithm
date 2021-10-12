@@ -129,4 +129,13 @@ let 거리두기 = 거리두기확인하기()
 //                       ["PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"]])
 
 let week1 = Week1()
-week1.solution(3, 20, 4)
+//week1.solution(3, 20, 4)
+let week2 = Week2()
+week2.solution([[100,90,98,88,65],
+                [50,45,99,85,77],
+                [47,88,95,80,67],
+                [61,57,100,80,65],
+                [24,90,94,75,65]])
+
+week2.solution([[50,90],
+                [50,87]])
