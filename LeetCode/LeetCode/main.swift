@@ -8,8 +8,10 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.maxSumDivThree([2,6,2,2,7])
-greedy.maxSumDivThree([1,2,3,4,4])
+greedy.leastInterval(["A","A","A","B","B","B"], 2)
+greedy.leastInterval(["A","A","A","B","B","B"], 0)
+//greedy.maxSumDivThree([2,6,2,2,7])
+//greedy.maxSumDivThree([1,2,3,4,4])
 //greedy.minOperations([1,1,1])
 //greedy.minOperations([1,5,2,4,1])
 //greedy.minOperations([8])

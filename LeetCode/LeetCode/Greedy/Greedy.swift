@@ -9,6 +9,37 @@ import Foundation
 
 class Greedy {
     
+    func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
+        
+//        Given a characters array tasks, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.
+//
+//        However, there is a non-negative integer n that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least n units of time between any two same tasks.
+//
+//        Return the least number of units of times that the CPU will take to finish all the given tasks.
+
+        var map = [Character:Int]()
+        
+        for task in tasks {
+            if let values = map[task] {
+                map[task] = values + 1
+            } else {
+                map[task] = 1
+            }
+        }
+
+        let taskFrequency = map.sorted { $0.value > $1.value }
+        let maxFrequency = taskFrequency[0].1
+        var idleTime = (maxFrequency - 1) * n
+        
+        for i in 1..<taskFrequency.count {
+            idleTime -= min(maxFrequency - 1, taskFrequency[i].1)
+        }
+        
+        idleTime = max(0, idleTime)
+        
+        return tasks.count + idleTime
+    }
+    
     func maxSumDivThree(_ nums: [Int]) -> Int {
         
         var oneRemainder = 20000
