@@ -8,8 +8,8 @@
 import Foundation
 
 let greedy = Greedy()
-greedy.leastInterval(["A","A","A","B","B","B"], 2)
-greedy.leastInterval(["A","A","A","B","B","B"], 0)
+//greedy.leastInterval(["A","A","A","B","B","B"], 2)
+//greedy.leastInterval(["A","A","A","B","B","B"], 0)
 //greedy.maxSumDivThree([2,6,2,2,7])
 //greedy.maxSumDivThree([1,2,3,4,4])
 //greedy.minOperations([1,1,1])
@@ -364,6 +364,8 @@ var graph = Graph()
 //graph.findKthLargest([3,2,3,1,2,4,5,5,6], 4)
 
 var simulation = Simulation()
+simulation.sumEvenAfterQueries([1,2,3,4], [[1,0],[-3,1],[-4,0],[2,3]])
+//simulation.sumEvenAfterQueries([1], [[4,0]])
 //simulation.createTargetArray([0,1,2,3,4], [0,1,2,2,1])
 //simulation.addDigits(38)
 //simulation.findPoisonedDuration([1,4], 2)

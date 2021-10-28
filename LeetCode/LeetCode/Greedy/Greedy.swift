@@ -9,6 +9,11 @@ import Foundation
 
 class Greedy {
     
+    func largestValsFromLabels(_ values: [Int], _ labels: [Int], _ numWanted: Int, _ useLimit: Int) -> Int {
+                
+        return 0
+    }
+    
     func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
         
 //        Given a characters array tasks, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.

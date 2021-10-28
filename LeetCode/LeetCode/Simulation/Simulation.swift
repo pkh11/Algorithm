@@ -8,6 +8,26 @@
 import Foundation
 
 class Simulation {
+    
+    func sumEvenAfterQueries(_ nums: [Int], _ queries: [[Int]]) -> [Int] {
+        
+        var nums = nums
+        var result = [Int]()
+        
+        for query in queries {
+            let value = query[0]
+            let index = query[1]
+            
+            nums[index] += value
+            
+            let evenSum = nums.filter{ $0 % 2 == 0 }.reduce(0, +)
+            result.append(evenSum)
+            print(evenSum)
+        }
+        
+        return result
+    }
+    
     func createTargetArray(_ nums: [Int], _ index: [Int]) -> [Int] {
         
         var target = [Int]()
