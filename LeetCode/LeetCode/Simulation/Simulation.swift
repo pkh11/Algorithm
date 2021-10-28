@@ -8,7 +8,7 @@
 import Foundation
 
 class Simulation {
-    
+
     func sumEvenAfterQueries(_ nums: [Int], _ queries: [[Int]]) -> [Int] {
         
         var nums = nums

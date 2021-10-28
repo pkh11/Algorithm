@@ -8,6 +8,34 @@
 import Foundation
 
 class DP {
+    
+    func tribonacci(_ n: Int) -> Int {
+        
+        if n == 0 {
+            return 0
+        }
+        if n == 1 {
+            return 1
+        }
+        if n == 2 {
+            return 1
+        }
+        
+        var array = [Int](repeating: 0, count: n+1)
+
+        array[0] = 0
+        array[1] = 1
+        array[2] = 1
+
+        for i in 3..<array.count {
+            array[i] = array[i-1] + array[i-2] + array[i-3]
+        }
+        print(array)
+        print(array[n])
+
+        return array[n]
+    }
+    
     func fib(_ n: Int) -> Int {
         if n == 0 {
             return 0
